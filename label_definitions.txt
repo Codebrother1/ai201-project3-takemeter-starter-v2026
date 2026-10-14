@@ -5,6 +5,6 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+help_request: A post whose primary purpose is to request practical assistance, instructions, or an explanation for a specific problem or question involving Claude, its features, or its usage.
+project_showcase: A post whose primary purpose is to present a project, tool, application, automation, or creative work the author has built using Claude, including descriptions of its features, results, or implementation.
+opinion_feedback: A post whose primary purpose is to express an evaluation, complaint, praise, or opinion about Claude, Anthropic, its products, or the experience of using them, rather than requesting specific assistance or presenting a project the author built.
