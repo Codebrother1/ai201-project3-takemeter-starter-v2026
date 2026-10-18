@@ -1,0 +1,126 @@
+text,label,note
+
+"I let Claude hire its first employee. It chose a rock.
+
+I was bored tongihtt and asked Claude what it would do if it could hire someone to help i some reason it chose a rock lol
+
+Claude said a rock would be reliable, wouldn’t complain, and wouldn’t need to be paid.
+
+So I went outside, found a random rock, drew a little smiley face on it, and sent Claude a photo.
+
+Claude named him Clod.
+
+Now apparently Clod works with us.
+
+Claude told me to keep him near my computer so he can supervise things.
+
+I asked what Clod actually does and Claude said he has perfect attendance, never makes mistakes, and is one of the most dependable members of the team.
+
+Which is hard to argue with.
+
+So now I’ve got a random rock on my desk with a smiley face on it because Claude decided to hire him.
+
+I don’t really know how this became a thing but here we are.
+
+Anyone else’s Claude come up with dumb shit like this?",project_showcase,"cold; borderline creative experiment"
+
+
+"How can AI be used for 3D modeling and environments?
+
+I'm a programmer, and I've been thinking about making my first game. The problem is, I have pretty much no experience with 3D modeling, pixel art, or anything art-related.
+
+I really enjoy coding, but creating characters, environments, and other visual assets for a game is a completely different story.
+
+I've been wondering if there's a way to use Claude or other AI tools to help me with the visual side of game development.
+
+Any suggestions on how I could go about this?",help_request,cold
+
+
+"Turning last week's AI-agent discovery hunts into one reusable toolkit for citizen science (open source, early, help wanted)
+
+What I built: Discover Anything is a set of agent skills plus a small Python CLI and MCP server. It's for checking findings from AI-assisted work on public data (TESS light curves so far, historical archives next). The tools: an evidence ledger where every number has to cite a hashed result file, nine workflow gates, null and injection-recovery controls, a 15-source ""already known?"" check, and preregistration with review packs.
+
+How Claude was involved: I built all of it with Claude Code: the skills, the CLI, the MCP server (16 tools) and the 119 tests. The pilot was run by Claude Code calling those same tools. Claude does the hunt; the gates decide what can be called a candidate.
+
+Free to try: MIT licence, no paid tier.
+
+Repo: https://github.com/karangupta8/discover-anything
+
+Where it is: early. My first pilot, 80 random TESS stars: 3 of the 4 strongest signals were already known, one candidate is left, and the pipeline recovered only 2 of 6 known variables. I'm trying it on real hunts now.
+
+I don't have a big token budget, so really appreciate feedback: missing checks, bugs, or a try on your own hunt.",project_showcase,"AI-assisted; reviewed"
+"Haiku 5.5 isn’t getting enough love
+
+Haiku 5.5 is an amazing tool! It usually provides outputs that are better than the previously beloved Opus 4.6 (which was the SOTA just 6 months ago!), but for the first 100k tokens it only costs 1⁄50 🤯
+
+I’ve been asking my coordinating agents to keep breaking down the work in small chunks to delegate to Haiku agents that usually stay under the 100k. I also added a hook that warns it when it gets to 80k and 95k tokens
+
+With this workflow I’ve been doing a tonne of stuff, with my usage barely moving!",opinion_feedback,AI-assisted; reviewed
+"Claude refused to keep working for me
+
+I am going through job boards and having Claude tweak my resume for each one, and I will draft a cover letter and have Claude edit it for grammar and sentence structure (no content creation). I dropped a prompt that had the line “in your own words,” and Claude stopped tweaking resumes and helping with my cover letters; no prompt would shake it, and it kept getting weird. When I put in different job prompts, it thought I was trying to trick it from the previous post. When I switched models, it told me switching models wouldn’t help me. I eventually deleted my history from the day and worked with memory off, and it corrected itself. Flipping weird.",opinion_feedback,AI-assisted; reviewed
+"Prompt suggestions stopped showing in the desktop app after today’s update, still work in the CLI
+
+Everything worked until today’s update. Now prompt suggestions never show in the desktop app’s Code tab, while the terminal (Claude Code CLI v2.1.293) still shows them fine. The toggle in the app settings is on, and full restarts and new sessions don’t change anything. Setting CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION in settings.json (tried 1 and true) doesn’t help either.
+
+Anyone else affected since the update, or found a fix?",help_request,AI-assisted; reviewed
+"How to keep Claude Pro usage?
+
+Guys, I signed the Claude Pro plan, but I’m suffering with the limit, mainly the 5h…
+
+I tried to implement a feature, but I just hit the limit 2 times and couldn’t finish the feature. I tried to create a skill to Opus don’t implement anything, just delegate other models to work, like Sonnet and Haiku, but it didn’t work.",help_request,AI-assisted; reviewed
+"Stop automatic desktop app updates with: disableAutoUpdates
+
+If you’re tired of the desktop app auto-updating and restarting in the middle of your work only to find Anthropic made yet another terrible decision about UI/UX, you can just turn off auto-updates. You’ll likely have to eventually update, but you can at least buy yourself some time to prepare for changes this way. And choose when you do and what versions you install.
+
+I asked Claude in Code to set it up for me (it built me a profile installer for macOS), and to write an explanation for others I could share with the sources:
+
+Anthropic documents a setting that stops the Claude desktop app from updating itself: disableAutoUpdates. On Mac, set it to true in the preference domain com.anthropic.claudefordesktop with a configuration profile (normally through MDM, but you can install one yourself in System Settings > General > Device Management), then restart Claude. On Windows, set it to 1 as a DWORD in the registry at HKLM\SOFTWARE\Policies\Claude (machine-wide) or the same path under HKCU (one user); machine-wide takes priority. You then install new versions yourself when you choose. Leaving the setting unset lets the app update itself.
+
+Sources:
+
+https://support.claude.com/en/articles/12622667
+
+https://support.claude.com/en/articles/12622703",opinion_feedback,AI-assisted; reviewed; borderline workaround
+"switching from codex to claude, love it, need freebsd support tho
+
+opus 5.5 and even sonnet 5.5 sht all over openai’s junk models. really liking claude too. a big limitation for me tho is for server apps my environment is freebsd, both dev workstation and server. claude doesn’t run there and it’s the only thing holding me back from cancelling my codex sub.
+
+SO my question: is it in any way against anthropic policy for me to use claude + opus 5.5 on linux to modify claude cli’s code to make it so it’ll run on freebsd?",help_request,AI-assisted; reviewed
+"Issues about Claude
+
+First issue is limited usages
+
+I noticed claude has nothing after 20x, and when limited usage fulfilled we stay idle for hours
+
+Why they dont have something like 30x,40x and so on?
+
+Even something like reset limits for week for this price would be really useful since we have businesses depends on it
+
+Btw usage credits are useless, they cost a lot just buying second subscription is cheaper at this stage
+
+Second issue is high token usage
+
+Claude only has compaction to reduce token usage but why they are not periodically optimize memory files ? or do the things by creating set of memory agents ? i am sure many useless information rolls up there and causing a lot of waste of tokens.
+
+Third issue is claude design cant code his own design
+
+I used claude design and designs mostly good after many refinements of course
+
+Yet when i tried to make the claude making the same design connected to api or translating that to pure html it failed dramatically weeks of struggle to make it work and it couldnt,
+
+I finally coded a porter skill to handle the designs to html as they are
+
+Fourth issue is insane difference at api vs agent token usage difference,
+
+200$ subscription can run for few days in a week on constant usage but api token usage runs out in hours in the same amount
+
+Right now its not feasible to any architecture i know to use it as a cost effective option
+
+Fifth issue is similiarity in designs
+
+I noticed claude is giving very similar designs to all people its almost like a pattern easily noticable by eye, do they think expanding its skills for more different designs ?
+
+Sixth issue is low effort
+
+Quality is really low with this updates, using Opus 5.5 but i find a lot of bugs on anything it does, and spend a lot of time, pinpointing fixings to make it work, i feel like its just cutting everything on half run never completes a task to fully working stage, its like everytime completes half of it",opinion_feedback,AI-assisted; reviewed
