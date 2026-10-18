@@ -295,12 +295,15 @@ AI helped with collecting and preparing data, but it did not choose any of the 1
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
-| Measure          | Baseline | Trained | Difference |
-| ---------------- | -------- | ------- | ---------- |
-| Overall accuracy |          |         |            |
-| Macro F1         |          |         |            |
-| F1 — `label_one` |          |         |            |
-| F1 — `label_two` |          |         |            |
+| Measure                 | Baseline | Trained | Difference |
+| ----------------------- | -------- | ------- | ---------- |
+| Overall accuracy        | 0.567    | 0.433   | -0.133     |
+| Macro F1                | 0.449    | 0.202   | -0.248     |
+| F1 — `help_request`     | 0.727    | 0.605   | -0.123     |
+| F1 — `project_showcase` | 0.621    | 0.000   | -0.621     |
+| F1 — `opinion_feedback` | 0.000    | 0.000   | +0.000     |
+
+The baseline is `facebook/bart-large-mnli`, used zero-shot with my label definitions from `label_definitions.txt` as its only instructions. Both models were scored on the same 30 held-out posts in `test_split.csv`. **Difference = Trained − Baseline**, so a negative number means the baseline did better. On every measure, the baseline was better or tied.
 
 **What I predicted before I looked:**
 
@@ -317,6 +320,16 @@ I expect a small improvement, not necessarily a dramatic one.
 
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
+
+My main prediction was correct: the zero-shot baseline beat my trained DistilBERT model. It scored 0.567 accuracy (17 of 30) against my model's 0.433 (13 of 30), about 13.3 percentage points higher. Its macro F1 was also higher, 0.449 against 0.202. On these posts, my fine-tuning made the model worse than using no training at all.
+
+The biggest gap is on `project_showcase`. The baseline found all 9 project showcases (F1 0.621), while my trained model found none (F1 0.000). The baseline was also better on `help_request` (F1 0.727 against 0.605).
+
+Neither model learned `opinion_feedback`. Both scored F1 = 0 on it. The baseline labelled 7 of the 8 opinion posts as `project_showcase` and the other 1 as `help_request`.
+
+The second part of my prediction only partly held. The baseline did use more than one label, but it did not spread its predictions evenly. It leaned heavily toward `project_showcase`, which it chose for 20 of the 30 posts, and used `opinion_feedback` only once (and that one was wrong). So both models favoured one label; they just favoured different ones.
+
+The baseline's 0.567 accuracy is still below my 0.65 target, so neither model met my overall accuracy criterion. The baseline beat a weak trained model, but it is not good enough on its own.
 
 ---
 
