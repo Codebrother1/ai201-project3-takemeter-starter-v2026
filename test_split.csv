@@ -1,0 +1,377 @@
+text,label,note
+"Team vs Personal Plan?
+
+I currently have a 20x Max personal plan through work. I need to get subscriptions for the rest of my team and try to decide if to ask for a bunch of personal plans or a Team plan.
+
+What are the pros and cons of the Team subscription?",help_request,AI-assisted; reviewed
+"If my external hard drive gets disconnected accidentally, all terminals freeze
+
+Hello. It also restricts my access to the application, rendering most programs unusable. However, when I close and reopen it, I can
+resume from where I left off using the “continue” command. It seems that Claude might be running in the background without me
+noticing. To give you the full picture: if the connection to the external hard drive is lost, it causes most of my terminals to stop, and I
+lose access to the application. This happens on my M3 24GB MacBook Air. Thank you!",opinion_feedback,AI-assisted; reviewed
+"I cant use claude co-work: Not connected The files and apps on Claude Desktop (Windows) aren’t available to Claude. You can still chat with Claude.
+
+I was using it perfectly fine. To have it access my computer folders and files to edit videos, and now the message in title shows up. Please help.",help_request,AI-assisted; reviewed
+"I let Claude play my rat gladiator game blind. It named its dojo “Patch Notes” because it planned to break the balance.
+
+I’m developing Ratiator, a management game where you recruit rat gladiators and write the conditional tactics they follow in combat. I wanted to see what Claude would figure out as a new player.
+
+It started with the controls and one sentence: “a management game about a rat gladiator dojo.”
+
+Claude plays through screenshots and an input bridge: clicking, hovering over tooltips, scrolling and typing. It isn’t given the source code, save data, a wiki or a walkthrough. The game pauses while it thinks, and it writes campaign notes that carry over between episodes.
+
+It named its operation Patch Notes Dojo, decided to build something overpowered enough to need patching, and created a tactic called the Spoon Doctrine.
+
+Then it lost its first fight.
+
+The interesting part was watching it inspect the fight information and work out what to change. Its confidence was considerably further along than its understanding.
+
+I edited the first 44-minute session into an episode. The decisions and commentary come from Claude’s session; voice acting, the rat avatar and editing are added afterwards.
+
+For anyone interested watching the whole thing --> Watch episode 1",project_showcase,cold
+"I built a free windows app meant for building and running modded (or vanilla) Minecraft servers!
+
+I host Minecraft servers for friends on my own PC. A lot of modpacks don’t come with server files, and setting them up by hand is a pain: picking the right loader and Java version, removing mods that only work in the game, fixing crashes. So I built an app to do that for me. I originally made it for myself, but it turned out well enough that I wanted to share it.
+
+What it does
+
+- Search for a modpack (or use a .zip/.mrpack file) and it builds a working server: it downloads the mods, installs the loader, picks the right Java and removes client-only mods.
+- Start and stop servers, see the console, live memory use and tick speed, and the addresses friends need to join.
+- If a server crashes, it explains why in plain words and can try to fix it with one click.
+- There’s a Mods tab that warns you when a mod is client-only or made for the wrong version, plus easy operator and whitelist management.
+- You can run several servers at once.
+
+How I built it with Claude
+
+I’m not a programmer, so Claude Code did all of the coding. My job was deciding what the app should do, testing it on my PC, and passing along bugs my friends hit. The workflow went like this:
+
+- Plain-language requests. I described what I wanted the way a user would. For example: “the save button should always be visible instead of having to scroll down”, “add a warning if someone leaves settings without saving”, or “make it so you can right-click a server to delete it or edit its properties”. Claude turned those into code and asked when something was unclear.
+- Bug reports pasted straight in. When a user got an error like [WinError 87] The parameter is incorrect while downloading a modpack, I pasted it in. Claude found the cause (a “:” in the file name, which Windows doesn’t allow), fixed it, and changed the app so errors come with step-by-step instructions.
+- Testing before every release. Claude built a fake Minecraft server and a test setup, then used Playwright to click through the real interface automatically (create a server, start it, crash it, fix it, add mods). It also used Wine to build and test the Windows installer, including updating from older versions and uninstalling.
+- Code reviews. I periodically asked it to “double check everything for bugs”. It used sub-agents to review different parts of the app in parallel, and that caught real issues before users hit them.
+- Releases. It set up GitHub Actions so that adding a changelog entry builds the installer and publishes a signed release, and the app updates itself.
+
+The app is a single Python file with a native Windows window. Everything (code, tests, release setup and the demo video) was done through Claude Code.
+
+Try it (free)
+
+It’s completely free and open on GitHub. Download MinecraftServerManager-Setup.exe from the Releases page and run it (Windows only):
+https://github.com/ricoism/minecraft-server-manager
+
+I’d love feedback, and please tell me if you find bugs or have ideas!
+
+(App demo video also made by Claude!)",project_showcase,AI-assisted; reviewed
+"claude app - why I always have to type /reload-skills ?? why skills and commands not loaded by default??
+
+All works fine in terminal but in Desktop app always before starting new conversation I need to type /reload-skills just so that my all skills would load. Why are skills not loaded by default?
+
+Windows x WSL",help_request,AI-assisted; reviewed; borderline: feedback-style question
+"Claude writes a daily newspaper from tech Twitter for me. Here’s the pipeline.
+
+techtwitter.io is a daily newspaper made from the last day of trends related to tech on X, powered by a custome workflow with claude
+
+How it works:
+
+A runbook in the repo tells Claude what to do, step by step. A scheduled task in the Claude desktop app starts it every night.
+
+based on preselected templates and rules, claude pulls trends and runs about 100 X searches through a X API.
+
+Based on given rules, it groups the posts into storylines, writes a digest with sources, and then writes the whole edition as one JSON file. The site (Next.js on Cloudflare Workers, with D1) just renders that JSON.
+
+Before uploading, it checks every quote against the saved post and every outside link.
+
+The headlines are jokes and the facts are meant to be accurate. Anything it can’t confirm is labelled unconfirmed or cut.",project_showcase,AI-assisted; reviewed
+"Coordinating multiple AI agents - a secure website hosted shared pool approach
+
+Hey everybody, I’m posting this because I think it is cool. I had Claude make me an online shared scratch / semaphore flag system where multiple AI agents of any type can coordinate and work together in one pool. This was done using a combination of Opus 5.5, Fable 5.1 and ChatGPT Sol 6.1 working together. I previously had a combination of a local scratch, individual to each agent, a remote flag system only some agents could access, and the split approach was causing workflow delays and issues. The remote approach gives all agents a single target to work on, outside of any public git repository, which allows for more private workflow, conversation and milestone targets. The tool was built via Claude Code once it became clear we needed a shared pool - particularly - the previous flag system was done over ssh but Claude Cloud had no ssh capability and couldn’t use the system. The HTTPS system allows all agents to access the pool using existing tools
+
+It is simply a php script, which can be deployed on any php-enabled web server, and gives read/write permission access to an offline directory for any member AI who holds a valid permission token. The scratch can be used to share files, a chat ledger, or anything else where a shared workflow is required. The semaphore flag system is an extra layer where any AI agent can ‘flag’ any one or more AI agent to get their attention, and help on some problem or other, without the target agent needing to trawl the whole repository. It is an essentially a ‘post box’ where the agent can put post in with another agent.
+
+The full code is on my git. It is a very simple script and can be ported to absolutely any web server. 
+
+https://github.com/ghywel/placego/tree/main/sharedstore
+
+It’s working pretty sweet on my test server, and greatly simplifies of coordinating different AI of different vendors on the same workflow, or a custom swarm of the same AI with very fine granular control - since each agent retains its autonomy as it is not bedded into a true swarm.
+
+I’d love to hear if this method is useful for you.",project_showcase,AI-assisted; reviewed
+"Claude Code edited my product video, and I'm honestly surprised how good it is
+
+I built a Mac app with Claude Code over the last month, and for the launch I asked it to make the video as well. No video editor, no After Effects. It wrote each scene as HTML, animated it, mixed in the music, and rendered it with HyperFrames. This is version 5, after one day of me saying things like ""the text overlaps the panel"" and ""make both sides use the same clip so the comparison is fair"".
+
+The app is CallLane: it stops macOS from turning your music down during calls, and keeps AirPods in high quality while you dictate or call, by using the Mac's mic instead of the AirPods mic.
+
+Some context: I only started using Claude about 6 months ago. Claude Code wrote most of the Swift app and the Core Audio driver. My job was mostly testing on real calls and deciding what the thing should do.
+
+If people are interested I can write up how the video pipeline works (it's just HTML scenes plus a render step).",project_showcase,AI-assisted; reviewed
+"How I make my Claude subscription go further: 28% lower API-equivalent cost using skills to delegate to sub-agents in Claude Code
+
+My goal in life is to token maxx
+
+I used Cladue Code to build an agent orchestrator, where Opus uses a skill delegate tasks to sub-agents.
+
+I built the skill for Edge, using Claude Code. I had Claude Code write the skill file and the rules for choosing between Haiku, Sonnet and Opus. It also built the evaluation comparing model-picked sub-agents with all-Opus runs, then revised the skill after testing.
+
+In a test I ran, Opus assigned:
+
+• Haiku: inventory functions and convert a config file
+
+• Sonnet: fix a date-parsing bug
+
+• Opus: implement a money-allocation function with tricky edge cases
+
+The skill checks whether the result is verifiable and how much judgment the task needs, what is the risk of a wrong answer.
+
+Edge compared 15 runs using the skill with 15 runs using Opus for every subagent. The result was ~28% lower API-equivalent cost, including the Opus orchestrator. All 30 runs passed all 35 hidden checks. This was one four-task test; subscription allowance wasn’t measured.
+
+The skill is free to try in Claude Code, with no Edge account required.
+
+You can try the skill here: Subagent Model Picker
+
+Read the full test and results: Method and results
+
+Would love to hear your thoughts and see if this worked for you",project_showcase,AI-assisted; reviewed
+"Claude restarted my entire task after I hit the usage limit. Is there any way to recover the work?
+
+I had Claude working on a website for several hours, and for once, everything was going remarkably well. The design was clean, the functionality was coming together exactly as I had asked, and I was genuinely pleased with the direction it had taken. After roughly three hours of work, the website was nearly finished.
+
+Then I reached my usage limit.
+
+When my access became available again, I clicked the “Try Again” button at the bottom of the conversation. I assumed it would allow Claude to pick up where it had left off. Instead, it appears to have started the original request all over again, and all the progress made during those previous hours seems to be gone.
+
+What makes this particularly frustrating is that the result was better than I had expected. I cannot be certain Claude will reproduce the same quality or make the same decisions the second time around, even with the same instructions.
+
+I find it rather misleading that a button labelled “Try Again” can have such a significant consequence without making it clear that the entire task may restart.
+
+Has anyone else experienced this on Claude.ai? More importantly, is there any way to recover the previous progress, or has it been lost for good?
+
+Thank you.",help_request,AI-assisted; reviewed; borderline: includes complaint
+"For those with the new project room update
+
+So anyone that has the new project rooms update or lack of them, and just use Claude for chat /companionship and or creative writing. If you have more then one model you use for different things does it still work with the side chat? Can you still use whatever model you want and will they still be unique?",help_request,AI-assisted; reviewed
+"I packaged my Claude Code guardrails and skills as 27 free plugins
+
+I run Claude Code on real work repos, and I built up a set of hooks that stop it from doing things I’d regret. It can’t merge, post
+GitHub comments as me, read .env files or rewrite tracked files with sed -i until I give an explicit go. I cleaned these up and
+published them as a free, MIT-licensed plugin marketplace, along with the skills I use for PRs, code reviews, ADRs and
+postmortems.
+
+How Claude helped: I built all of it with Claude Code. Many of the guardrails started as a mistake it made in a session: I log every
+mistake, and when one keeps coming back it becomes a hook that blocks it. The site that documents the plugins reads each plugin’s
+README at build time, so the docs can’t drift from the code.
+
+What’s in it (27 plugins):
+
+Guardrails: guard, pre-ship-gate (refuses commits that mix file moves with logic), worktree-guard, stop-check, text-lint
+
+Skills: pr, review-pr, pr-address-comments, adr-template, postmortem-template, github-work
+
+Mods: gh-guard, context-hud, secret-redactor, read-guard
+
+Each plugin has a page with what it does, when to use it, and its source: https://ferjani.dev/skills
+
+Install one: /plugin install guard –marketplace rezk2ll/skills
+
+Curious what guardrails other people run.",project_showcase,AI-assisted; reviewed
+"Just switched from Cursor to Claude Code — what should I learn first?
+
+I started using Claude Code today. I used to use Cursor, but I became dissatisfied with the user experience, so I decided to switch to Claude Code.
+
+I’m still a beginner, so I’d love to hear some advice from experienced users.
+
+Is there anything you think I absolutely should learn first? Any tips or recommendations would be greatly appreciated!",help_request,AI-assisted; reviewed
+"How do you afford good AI coding agents / APIs as a student ?
+
+I recently got to try Claude Pro and Claude Code for a week thanks to someone on Reddit, and it completely changed my perspective on what good AI tools can do.
+
+Before that, I was juggling free APIs and sketchy websites just to get access. Now I realize how much I could build with proper AI tools, not just for coding but also automation, agents, and other projects.
+
+The problem is that I’m a student in India, and these subscriptions are pretty expensive for me.
+
+So, how do other students and indie hackers manage this? Are there legitimate ways to access Claude, Codex, or good APIs affordably? Do you rely on student credits, free tiers, open-source tools, or some combination? I’m not necessarily looking for everything to be free. I just want to find a sustainable way to experiment, learn, and build useful things without burning through money I don’t really have.
+
+I’d love to hear how you manage your AI toolkit on a tight budget!",help_request,AI-assisted; reviewed; PDF extraction
+"I had Claude build a very simple mental math game similar to Wordle
+
+Link to the game:
+
+If you want to try it out (it’s quite simple of a game) then here it is:
+
+https://www.reddit.com/r/mathnumble/s/HXbLg9pdXV
+
+What is it:
+
+Basically, the goal is to guess hidden numbers doing mental math.
+
+You are given a starting number
+
+You have to keep adding numbers in rows to fgure out the hidden number
+
+You have to keep the addition result in your head because you don’t see the result of adding up rows
+
+Each row adds to the result from all of the previous rows’ additions. If in any column the digit in the addition result (the one in your head) is one of the digits of the hidden number then the background of that cell will turn yellow
+
+If that digit is in the same column as in the hidden number the background turns green and the column is solved
+
+You win if you solve all columns before you run out of rows
+
+How to create Reddit games with Claude:
+
+It’s quite simple to create reddit games with Claude or any AI for that matter.
+
+You need to register your app in the reddit developers platform:
+
+https://developers.reddit.com/new/template
+
+Once you finish the registration you will receive the information on how to fetch the Devvit package. If you don’t know what it is Claude can set everything up for you once you give it those details.
+
+Here are the docs for the Devvit package / platform.
+
+https://developers.reddit.com/docs/
+
+Once you start your local Devvit app a test subreddit will be created for you to test the app, where you can interact with it.
+
+Once you are finished with the development you can either submit the app for approval or just create a public subreddit and install your app there. I think it takes a while to get the app approved before other subreddits can install your app.",project_showcase,AI-assisted; reviewed; PDF extraction
+"Claude Code just found a *creative* way around a problem in my own system
+
+Long story short: It's a complex project that deals with critical, secure code. Everything is implemented by sub-agents and then reviewed by yet more sub-agents. Each session is an orchestrator of a phase on a plan. Above everyone, there's a project manager (PM) session that keeps an eye on all efforts (it's the one I interact most with).
+
+1.
+
+Image I: A problem had to be solved, and one of the implementer sub-agents found a workaround, decided to misrepresent its actions to its own orchestrator, and the *tricky* behavior only got caught by the PM.
+
+2.
+
+Image II: Then I opened a side-chat with the orchestrator session and asked about it.
+
+It would have totally slipped had I not have a system of checks and balances in place. TIL.
+
+Stay safe out there.",opinion_feedback,cold
+"Branching was one of the best features from Claude. When do they add it back?
+
+With the “one Claude” web interface they removed branching. I really want it back.",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Claude for troubleshooting?
+
+I’m a newbie to all things ai so be nice please. I would like Claude to assist with basic troubleshooting on my Ubuntu media server. Basic stuff like, look at these logs and figure out why the container keeps going down, investigate that my hardlinks are working, or even document my current homelab set up, ect. As for my experience level, I’m intermediate at homelabbing but not a coder and just now dabbling in the ai space.
+
+Is there anyway to accomplish this goal without doing a huge amount of work? Claude suggested building sandboxes and diagnostic accounts and runners and such, and it seems like a ton of work. Is that the only way to do it safely without risk of nuking my system?
+
+edit: just to clarify, nine times out of ten I know how to fix whatever issue my services are having, I’m just not around to do so in a timely manner for my other users. I’ve already been feeding Claude logs manually if I get stuck on something particularly thorny.",help_request,AI-assisted; reviewed; PDF extraction
+"Opus 3 → Opus 4.8 → Opus 5.5: how different models understand task context, and what changed over a few months of using an improved model on the exact same task
+
+I’ve noticed something interesting. The latest versions of Claude do the work better and with higher quality than earlier ones, but they might not tell us about it at all.
+
+Context: I constantly collect niche news around the SEO, GEO, SMM, and AI brand visibility industries. As soon as I got my hands on Claude (that was Opus 3), I immediately dumped all the routine work of monitoring markets, media, and thought leaders onto it. It’s important for me to have a daily digest of the latest events, and gathering the hot topics is now Claude’s job. I haven’t made any fundamental changes to the prompt or the task description in a very long time (I can’t say exactly, but it’s measured in months). Yet the quality of the information I get has grown many times over.
+
+How it used to look: Claude gave me a collection of posts based on search phrases, split them into categories, and sorted and prioritized them by how interesting they’d be to the audience. Once a news item made it into the digest, it stayed a fixed artifact until I said something needed to be done with it.
+
+How it looks now: All information is kept current, updated as new developments come in. A single news item is no longer a static entity but something with variables laid out on a timeline (new data, new updates, changes). Sorting by audience works the same way, but now Claude takes into account that I work with three brands at once, and it clearly distributes content according to the interests of the audiences relevant to each brand (in my case: SE Ranking for everything related to SEO, SE Visible for everything related to GEO + AI visibility, and Planable for everything related to SMM). On top of that, it now separates official information sources from vendor sources. I didnt ask it to do this, but now it treats this as an important additional layer of data verification.
+
+Of course, once the difference became really noticeable, I started investigating, and I was surprised by how many small details and changes had happened outside my view.
+
+Does anyone know what might be behind these “invisible” changes? Connected MCPs, updates in parallel processes, or general improvements in context and data analysis? For me this was a nice surprise, but for someone else it could turn into a critical failure in data verification or task execution. Who knows…",opinion_feedback,AI-assisted; reviewed; borderline: ends with question
+"Claude Code on desktop got a serious glow up, here’s what’s new
+
+Honestly it’s way better now. If you use it on desktop, try these: Saved environments – save a few folders, an SSH host or cloud as one setup, start sessions there. Worktree per folder – parallel sessions don’t mess with each other anymore. Nested sessions – ask for parallel tasks, each one reports back to the main thread. /btw (Cmd+;) – side question opens in its own tab, main session keeps working. One-click follow-ups – Claude suggests next task, one click, runs as its own session. Sidebar status – see which sessions are working and which need you. Recap cards + live to-do list – come back to a session and catch up in seconds. Hard to pick one, they all sound great. What about you?",opinion_feedback,AI-assisted; reviewed
+"What have you done OUTSIDE of Claude to make your workflow better
+
+There’s a lot of discussion on how to be a better Claude jockey.
+
+But, what have you done to improve your claude workflow outside of the prompts, the connections, the memory files, etc. What
+tweaks to your setup or workflow improved your productivity?
+
+My mind goes first to physical setup and accessories (Like Stream Decks and Xenon Edge), but I’m sure there’s more out there.",help_request,AI-assisted; reviewed; requests workflow recommendations
+"I built a Claude Code skill that automates the entire Flutter release pipeline — one command to test, version bump, build AAB/APK, generate release notes & push to git
+
+Hey r/ClaudeAI! I’ve been using Claude Code heavily for Flutter development, and I built a custom skill that turns the entire release process into a single command.
+
+GitHub: https://github.com/Jaywalker-not-a-whitewalker/flutter-release-pipeline
+
+How it works:
+
+You install the skill file into Claude Code (~/.claude/skills/ or any agent-compatible location), then just say “run flutter release pipeline” and Claude handles everything:
+
+✅ OS detection (macOS, Linux, Windows) — uses correct commands per platform
+
+✅ Project & config verification before anything runs
+
+✅ flutter test with JSON parsing — pipeline stops on failure
+
+✅ Auto-bumps patch version + build number in pubspec.yaml
+
+✅ Generates markdown release notes from git log
+
+✅ Logs every release to releases.csv (append-only, never deletes)
+
+✅ Builds Android AAB or APK (your choice)
+
+✅ Optional iOS archive prep (flutter clean + flutter pub get)
+
+✅ Git stage, commit, tag, push
+
+✅ Prints a clean summary box at the end
+
+It’s designed to be multi-agent compatible — not locked into Claude Code specifically. Any agent that can read a CLAUDE.md-style skill file can use it.
+
+Would love to hear how others are structuring their Claude Code skills for DevOps workflows!",project_showcase,AI-assisted; reviewed
+"Is that to hard to have a sticky floating window for Claude like chatgpt does?
+
+We need something to opening claude fast as gpt does, without the need to open the whole chat!",opinion_feedback,AI-assisted; reviewed
+"People don’t praise Haiku 5.5 enough
+
+it’s the first time i haven’t hit limits as a free user, even during heavy, long chat sessions. i used to have claude pro mainly so i could study without interruptions and get more usage with sonnet 5/5.5 , but now claude haiku 5.5 dropped and it’s genuinely great for the price. i don’t even feel the need to renew my claude pro subscription anymore because haiku is more than enough for most of what i do.
+
+It understands my messy handwriting and notes and just outputs the stuff I should know and doesn’t do the long ass outputs like Gemini/ChatGPT it’s like talking to a fast cheap version of opus 5.5
+
+And the fact that Claude makes it 90% fucking cheaper when you’re under 100k context is actually insane. Like, the value you get for the price is ridiculous, especially when you’re using it for Claude chat and don’t want to constantly worry about hitting limits or burning through your budget.
+
+(I start a new session every ~1 hour to stay within the <100k context pricing unless I need it to remember stuff earlier. )
+
+Honestly, being able to use a model this good without feeling forced to pay for a pro subscription is a massive W. I saw many people hating on it on Claude Code, but there’s no praising for it in normal Claude chat.",opinion_feedback,AI-assisted; reviewed
+"What’s difference in how Sonnet and Opus works beside their size and cost?
+
+Hello and good time of day.
+
+I mean, how they perform in different tasks involving coding, designing documents, creative writing. In what tasks Sonnet with high / extra efforts can perform sufficiently good and what tasks is definitely better be handed to Opus.",help_request,AI-assisted; reviewed
+"Prompt suggestions stopped showing in the desktop app after today’s update, still work in the CLI
+
+Everything worked until today’s update. Now prompt suggestions never show in the desktop app’s Code tab, while the terminal (Claude Code CLI v2.1.293) still shows them fine. The toggle in the app settings is on, and full restarts and new sessions don’t change anything. Setting CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION in settings.json (tried 1 and true) doesn’t help either.
+
+Anyone else affected since the update, or found a fix?",help_request,AI-assisted; reviewed
+"Haiku 5.5 isn’t getting enough love
+
+Haiku 5.5 is an amazing tool! It usually provides outputs that are better than the previously beloved Opus 4.6 (which was the SOTA just 6 months ago!), but for the first 100k tokens it only costs 1⁄50 🤯
+
+I’ve been asking my coordinating agents to keep breaking down the work in small chunks to delegate to Haiku agents that usually stay under the 100k. I also added a hook that warns it when it gets to 80k and 95k tokens
+
+With this workflow I’ve been doing a tonne of stuff, with my usage barely moving!",opinion_feedback,AI-assisted; reviewed
+"How are you guys using ChatGPT or Claude to study UWorld and First Aid? Share your best prompts!
+
+Hey everyone!
+
+I’m currently preparing for USMLE Step 1 and trying to make better use of AI tools like ChatGPT and Claude while studying.
+
+I’m particularly interested in how you guys use AI to understand and memorize UWorld questions, explanations, and First Aid content.
+
+For those using either ChatGPT or Claude:
+
+What prompts do you use to explain UWorld questions and their answer choices?
+
+How do you make AI explain complicated medical concepts in simple, easy-to-remember language without missing important Step 1 details?
+
+Do you upload screenshots of UWorld questions or pages from First Aid? What’s your workflow?
+
+How do you use AI for memorization, mnemonics, active recall, and flashcards?
+
+Which do you prefer for medical studying, ChatGPT or Claude, and why?
+
+I’m especially interested in prompts that help with understanding, memorization, and long-term retention, rather than just summarizing information.
+
+If you have a specific prompt that works well for you, please copy and paste it here!
+
+Would love to hear what’s actually working for everyone.",help_request,AI-assisted; reviewed; PDF extraction
+"How to keep Claude Pro usage?
+
+Guys, I signed the Claude Pro plan, but I’m suffering with the limit, mainly the 5h…
+
+I tried to implement a feature, but I just hit the limit 2 times and couldn’t finish the feature. I tried to create a skill to Opus don’t implement anything, just delegate other models to work, like Sonnet and Haiku, but it didn’t work.",help_request,AI-assisted; reviewed
