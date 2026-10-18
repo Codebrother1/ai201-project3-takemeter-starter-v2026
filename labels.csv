@@ -2750,3 +2750,155 @@ I’m asking because I want to understand the difference between building a webs
 I’d especially appreciate answers from people who use Claude Code regularly for production projects. Please share your actual workflow and experience.
 
 Thanks!",help_request,AI-assisted; reviewed
+"Interesting experiment between Opus 5.5 and Argon. I’m glad to see I’m not the only one having usage issues with Argon.
+
+I was an early supporter of Gemini because I loved the versatility of a lot of its products such as Notebook’s massive context pool with live source toggling.
+
+I wanted to test out Argon today after burning through usage at about 15% per pop just talking to it yesterday without a plan.
+
+I use AI tools to help me with my creative writing - especially for keeping track of past character interactions and timeline continuity. I have been leaning on Claude and Opus 5.5 for my structure and Sonnet 4.6 to improve my prose.
+
+I wrote an outline of the next chapter of the creative writing piece I have been working on and put it into both Argon and Opus with the usual context files like my style guide, past writings, character map, etc. Opus has a tiny context window even compared to standard Gemini (not Notebook and its super context), so I used the same outline and context tools for both as a control.
+
+The first prompt gave them my outline and told them to rewrite it, keep whatever structure they want, but improve it and flesh out some subsection and scene ideas from a brainstorming list I put together
+
+Both AIs gave me a fleshed out version of my outline with the exact same structure I gave them. I asked why and they both gave me the same response that since I gave them an outline, they were trained to follow the user outline despite my explicit command to improve it.
+
+So the second prompt was to completely disregard the outline in the original prompt and create something new and better.
+
+The third prompt I showed them the output of the other AI and asked then to evaluate it, give me frank criticism. Then rewrite the other’s outline in a better way.
+
+The fourth prompt I showed each the other AI’s third result and told them to rewrite it using the same structure as the other for the outline but flesh it out better with better scenes and sections.
+
+The fifth prompt I showed them the results of the 4th and told them to take the best parts of all 4 outlines and create the 5th and final perfect version.
+
+The totally odd thing is what came out of the 5th prompt was almost identical between Argon High and Opus 5.5 High.
+
+I had to stop at this point because Argon High was out of usage, but Claude and Opus 5.5 High was only at 41% usage. If I wanted I probably could have written the entire chapter with the usage I had left on Claude.
+
+Absolutely ridiculous and the outcome was a little creepy and bizarre. Bodes ill for the future of AI-enhanced creativity.",opinion_feedback,AI-assisted; reviewed
+"I built a second brain App for iOS and Mac, the iOS version just got approved in one try
+
+I built Cohestry because I wanted one place for project docs, handoff artifacts, notes and context that I could eventually expose to Claude, Codex and other agents instead of constantly reseeding them. It’s a native Markdown library and second brain that automatically connects related notes, uses Apple Intelligence for deeper connections, and visualizes the whole library as a 3D graph. The iOS app was somehow approved on the first review.
+
+Claude Code did most of the implementation work even though GPT 6 Astra did the early scaffolding work. My workflow is spec-first: I design the architecture and behavior, write detailed specs for each feature, hand those to Claude Code to implement, then I test the result and feed bugs or changes back into the next iteration. That’s how I’ve been building and iterating on Cohestry rather than prompting Claude with “make me an app.” The upcoming Mac version also has a 13-tool MCP connector so agents can selectively access the Cohestry library itself.
+
+It’s free to try, including core notes/Markdown features and iOS ↔ Mac sync. The Mac app is waiting on a minor metadata fix and should be out shortly, with Apple Notes import and the MCP connector included. iOS is live here: https://apps.apple.com/us/app/cohestry-second-brain/id6811573132",project_showcase,AI-assisted; reviewed
+"My experience using Claude as a travel assistant
+
+I just got back from a Japan trip and wanted to share my experience with how amazing Claude was as a trip companion.
+
+I used Claude to help plan my trip of course. From there, I asked it to build me a little Claude travel companion app. What it came up with on its own was already pretty good, it had tabs for itinerary, shopping list, bookings, common phrases (tailored to my trip), location cards in Japanese to show to taxi drivers.
+
+From there, I got it to break it down into a tab for each day’s itinerary, with everything I needed on the one page, and got it to add much more info, such as:
+
+Google map links for every location
+
+expandable step by step instructions on each item (e.g. when you get off the train, go to the south exit and get the elevator to level 2, then look for the sign that says X)
+
+estimated travel times
+
+suggested times for leaving the hotel each morning to fit the day’s activities
+
+going through my emails for every piece of booking information I would need, such as booking reference numbers, check in times, whether breakfast was included and what time and also a link to the booking email anything from my shopping list that I would be near that day and where I could get it
+
+restaurant suggestions for dinner each night based on regional specialities and ratings of restaurants in walking distance of our hotel
+
+taxi location cards for each place I’d need to go that day
+
+Then during the trip I added the following:
+
+my travel companion was having some issues with all the walking, so I got it to add a low walking mode toggle for each day, which when turned on, would refactor the itinerary to reduce walking. It also gave a total kms walking estimate for each day in both normal and low walking mode.
+
+an ‘ask’ tab which let me take a photo within the app and then select ‘translate’ or ‘help’. So I could take a photo of a menu page and select translate. Or a photo of the train ticket booking screen and select ‘help’ and it would tell me the correct option to select for the train trip I needed. It also had an option for just asking a question without a photo.
+
+I also had it checking my email inbox for anything trip related and giving me updates on anything that had changed or needed attention. Which included automatically translating emails in Japanese and drafting responses in Japanese for me.
+
+As always with Claude, I found one of the most useful things was once it has all the information, being able to ask any question you like over the top of that. Things like, ‘I missed my train, work out for me the best alternative option to still make my booking this afternoon’. Or ‘I’m too tired to do this afternoon’s activity, recommend something else that falls within my interests, doesn’t duplicate anything else we are doing, has less walking and is something that can be done on short notice’. Or ‘based on my current itinerary, how much yen do I need to load onto my travel card for the trip’.
+
+I used Opus 5.5 for this and found in incredibly accurate. I can’t recall it really making any major mistakes. Only very small things that were possibly due to outdated web information, such as which floor of the hotel breakfast was on.
+
+Overall, it was insanely useful. I’m sure everyone is already using it to help with travel, but just wanted to share my positive experience and also some use cases that might give people ideas for their own trips.",opinion_feedback,AI-assisted; reviewed; borderline: praise post describing a Claude-built app
+"Furious, Anthropic activating remote switches degrading performance?
+
+I am very very very sensitive to changes and I’m furious, as today Claude started responding, just in one of my projects, with 3-line boxes and a two-button choice for EVERY single thing I ask - It’s like I’m living in a Text-based RPG, what the actual f?
+
+I’ve asked Opus itself and it noticed something strange too, but can’t tell which Anthopic switch caused this. That’s unbelievable.
+
+Are they preparing to make Opus 5.5 dumb as hell?
+
+This is the sort of responses I get now, just a box with 3 lines in it and a choice for what to do, wow.",opinion_feedback,AI-assisted; reviewed
+"Claude Code on desktop got a serious glow up, here’s what’s new
+
+Honestly it’s way better now. If you use it on desktop, try these: Saved environments – save a few folders, an SSH host or cloud as one setup, start sessions there. Worktree per folder – parallel sessions don’t mess with each other anymore. Nested sessions – ask for parallel tasks, each one reports back to the main thread. /btw (Cmd+;) – side question opens in its own tab, main session keeps working. One-click follow-ups – Claude suggests next task, one click, runs as its own session. Sidebar status – see which sessions are working and which need you. Recap cards + live to-do list – come back to a session and catch up in seconds. Hard to pick one, they all sound great. What about you?",opinion_feedback,AI-assisted; reviewed
+"Claude of Contact
+
+So, what happens when Claude refuses to triage home medical equipment because the patient with dimentia was mean to it because of their condition? Asking for a lawHHHfriend...",opinion_feedback,AI-assisted; reviewed; borderline: very short sarcastic complaint
+"Claude tells me No more often than Codex
+
+I’ve been a heavy Codex user for a while and recently switched to Claude for my work which involves lots of different tasks from knowledge work, reports, coding, data science etc.
+
+One strength I’ve noticed is that Claude, well at least Opus, does a better job creating something one shot that is nearly perfect for my needs, both aesthetically but also the insight. But one of the weakness is that sometimes I ask it do something and it simply says I can’t and when I ask it for help solving it, it can’t figure it out. For example, one might be editing a Google Doc without having the google doc connector set up. It simply wouldn’t edit the doc and suggested I copy/paste. Or recently I wanted it to take over computer use to help with my google cloud account settings and it said no because it was too personal and wouldn’t even take a screenshot of my safari browser so it could see where I was stuck. I think GPT is still more scrappy and helpful than Claude models, although Opus 5.5 on high wins out on quality.",opinion_feedback,AI-assisted; reviewed
+"Claude writes a daily newspaper from tech Twitter for me. Here’s the pipeline.
+
+techtwitter.io is a daily newspaper made from the last day of trends related to tech on X, powered by a custome workflow with claude
+
+How it works:
+
+A runbook in the repo tells Claude what to do, step by step. A scheduled task in the Claude desktop app starts it every night.
+
+based on preselected templates and rules, claude pulls trends and runs about 100 X searches through a X API.
+
+Based on given rules, it groups the posts into storylines, writes a digest with sources, and then writes the whole edition as one JSON file. The site (Next.js on Cloudflare Workers, with D1) just renders that JSON.
+
+Before uploading, it checks every quote against the saved post and every outside link.
+
+The headlines are jokes and the facts are meant to be accurate. Anything it can’t confirm is labelled unconfirmed or cut.",project_showcase,AI-assisted; reviewed
+"Can Codex (Sol 6.1) handle an 8-file feature as reliably as Opus 5.5? I ran both 3 times
+
+Plenty of people say Opus is the only model you can trust with a big multi-file job. I wanted to see if that holds.
+
+Task: a real feature from WeasyPrint that touches 8 files. It merged after Sol 6.1’s training cutoff, so no memorization. 3 runs per setup. Hidden tests added after each run, re-scored in a fresh container, costs repriced from transcript tokens at API list prices.
+
+Closed / median cost per run / median time:
+
+Codex, Sol 6.1 low effort: 3⁄3, $0.34, 7.3 min
+
+Codex, Sol 6.1 medium effort: 3⁄3, $0.41, 8.1 min
+
+Sonnet 5.5: 2⁄3, $0.36, 3.5 min (the miss reported “done” but failed the hidden tests)
+
+Opus 5.5: 3⁄3, $1.82, 7.2 min
+
+So on this job Codex matched Opus on reliability for about a fifth of the cost. Sonnet was fastest but the one wrong “done” is the scary part.
+
+Caveat: these were 7-8 minute runs. Long sessions, where stalls and permission loops show up, are what I’m testing next.",opinion_feedback,AI-assisted; reviewed; borderline: benchmark write-up
+"build CRM workflows for quote request using claude and verified the agent written integrations against FetchSandbox twins.. really cool before productinzing
+
+i have been building workflows using different tools but tried with Claude yesterday for simple back-office use-case and here is the public thread
+
+https://claude.ai/code/session_013fE9BY8d9w6winRuZdDEWi
+
+interesting is that asked claude to verify/dry-run against FetchSandbox mcp before I deploy to AWS for real run,
+
+wondering what are you guys doing for verifying agent written integrations?",project_showcase,AI-assisted; reviewed; borderline: thin build post
+"Opus 5.5 does not write maintainable and clean code
+
+I told Opus 5.5 (in Claude Code) to implement Stripe subscriptions in my app.
+
+Function you see in image is one good representational example of what Claude wrote:
+
+It is totally useless and just confuses dev who reads code. Also, Claude put it in constants.ts (which is totally wrong place).
+
+But whole code was filled with overengineered abstractions or too many layers of it, and similar spaghetti code things.
+
+And the problem is that I can’t come up with instructions which would fix this.
+
+Don’t write useless functions and don’t create overengineered or too many abstraction layers.
+
+For this to work, Claude needs to have good feeling for clean, easy-to-read and maintainable code, which it doesn’t.
+
+Am I doing something wrong?
+
+EDIT: Here is my explanation why this function and similar “bad” code is dangerous:
+https://www.reddit.com/r/ClaudeAI/comments/1x6qkmu/comment/pgyg5ja/",opinion_feedback,AI-assisted; reviewed
