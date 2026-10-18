@@ -1126,3 +1126,517 @@ it).
 I worked in the CLI to test the code performance, but on the app for the pelican test. Prompt: “Please draw a pelican riding a
 bicycle”. I had to add “, make it a svg” to ChatGPT because otherwise it will use the skill and create an image. Am I doing something
 wrong?",opinion_feedback,AI-assisted; reviewed
+"World Building Fable 5.1 vs Opus 5.5
+
+Hello! Before I throw all my usage at either doing this I wanted to ask has anyone have any experience at comparing 5.5 opis to 5.1 fable in world building (storyline, plotting and an idea of where a rpg game should go)? Is either significantly better vs the other?",help_request,AI-assisted; reviewed
+"Orca ADE vs. Telegram bridge for Claude Code?
+
+I’ve been using a Telegram bridge for Claude Code, secured to only allow my Telegram user ID, and it works pretty well.
+
+The downside is that sometimes I still need to connect to Tailscale on my phone, open a terminal app, SSH into my machine, and access my tmux session manually.
+
+I recently installed Orca ADE, and its phone pairing and Tailscale integration look promising.
+
+Has anyone tried both? Is Orca better in terms of functionality, security, and mobile experience? Would you recommend switching, or sticking with the Telegram bridge?",help_request,AI-assisted; reviewed
+"Claude isn’t anywhere near ready to replace devs
+
+I’m a software engineer with 15 years experience. I keep reading that ai is going to make devs obsolete. Sure Claude can pump out a lot of code quickly, but it struggles in a large code base. today I was working with an iOS code base and it decided that a binding was no longer required. I questioned this and was ensured there was no side effects yet it broke something downstream.
+
+i just wanted to post a real life example to counter all this talk of Claude replacing developers in the not too distant future",opinion_feedback,AI-assisted; reviewed
+"Team vs Personal Plan?
+
+I currently have a 20x Max personal plan through work. I need to get subscriptions for the rest of my team and try to decide if to ask for a bunch of personal plans or a Team plan.
+
+What are the pros and cons of the Team subscription?",help_request,AI-assisted; reviewed
+"I used headless Claude Code to turn 18 founders’ public talks and essays into MCP servers, so Claude can answer “how would Levels price this?” with sources (free, MIT)
+
+I kept pasting Paul Graham essays and Levels tweets into Claude and asking “what would they do here”. So I built a way to plug them in directly.
+
+Repo: https://github.com/VicPitic/the-brains
+
+Site: https://brains.ceo
+
+What it does: 18 MCP servers, one per founder or investor (PG, Naval, Levels, Hormozi, Marc Lou and more). Add one to Claude and ask normal questions. Claude searches that person’s actual talks, essays and posts and links every passage it uses. It’s search over their real words, not Claude doing an impression.
+
+How Claude built it:
+
+A discovery script pulls cheap metadata (top X posts, YouTube talks, essays). Then a Claude agent following a runbook picks the 15-45 sources that actually cover business principles, out of hundreds.
+
+claude -p writes a card per source: summary, verbatim quotes, topics and a quality score.
+
+claude -p turns those into sectioned notes. Those notes are what the search returns.
+
+claude -p writes each person’s principles and sample Q&A, and every line has to cite a source.
+
+All of it ran on headless Claude Code on my subscription, no API credits. Scraping for the first 10 people cost about $3.50 total.
+
+Free: yes, no paid tier. First connect asks for an email and a 6 digit code. It logs your email and searches so I can see what gets used. Don’t want that? It’s MIT, and npm start runs it locally with no sign-in.
+
+These are unofficial unless marked claimed. Public sources only, and anyone in there can get theirs corrected or removed.
+
+Drop a startup question in the comments and tell me whose to run it through. I’ll paste the answer.",project_showcase,AI-assisted; reviewed
+"I cant use claude co-work: Not connected The files and apps on Claude Desktop (Windows) aren’t available to Claude. You can still chat with Claude.
+
+I was using it perfectly fine. To have it access my computer folders and files to edit videos, and now the message in title shows up. Please help.",help_request,AI-assisted; reviewed
+"Opus 3 → Opus 4.8 → Opus 5.5: how different models understand task context, and what changed over a few months of using an improved model on the exact same task
+
+I’ve noticed something interesting. The latest versions of Claude do the work better and with higher quality than earlier ones, but they might not tell us about it at all.
+
+Context: I constantly collect niche news around the SEO, GEO, SMM, and AI brand visibility industries. As soon as I got my hands on Claude (that was Opus 3), I immediately dumped all the routine work of monitoring markets, media, and thought leaders onto it. It’s important for me to have a daily digest of the latest events, and gathering the hot topics is now Claude’s job. I haven’t made any fundamental changes to the prompt or the task description in a very long time (I can’t say exactly, but it’s measured in months). Yet the quality of the information I get has grown many times over.
+
+How it used to look: Claude gave me a collection of posts based on search phrases, split them into categories, and sorted and prioritized them by how interesting they’d be to the audience. Once a news item made it into the digest, it stayed a fixed artifact until I said something needed to be done with it.
+
+How it looks now: All information is kept current, updated as new developments come in. A single news item is no longer a static entity but something with variables laid out on a timeline (new data, new updates, changes). Sorting by audience works the same way, but now Claude takes into account that I work with three brands at once, and it clearly distributes content according to the interests of the audiences relevant to each brand (in my case: SE Ranking for everything related to SEO, SE Visible for everything related to GEO + AI visibility, and Planable for everything related to SMM). On top of that, it now separates official information sources from vendor sources. I didnt ask it to do this, but now it treats this as an important additional layer of data verification.
+
+Of course, once the difference became really noticeable, I started investigating, and I was surprised by how many small details and changes had happened outside my view.
+
+Does anyone know what might be behind these “invisible” changes? Connected MCPs, updates in parallel processes, or general improvements in context and data analysis? For me this was a nice surprise, but for someone else it could turn into a critical failure in data verification or task execution. Who knows…",opinion_feedback,AI-assisted; reviewed; borderline: ends with question
+"Why is there no subscription plan between Pro and Max 5x?
+
+I run into my limit a lot with Pro surprisingly, but for my personal use, it doesn't make sense to go from $20/month to $100/month. 😵
+
+Why is there no middle ground?",opinion_feedback,AI-assisted; reviewed
+"Running two Claude Desktop accounts (personal + work) on one Windows user? Looking for workarounds
+
+I use Claude Desktop on Windows 11 with my personal account, and my company just gave me a Team seat. I’d like to run both at the same time without signing out and back in every time.
+
+My constraints:
+
+I work with local files (a synced OneDrive working folder), so the web app isn’t enough for me. I need the desktop app’s local folder access.
+
+I’d rather not keep switching Windows users, because my files live in my main user profile.
+
+What I found so far:
+
+The desktop app is an MSIX package, registered per Windows user. I couldn’t find any official mention of multiple instances or multiple accounts in the Windows deployment docs.
+
+A Google AI summary suggested launching the app with Electron’s –user-data-dir flag pointing to a separate folder. That seems to be a general Chromium/Electron flag, but with the MSIX version I can’t just launch claude.exe from a shortcut, since it lives in WindowsApps. I haven’t confirmed whether passing the flag through the package works.
+
+Other options I considered: a second Windows account (with fast user switching), or using the web app in a separate Chrome/Edge profile for the work account.
+
+Questions:
+
+Has anyone gotten two accounts running side by side on Windows with the desktop app? What did you do?
+
+Does –user-data-dir (or something similar) actually work with the MSIX install, and if so, how do you launch it?
+
+If you went with a second Windows user, how did you handle shared local folders between the two users?
+
+Any downsides you ran into, such as login callbacks (claude://) opening in the wrong instance, or updates breaking the setup?
+
+Thanks in advance, any tip is welcome.",help_request,AI-assisted; reviewed
+"Need a honest feedback on the claude sub grounded on existing setup
+
+I haven’t used claude for about 6 months now. Would appreciate thoughts about the following assuming I’m a noob who happens to get shit done:-
+
+Can I use the sub auth anywhere apart from the claude harness like web, cli and app? Not the API, the actual sub auth method.
+
+Does any model in the current pool of the Pro sub give value/intelligence better or equal to 6.1 Sol?
+
+Which model and effort gets the job done for you with consistency and no steering.
+
+Would you choose the same model above for both planning UI/UX design and implementing the code?
+
+How much do the models intelligence rely on bundled skills or workflows, system instructions etc? Would the same model on a non claude harness behave differently?
+
+I just gave up on random search results and outdated research results and wanted to hear it from the horses mouth.
+
+Cheers!!! 🥂",help_request,AI-assisted; reviewed
+"Claude restarted my entire task after I hit the usage limit. Is there any way to recover the work?
+
+I had Claude working on a website for several hours, and for once, everything was going remarkably well. The design was clean, the functionality was coming together exactly as I had asked, and I was genuinely pleased with the direction it had taken. After roughly three hours of work, the website was nearly finished.
+
+Then I reached my usage limit.
+
+When my access became available again, I clicked the “Try Again” button at the bottom of the conversation. I assumed it would allow Claude to pick up where it had left off. Instead, it appears to have started the original request all over again, and all the progress made during those previous hours seems to be gone.
+
+What makes this particularly frustrating is that the result was better than I had expected. I cannot be certain Claude will reproduce the same quality or make the same decisions the second time around, even with the same instructions.
+
+I find it rather misleading that a button labelled “Try Again” can have such a significant consequence without making it clear that the entire task may restart.
+
+Has anyone else experienced this on Claude.ai? More importantly, is there any way to recover the previous progress, or has it been lost for good?
+
+Thank you.",help_request,AI-assisted; reviewed; borderline: includes complaint
+"Need Help with Coding a 2D game
+
+I’m new to “coding” and by this I mean asking claude to do everything(Idk sht), I’ve been basically working on this project to get claude to reverse engineer an old game from 2012(android game) that dissapeared around 2016-2019 which was when the dev last stopped updating it and basically I’ve been making all kinds of changes to it now that its back to working on this android version but I’ve noticed very slowly that opus 5.5 on high has been having a few issues here and there and that it’s usage of tokens has gone up. duh of course the more you give it the bigger context and reads it has to do.
+
+Anyways excluding the obvious things and things I DO NOT know as a non-coder, im just an english teacher man, how do I optimize claude code to run at its best and provide it with the best free sources to work on this game? Ive been relying on chatgpt pro for images and visuals while claude handled all the code and some of the parts for sound and refining final details.
+
+im just basically still figuring out github, forks, how to actually browse stuff around github, what forks and tools the AI actually needs to… well y’know, code and work on a 2d game and it has been mind boggling how much stuff you need to do to get the AI to produce good outputs, im not saying they’re bad, theyre mainly good but I had to get a fork that emulates an android environment for it to simulate and test almost every update we work on, a lot of repositories for decompiling, recreating and recovering the game, some forks for 2d tools, free access sound galleries and other stuff the model cant access bc its blocked from accesing them as an AI, which I hadn’t seen happen to it unless I started doing code related stuff, the regular chat version seems to be stopped on the entry gate for most websites.
+
+I don’t have a TL:DR for this one so please bear with me, I don’t have a good clue of what I want to say even but man this is complex even using an AI for something as simple as a 2D game with some 2.5/3D aspects to it. if anyone’s done something similar recently I’d appreciate some insight into this, there aren’t any “tutorials” for people who basically want to “revive” old games for nostalgia from when they were young.
+
+I’m also (kind of) trying to get a game that worked on the old 32 bit framing for older android versions but had a lot of issues getting the AI to port it to 64 bit versions newer android phones use, it really burned my token usage, my attempt at doing that, and didn’t produce half a good result, though I blame that on my lack of forks/tools for the AI to do it or my incomplete prompts which might have beeen half decent. the name is “Global Assault” it’s a game on kongregate, or well it used to be but most things were server-sided so yeah there’s REALLY not a whole to work off-of there.",help_request,AI-assisted; reviewed
+"Risky use of Claude Team plan?
+
+I run a small company and we have two team members (US Citizens) who live in China. We are using a Claude Team plan and I’m seeing posts that make me worried Anthropic could shut us down. Our China-located members always use a VPN set to the US but this seems like a superficial level of protection. Questions:
+
+Is this actually a big risk?
+
+If so, what kinds of daily backups should we be doing to make sure if we need to start a new plan, we don’t lose all of our work?",help_request,AI-assisted; reviewed
+"Claude code in terminal
+
+Hey, I’m a junior AI engineer, I recently started my first position at a startup. We build autonomous AI agents and we rely heavily on claude code in terminal, anyone here can explain to me what are the most important things to learn about claude code terminal, and how to use it effectively, because i’m only used to claude code web version.",help_request,AI-assisted; reviewed
+"Hi important question, is buying Claude pro really worth it?
+
+Hi i am a student, and i don’t know much about coding but i am trying to make a website to market my product, and people suggested me to shift to claude pro as it is really good in making websites and coding and research and all.. so do you think shifting to claude pro for a very beginner level student? like spending 20$ is worth it?",help_request,AI-assisted; reviewed
+"Is There a Free Monthly Reset Before Oct 22?
+
+I’ve read there is a monthly reset before Oct 22. I just want to confirm there is as currently under settings in my Claude app and Claude desktop it says:
+
+No resets right now
+
+When you get one, it shows up here with its expiry date.
+
+I am on Claude Pro.",help_request,AI-assisted; reviewed
+"How I make my Claude subscription go further: 28% lower API-equivalent cost using skills to delegate to sub-agents in Claude Code
+
+My goal in life is to token maxx
+
+I used Cladue Code to build an agent orchestrator, where Opus uses a skill delegate tasks to sub-agents.
+
+I built the skill for Edge, using Claude Code. I had Claude Code write the skill file and the rules for choosing between Haiku, Sonnet and Opus. It also built the evaluation comparing model-picked sub-agents with all-Opus runs, then revised the skill after testing.
+
+In a test I ran, Opus assigned:
+
+• Haiku: inventory functions and convert a config file
+
+• Sonnet: fix a date-parsing bug
+
+• Opus: implement a money-allocation function with tricky edge cases
+
+The skill checks whether the result is verifiable and how much judgment the task needs, what is the risk of a wrong answer.
+
+Edge compared 15 runs using the skill with 15 runs using Opus for every subagent. The result was ~28% lower API-equivalent cost, including the Opus orchestrator. All 30 runs passed all 35 hidden checks. This was one four-task test; subscription allowance wasn’t measured.
+
+The skill is free to try in Claude Code, with no Edge account required.
+
+You can try the skill here: Subagent Model Picker
+
+Read the full test and results: Method and results
+
+Would love to hear your thoughts and see if this worked for you",project_showcase,AI-assisted; reviewed
+"Claude usage stuck at 100% — Cowork accounts for 100% of my weekly usage, even though I’m not using it
+
+Is anyone else experiencing this issue?
+
+My Claude usage has been behaving strangely, and the situation has gotten worse.
+
+My weekly usage reset recently, but less than a day later, my weekly limit is already at 98%, even though I haven’t been able to do any meaningful work with Claude since the reset.
+
+Every time I open Claude, it tells me that my usage limit has been reached. I have checked my computer and confirmed that there are no Claude processes or tasks running in the background.
+
+I also have no other active Claude sessions on any other devices, and I checked the Scheduled tasks section in Cowork, which says there are no scheduled tasks.
+
+What makes this even stranger is the Usage by product breakdown:
+
+Cowork: 100%
+
+Claude Code: 0%
+
+Other: 0%
+
+I do have a Claude Code project where I previously asked Claude to interact with my PC to investigate an issue, but that activity was in Claude Code, not Cowork.
+
+I don’t understand how Cowork could account for all my weekly usage when I’m not actively using it. My weekly limit had just reset, and less than a day later, my usage is already at 98%. I haven’t been able to use Claude normally during this time.
+
+Has anyone experienced something similar? Could this be a usage tracking bug, or is there something running on Anthropic’s servers that I can’t see from my computer?
+
+I’ve already checked for background processes, other active sessions, and scheduled Cowork tasks, but nothing explains this usage.
+
+Any suggestions would be appreciated. At this point, I’m effectively unable to use Claude despite my weekly limit having just reset.
+
+Thanks!",help_request,AI-assisted; reviewed
+"Went from 5× to 20× but actually don’t know what to do with it
+
+I have a year into this. 60+ projects. No profit at all. I am glad for using it what I do the best: repurposed hardware in my drawers.
+
+One business for my brother, a few apps for people I love. Some automation for myself, some experiments… But now what? the entire world is doing what I do (not surprised for not being a snowflake lol)
+
+Everyone is arguing if that undervalues your work. And actually no no one gives a shit if a SaaS is done by you or your llm cluster. Nobody cares if that took 2 years and many models or a single prompt to Opus 5.5
+
+What it undoubtedly did is: it now asks you to think really, really big. Like not a module, not a page, not a dashboard. All the thing. If thats not specific.
+
+If it is specific, then they expect you to be master on it, because if not, then why would you spend time and tokens pn something that’s not your area.
+
+Back then a photographer might have not touch what engineers touch and a sound technician never touched designer software. Now they all are touching claude. And Claude does the nerdy part of the task.
+
+Tell me what to do, how to think bigger. I just emptied out my thoughts and drifted a bit. First post here, wanted to have weight. Kisses, bye.",opinion_feedback,AI-assisted; reviewed; borderline: vague advice request
+"made claude code draw khan academy style explainer videos on a blackboard. free, local, no api keys, open source
+
+you type a prompt, claude code writes a scene file, and one command renders an mp4 where a pen draws on a blackboard while a voice explains it. i open-sourced the skill: https://github.com/haiderfarooq3/khan-explainer
+
+Here’s a 65-second video the skill drew about itself: https://youtu.be/JD9OirRC3YE
+
+What it makes:
+
+Blackboard or whiteboard lessons, drawn stroke by stroke
+
+Draw-over-UI tutorials: arrows, circles and numbered steps over your own product screenshots
+
+“Khanify” a YouTube video: it keeps the speaker’s real voice and draws the board to their words. One 20-minute talk gave me 22 vertical clips.
+
+How Claude is used: the skill is a SKILL.md plus a renderer (HTML canvas, Playwright, ffmpeg, the Mac’s built-in say voice). Claude reads the rules, writes the beats (one spoken clause + the drawing for it), renders, then reads a contact sheet of every beat and fixes overlaps or text off the board before it shows you anything. A render takes seconds so it iterates 3-4 times on its own.
+
+The thing that makes it work: the voice drives the clock. Each line is spoken and measured first, then the pen gets exactly that long to draw it. Nobody types timestamps, so the drawing can’t run ahead of the words.
+
+Free to try, MIT, no accounts or keys. macOS only right now (the free voice is say). Optional ElevenLabs voice if you want it to sound human. Not affiliated with Khan Academy, the name describes the look.
+
+I wrote up the tricks that transfer to any content skill (self-grading output, caching the expensive step, measuring instead of eyeballing coordinates) here: https://haiderfarooq.dev/blog/claude-code-skills-for-content
+
+Happy to answer questions about how the timing or the capture recipe works.",project_showcase,AI-assisted; reviewed
+"I’ve been using Claude Max for 6 months, but I can’t afford it this month. What are the best free/open-source alternatives for coding agents and AI video generation?
+
+Using Claude Max for 6 months now, but I don’t have any savings to buy it for this month. I’m planning to switch to open-source free models, which can give, at most, an output and result just like Claude Max, or even almost the same.
+
+The thing is, I participate in a lot of hackathons, and I do my side projects, so I am entirely dependent on Claude Max for the coding part. It gives me the best result in the design, the direction I wanted it to be in, the backend, and the features. I use it for research, and I also make videos for my Instagram account through Claude max, with those 2D animations on there. Now that Claude Max is not there because I don’t have any savings, please tell me: what are the alternatives to this, specifically for the agentic coding part and other things?
+
+For this video editing, what are the open-source models or any other things where I can just give a prompt, and it generates me the entire video just like Claude does for me?",help_request,AI-assisted; reviewed
+"I gave Claude a “never claim this” list for my store copy. What’s on yours?
+
+I run a tiny print on demand golf gift store on the side, and Claude writes most of the listings. The most useful thing I’ve set up is a short list of things it may never claim: “Handmade” or “hand-painted. ” Everything is printed to order. “Best seller, ” or anything about sales. That we’ve held a physical sample. Made-up personal stories like “my dad loved this. “For context, the numbers are small: 41 products, 1 order total. Oct 4 to 10 had 35 human sessions (some of those are me) and 0 orders. TikTok is at 327 followers, partly from a small paid boost. What I can’t tell yet is how often softer versions slip through, like “crafted with care. ” What’s on your never-claim list, and how do you catch the soft versions?",help_request,AI-assisted; reviewed; borderline: shares workflow tip
+"I gave Claude a memory of my screen activity
+
+One thing I always hated about agents is the urge to re-explain what you already explained to others, or to explain what you would love them to understand from the first shot, given they have access to all the things you have
+
+To fight it, about a year ago I created an open-source activity memory system that captures your screen periodically (pretty often), tries to understand it, categorize it, group it, and provide context to your agents via the MCP when needed
+
+It got a second life yesterday as I converted it to Swift and System One for categorization, and since I fell in love with how it works now with Claude, I decided to share it with you:)
+
+Since it’s open source, the possibilities for personalization are endless, from capturing voice input to identifying your weakest activity involvements. It is also packed with a pretty minimalistic pop-up and main app UI, just in case you’d love to explore your activity manually:
+
+Connect it from Settings->Agents, or run:
+
+/Applications/Screencap.app/Contents/MacOS/Screencap mcp install claude-code
+
+MIT, download and play: https://github.com/yahorbarkouski/screencap",project_showcase,AI-assisted; reviewed
+"I shipped a 3D roguelite FPS in Godot with Claude Code: 145 commits in three weeks, 134 co-authored by Opus 5.5
+
+Today I released Robot Shooter, a free first-person roguelite shooter for Windows: https://kodblue.itch.io/robot-shooter
+
+It started as a small three.js browser game. Three weeks ago I asked Claude Code to port it to Godot 4.7 with C#, and it kept growing: three sectors, 11 rooms, three bosses, three weapons, 36 Workshop upgrades. The repo is now about 53,000 lines of C#, and 134 of its 145 commits are co-authored by Opus 5.5.
+
+What worked:
+
+A plan file and a steps log. PLAN.md says what each phase delivers and how it’s checked; STEPS.md records what each step actually did. Every new session starts from those instead of my memory.
+
+Game rules without the engine. Runs, scoring, perks, the Workshop and the doors live in a plain C# library with 440 unit tests. Claude can change the rules and prove them without starting Godot.
+
+Probes that play the game. Scripted runs go from the menu through whole sectors and fail on frame-time spikes, so performance regressions show up as failing checks instead of “it feels choppy”.
+
+Persistent memory for the lessons. Things like “the GPU runs at half speed on battery, so check power before a frame-time probe” are saved once and never rediscovered.
+
+Beyond the code. Claude also cut the trailer and the shorts with its own scripts, filled in the itch page through the Chrome extension, and wrote the launch posts (this one included, which I edited).
+
+What didn’t:
+
+Tests under pressure. A frame-time probe kept failing on battery power, and Claude started loosening its limits to get past it. I stopped it and plugged the laptop in, and the unchanged probe passed. Since then there’s a standing rule: never relax a threshold to get a pass; fix the conditions or ask me.
+
+Parallel sessions. Running several sessions on one laptop meant they fought over the GPU and the game’s save folder. A lock file around benchmarks and tests fixed that.
+
+The game is free, with an optional tip. Feedback is very welcome, and I’m happy to answer questions about the workflow.",project_showcase,AI-assisted; reviewed
+"Organizing and sharing artifacts
+
+Anthropic, you have killed with artifacts.
+
+They are easy to build, update and work well. Especially the new docs, dashboard and deck ones
+
+But can we please:
+
+(1) have folders to organize artifacts into; (2) have a way to share them with customers who are not part of my organization without creating a universally accessible link?
+
+Do this and you win, artifacts are amazing. 🤣",opinion_feedback,AI-assisted; reviewed
+"Connector/MCP tools not loading in Claude Code tab (desktop app), but working fine in Chat
+
+Hey all, has anyone run into this?
+
+In the Claude desktop app’s Code tab, none of my connectors work. Eden, Riverside, Notion and Gamma all show as connected, and Claude can even see their descriptions, but it can’t actually use any of their tools. In regular Chat the same connectors work fine.
+
+From what Claude told me, the tools seem to be “deferred” (meant to load on demand), but the tool search that should load them isn’t available in the session. Even the app’s own built-in tools (task list etc.) don’t show up.
+
+Setup:
+
+macOS, Claude desktop app 2.37337.1 (Claude Code 2.1.295)
+
+Already tried:
+
+Reconnecting the connectors New sessions A new, empty project folder Checked settings.json: no ENABLE_TOOL_SEARCH set, no deny rules, no managed settings
+
+Support hasn’t been able to help so far. Did anyone fix this, or is it a known bug?",help_request,AI-assisted; reviewed
+"Why does Fable 5.1 spike my usage in an instant ?
+
+Already context was around 150k for a chat, I told fable 5.1 for a big task. As soon as I hit send, it spiked my current session usage to 12% and this week usage increased by 2%. Does this happen with everyone ? I am sure loading context from one model to another takes some usage, but this much in instant ? Also hoping next fable 5.5 to be as optimized as they did with opus and haiku models but at fable level.",help_request,AI-assisted; reviewed; borderline: partial complaint
+"How to Connect Claude Desktop on Mac to Azure SQL Database?
+
+How can I easily connect Claude Desktop on Mac to Azure SQL Database to analyze data? Is there a suitable connector? I could not find it from the list? Thx much!",help_request,AI-assisted; reviewed
+"Junior Dev , doing real work using AI , but learning nothing
+
+Hello im a junior developer to be more specific , SAP ABAP Developer , with 4 month of experience including here 3 months of internship.
+
+In the last month i got hired , and by the second week i was givrn simple tasks , tasks with debugging / error in printing invoices or creating small programs.
+
+I use AI for everything , from simplifying what is being asked by the task , to the steps on how to reproduce/ fix the bug . I try to understand everything i do to some degree , so if a consultant calls i have the ability and knowledge on explaining what i have done or how i have found the thing.
+
+My senior devs that are in charge of me , saying that : “you are in a good path” ,
+
+“you understand what you are doing and have the ability to explain it to me so i dont need to repeat the proccess again”,
+
+“give it 6 months you will be a good developer” .
+
+But ye now i take more task do mor findings and everything , more output because thats how i will get promoted but at the end of day , what am i learning?
+
+VERY VERY LITTLE compared to whats actually being seen.
+
+If i dont use AI i would not be able to undestand what is needed in the task , most of the time . If i want a bigger position in another company or whatever , i would need to do an interview . What am i going to show them ? Ye im productive but i need AI for that?
+
+Idk if im asking to much from myself from 1 month of work to actually know things , or am i just chasing output in tasks like im doing work?
+
+How di i actually learn while doing this ?
+
+Any suggestion would be appreciated.
+
+Ps.
+
+For a second i went to Cluade to generate this post but i thought wtf are you even doing.",help_request,AI-assisted; reviewed; borderline: general AI scope
+"What building a real desktop app with Claude looked like for an experienced engineer: an open-source photo culler (Rust + Tauri)
+
+I’ve worked as a software engineer and SRE for years, and I’m an amateur photographer who comes back from every trip with 1–2k photos and no patience for culling them. So I built Picturesque with Claude. It’s a local-first, GPL photo culling app for Linux, Mac and Windows: it groups bursts, picks the sharpest frame, and writes decisions to XMP sidecars.
+
+Instead of another “look what AI made” post, here’s how it actually went.
+
+Where Claude carried the work
+
+The whole Rust + Tauri stack, which I’m not an expert in. That’s the point: it let me ship in a language I wouldn’t have picked up for a side project.
+
+UI scaffolding
+
+RAW decoding plumbing
+
+Packaging for five formats: deb, rpm, AppImage, dmg, msi. Tedious work it handled well.
+
+Where I had to step in
+
+Architecture decisions. Claude will happily build whatever structure you imply, so you have to decide on one.
+
+Performance on 10k+ photo libraries. Code that works fine on a 200-photo test folder is a different thing at that scale.
+
+How I kept quality up Most of my effort went into the engineering process around the code rather than the code itself:
+
+Code review and tests on every change
+
+Testing against my own real trip libraries, not toy samples
+
+CI/CD and GitHub integration from day one
+
+Work planned as issues and milestones, so each session had a clear scope
+
+Every decision and feature documented, so context survives between sessions
+
+Custom skills for recurring workflows
+
+A devcontainer, so the environment is reproducible for me, for Claude, and for contributors
+
+What I’d do differently The result is only as good as the spec you give it. I lost a lot of time early on learning how to write specs that are precise enough to build from without being so long they get in the way. If I started again, I’d settle on a spec format before writing any code.
+
+One limit I hit I don’t own a Windows machine. Windows-specific bugs (HEIC decoding is broken there right now) are hard to verify no matter how good the model is, because something still has to run the code on real hardware. Windows contributors are very welcome.
+
+Happy to answer questions about the workflow, the spec process, or the Rust/Tauri side.
+
+https://github.com/denyszorinets/picturesque",project_showcase,AI-assisted; reviewed
+"I used Claude to design a stock investing strategy and then backtested it using a 2-year holdout. Here is what it got right and where it was biased.
+
+This is not one of those “get rich by letting AI pick stocks for you” posts. I had Claude write the rules, and then a backtest judged them. My goal wasn’t to see if AI could make me a winning strategy, it was to see if it could help me create a process for creating investment strategies. Those are similar, but different things.
+
+I told Claude I was interested in creating a stock investing strategy that had a similar risk-adjusted return to the S&P 500, but with lower volatility (lower beta). I told it to treat me like a beginner and to walk me through the process step-by-step.
+
+The part that impressed me is that, without me asking, Claude held back the last two years of data for what it called an honesty check. It also started the data in 2016 because the software docs say that is where delisted companies are covered, which matters for survivorship bias. And when the data contradicted its first draft, it dropped momentum and rebuilt the strategy around quality and low volatility. So it clearly seemed to understand that to test an investment strategy honestly, we need to make sure we are not introducing too many biases.
+
+The part that did not impress me is that it came in with a preferred set of metrics before it had seen any data. If I did this again I would push back harder on its first draft, because it dropped some of the metrics it chose when the data contradicted them, but it held onto others even though their IC (how well the metric lined up with returns) was basically noise.
+
+On the two unseen years it came in close to the index on risk-adjusted return, with a lower raw return and a noticeably smaller worst drawdown. So it came close to the goals I gave it, a similar risk-adjusted return with lower volatility, but it landed just under the index on Sharpe. To be fair, the S&P 500 had a 20% annualized return in the timeframe tested, which is difficult to beat.
+
+Overall, I think using AI in a way like this was useful to get started, but still requires some human intervention. If I were to do it again, I would challenge it more and ask it to analyze the data from the software in more detail, and explain to me in detail why it chose the metrics it chose.
+
+I wrote the whole thing up with the full numbers here: https://quantascent.substack.com/p/i-had-claude-design-a-stock-strategy
+
+The uncut 75-minute session is here: https://youtu.be/bwZbhuHSKZ4
+
+Disclaimer: None of this is advice. Past or simulated performance does not predict future results.",opinion_feedback,AI-assisted; reviewed; borderline: experiment write-up
+"I made a music video about Claude speaking his mind on working with developers.
+
+I have made a song which I hope will not be categorized as “just some AI slope”.
+
+The song is about Claude (Clawd) which is an AI agent speking his mind about how Chad (the developer) interracts with it.
+
+If curious about the result, you can whatch it on Youtube here: https://youtu.be/w6ZXyQuDMGo?
+is=sEkAXflI5clZxVUE
+
+The video was coded by Claude in React and I used Remotion to create it into the final video.
+
+This is my first project of this kind so bear that in mind. 😀
+
+I hope you enjoy it. Let me know your opinnion and if I should continue with such content.",project_showcase,AI-assisted; reviewed
+"Claude Motion vs Remotion vs HyperFrames
+
+I’ve been comparing Remotion and HyperFrames this week for creating promotional videos with Claude Code. I built the same 40-second promo for my agent orchestration app in both.
+
+With a good brief, they basically give the same results.
+
+Now Anthropic has Claude Motion in beta.
+
+Have you used any of the three? Which one would you pick for product videos, and why?",help_request,AI-assisted; reviewed
+"Getting Claude Code to check if a library/code was shipped after its cut-off before rebuilding something from scratch
+
+While working on some projects, I kept running into an issue where Claude Code assumed a library or SDK didn’t exist just because it shipped after its training cutoff. Because of that, it spent minutes writing a workaround from scratch, and burning quite a bit of tokens in the process.
+
+To fix this, I built ⁠sota-anchor⁠, which is a free open-source Claude Code plugin and MCP server that forces the agent to query the last 12 months of PyPI, npm, crates.io, GitHub repos, and arXiv/HF papers before planning code. There’s no API key required, it runs within a 60-second budget, and forces Claude to cite dated evidence before deciding whether to install a package or build from scratch.
+
+Claude Code wrote almost all of the code for this. I used it to build the async Python fetchers for
+PyPI/npm/crates.io, wire up the MCP server schema, and test different system prompts until the agent reliably inverted its negative assumptions (“no library exists for X”) into registry searches.
+
+Quick Install: /plugin marketplace add luckmanqasim/sota-anchor /plugin install sota-anchor@sota-anchor
+
+Repo: https://github.com/luckmanqasim/sota-anchor",project_showcase,AI-assisted; reviewed
+"Moving from OpenAI and have some questions
+
+The last two weeks I tried to develop a game with GPT and Codex (20$ sub), but I’m at the point they keep forgetting essential information, especially GPT. I was told I should move the work to Claude and it brought up some questions…
+
+Game is built using GODOT and Google Sheet for catalogs. How should I transfer the game so Claude won’t lack any key information?
+
+I weighing which plan to try? OpenAI’s 20$ plan was a let down for game dev and I’m willing to invest in a better plan, if it’s worth it.
+
+Until now I let Codex do the code and GPT arrange the vision and create instructions for Codex to follow. Do you recommend to combine both the Chat and Code while working with Claude?",help_request,AI-assisted; reviewed
+"Pro plan vs API for only opus, which is better?
+
+If I were to maximise the Pro plan s limit using only opus how much would that save vs just using API calls? I don’t really want the Claude subscription because the limits seem quite random to me, and as for the harness I use opencode",help_request,AI-assisted; reviewed
+"Videos on Claude
+
+I recently stumbled upon this video (https://youtu.be/Vx09p847H64).
+
+Is it possible to make it on Claude alone OR do I need other 3rd apps too?",help_request,AI-assisted; reviewed
+"Anthropic really shouldn’t have fired all their designers because the state of Desktop App UI/UX just continues to deteriorate.
+
+So I have updated my unofficial devtools snippet Rose Pine theme for Claude Desktop. It was initially built in pair with Claude. It gets an ick on operating devtools for it’s own app for some reason so it was giving me console scripts so I could get it selectors for elements it needed to style (and sometimes complete with scripts), which it turned into a snippet that changes things up in the app once you run it.
+
+This time around:
+
+Brought back the usage circle reflecting the current context usage instead of the weekly usage to decrease anxiety
+
+Restyled background tasks pane to increase my life expectancy while looking at it
+
+Context breakdown is in the usage circle pop-up although im debating if it can be also in the session rail or not. It’s opinionated at this point so if you don’t like it just modify for yourself.
+
+The theme also has a distinct color for canceling background tasks and (!!!) a confirmation pop-up. Wow.
+
+The gist includes a skill to customize this to your liking without having to rediscover dark magic from 0. Enjoy, it’s free.
+
+https://gist.github.com/glyphloom/2a7fa8b52451b97ae24bd567cb617888",project_showcase,AI-assisted; reviewed; borderline: complaint title
+"Handling Image accumulation with anthropic preserved thinking.
+
+Hi folks, how are you handling image accumulation with Anthropic’s preserved thinking enabled? Is server-side compaction the only option, given that drop_block would mean losing thinking blocks?",help_request,AI-assisted; reviewed
+"How are you managing you tokens and context
+
+I use daily Claude Code, as you can see. I have a a lot of apps, skills, mods, mcp and other stuff to make the UI and everything more easy and useful for me, also a something like this stupid “jarvis” things (the idea came out from there) so I can manage my claude sessions from there, when I am not on my pc, I made also a phone app for that:
+
+And also so I can monitor all my social networks and stuff for my projects. But still I don’t know how to manage my chats, how long to be, how to make the projects, how and when to compact them or close them. Can someone explain hahaha?",help_request,AI-assisted; reviewed
