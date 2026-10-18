@@ -307,6 +307,12 @@ AI helped with collecting and preparing data, but it did not choose any of the 1
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
+I predict that the zero-shot baseline model will perform slightly better than my trained DistilBERT model, which achieved 43.3% accuracy.
+
+My trained model kept predicting help_request for every test post. It correctly identified the 13 help requests but failed to recognize the other two categories. I think the zero-shot model will be less likely to repeat that pattern and will make predictions across all three labels instead of leaning toward just one.
+
+I expect a small improvement, not necessarily a dramatic one.
+
 **What the gap actually means:**
 
 <!-- If the baseline matched your trained model, your fine-tuning added
