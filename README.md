@@ -207,15 +207,46 @@ This result should not be overstated:
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** `distilbert-base-uncased`, fine-tuned for three-class classification of r/ClaudeAI posts.
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, maximum length 128 tokens, seed 42. I trained on an Apple Silicon GPU (`mps`) with PyTorch 2.14.1.
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** I replaced the starter notebook's three placeholder labels with my own: `help_request`, `project_showcase` and `opinion_feedback`. The notebook cannot read my `labels.csv` without that change. I kept the default model and all default hyperparameters.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:** The notebook split my 200 labelled posts itself (stratified, seed 42) into 139 training, 31 validation and 30 test posts.
+
+| Label              | Train | Val | Test |
+| ------------------ | ----- | --- | ---- |
+| `help_request`     | 63    | 14  | 13   |
+| `project_showcase` | 40    | 9   | 9    |
+| `opinion_feedback` | 36    | 8   | 8    |
+
+No label has fewer than 8 test posts, but 8 or 9 is still small. One more or one fewer correct post changes that label's F1 a lot.
+
+**Results of this run (seed 42, 30 test posts):**
+
+| Measure | Result |
+| ------- | ------ |
+| Overall accuracy | 0.4333 (13 / 30) |
+| Macro F1 | 0.2016 |
+| F1 — `help_request` | 0.605 |
+| F1 — `project_showcase` | 0.000 |
+| F1 — `opinion_feedback` | 0.000 |
+| Accuracy on the most-confident third | 0.900 (10 posts) |
+
+The model predicted `help_request` for all 30 test posts. Its 13 correct answers are exactly the 13 real `help_request` posts; all 9 `project_showcase` and all 8 `opinion_feedback` posts were called `help_request`. The classifier collapsed to my largest label and did not learn to distinguish the other two. Its confidence barely moved from an even guess: 0.437 on average when right and 0.408 when wrong, against 0.333 for a random three-way guess.
+
+**Against my criteria (this run only):**
+
+| # | Criterion | Target | This run | Status |
+| - | --------- | ------ | -------- | ------ |
+| 1 | Overall accuracy | ≥ 0.65 | 0.433 | Missed |
+| 2 | Per-label F1 | `help_request` ≥ 0.55, `project_showcase` ≥ 0.65, `opinion_feedback` ≥ 0.55 | 0.605 / 0.000 / 0.000 | Missed (only `help_request` reached its target) |
+| 3 | Dataset balance | No label above 50% | Largest is `help_request` at 45% | Met (a property of the data, not the model) |
+| 4 | Most-confident-third accuracy | ≥ 0.70 | 0.900 | Met numerically, but not meaningful: every prediction was `help_request`, so the 9 of 10 "confident" correct answers are just `help_request` posts |
+| 5 | Labelling consistency | ≥ 85% | 90% (18 / 20) | Met (measured on my labels in Milestone 4, not on the model) |
+
+This was my first training run, with one fixed seed (42). It is not the three-seed robustness test from Unit 6, so these are not final verdicts. Unit 6 requires each target to hold across seeds 42, 7 and 2024.
 
 ---
 
