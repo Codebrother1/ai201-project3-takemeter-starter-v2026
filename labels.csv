@@ -1,5 +1,4 @@
 text,label,note
-
 "I let Claude hire its first employee. It chose a rock.
 
 I was bored tongihtt and asked Claude what it would do if it could hire someone to help i some reason it chose a rock lol
@@ -22,9 +21,7 @@ So now I’ve got a random rock on my desk with a smiley face on it because Clau
 
 I don’t really know how this became a thing but here we are.
 
-Anyone else’s Claude come up with dumb shit like this?",project_showcase,"cold; borderline creative experiment"
-
-
+Anyone else’s Claude come up with dumb shit like this?",project_showcase,cold; borderline creative experiment
 "How can AI be used for 3D modeling and environments?
 
 I'm a programmer, and I've been thinking about making my first game. The problem is, I have pretty much no experience with 3D modeling, pixel art, or anything art-related.
@@ -34,8 +31,6 @@ I really enjoy coding, but creating characters, environments, and other visual a
 I've been wondering if there's a way to use Claude or other AI tools to help me with the visual side of game development.
 
 Any suggestions on how I could go about this?",help_request,cold
-
-
 "Turning last week's AI-agent discovery hunts into one reusable toolkit for citizen science (open source, early, help wanted)
 
 What I built: Discover Anything is a set of agent skills plus a small Python CLI and MCP server. It's for checking findings from AI-assisted work on public data (TESS light curves so far, historical archives next). The tools: an evidence ledger where every number has to cite a hashed result file, nine workflow gates, null and injection-recovery controls, a 15-source ""already known?"" check, and preregistration with review packs.
@@ -48,7 +43,7 @@ Repo: https://github.com/karangupta8/discover-anything
 
 Where it is: early. My first pilot, 80 random TESS stars: 3 of the 4 strongest signals were already known, one candidate is left, and the pipeline recovered only 2 of 6 known variables. I'm trying it on real hunts now.
 
-I don't have a big token budget, so really appreciate feedback: missing checks, bugs, or a try on your own hunt.",project_showcase,"AI-assisted; reviewed"
+I don't have a big token budget, so really appreciate feedback: missing checks, bugs, or a try on your own hunt.",project_showcase,AI-assisted; reviewed
 "Haiku 5.5 isn’t getting enough love
 
 Haiku 5.5 is an amazing tool! It usually provides outputs that are better than the previously beloved Opus 4.6 (which was the SOTA just 6 months ago!), but for the first 100k tokens it only costs 1⁄50 🤯
@@ -124,3 +119,1010 @@ I noticed claude is giving very similar designs to all people its almost like a 
 Sixth issue is low effort
 
 Quality is really low with this updates, using Opus 5.5 but i find a lot of bugs on anything it does, and spend a lot of time, pinpointing fixings to make it work, i feel like its just cutting everything on half run never completes a task to fully working stage, its like everytime completes half of it",opinion_feedback,AI-assisted; reviewed
+"Remote access is stupid
+
+By design I have to turn it on locally, and there’s no way to do that remotely in the mobile app UI. I guess for security reasons.
+
+But then I can just start a new remote Claude Code session and ask it to open remote access to whatever project I forgot to open.
+
+What?
+
+If it can be done remotely, why not just show me all my projects right away. If the goal is strong security, then this is a failure on that
+front as well. So the result is neither secure nor convenient.",opinion_feedback,AI-assisted; reviewed
+"Claude cited far right sources multiple times for the first time
+
+I have never previously used Claude/ AI for anything politics, but was doing some research on France’s protests and history of
+revolution. Claude cited breitbart and FDD multiple times under a “what’s solid” section and ABC and other sources under “what’s
+contested”. When challenging the response and asking for wire and other grounded sources, the response flipped.
+
+If the response held, I’d be less shocked. But the fact that the response flipped and it stemmed from some far right and hawkish bull
+shit is surprising.
+
+Has anyone else run into this? I’m I just a naive user?",opinion_feedback,AI-assisted; reviewed
+"Jumping off Claude to check out Argon for awhile
+
+I’ve got a hobby project I am working on lately, and it’s to make a Linux distro for some specific hardware.
+
+After working with Opus and Fable on it for about two months I am completely ready to say, Claude is not it for this project.
+
+At work, they let us use Codex and Claude and I find that Opus is really great for the well-defined tasks I have for it, where over a
+couple of sprints I have been able to build up clear skills and docs, the whole job from start to finish is well understood, and in
+particular I understand the problem space intimately and can supervise the agents closely to make sure we don’t waste time or spin
+off into cul-de-sacs.
+
+But with this personal project it’s further out of my wheelhouse because I only spent two years working close to the hardware or in
+the kernel, and that was a long time ago.
+
+Anyway Opus was doing just so-so. I sprung for Max for August and September and Fable was really impressive for the second and
+third acts. In particular it was very deft with tool calls and before too long I had built a cool and inexpensive R&D rig for the device,
+have been able to test display, audio, and Bluetooth stuff on it without my hands.
+
+But Fable really slowed down when the project got to like 85%. After that point it seemed to just get lost in these little loops of doing
+a bunch of work to fix some symptom, going through a lot of iterations, and then when it was dogfood time I would discover
+something else had broken.
+
+I think the issue is that even Fable is oriented towards the surface layer; it sees a bug and it gets fixated on measuring the bug
+precisely, and then it wants to improve the measurement.
+
+And there is a serious aversion to writing driver code and such from scratch. It feels architectural, like it expects that will be too many
+output tokens or something. When I press it to stop iterating on big solutions and step back and work from ground truths it talks a
+good one on that but then it goes back to “we have to measure,.not guess!” and proceeds to spend days in a loop on some
+symptom again.
+
+Anyway I wish they would let me use Fable at work because I bet it would fricking pants these projects that I have basically
+managed to turn into a cookie cutter with Opus.
+
+But for this personal stuff I am going to try Argon for a bit…the claim is that it’s been trained to be able to attack large messy
+codebases with lots of technical debt.
+
+P.S. one thing that Claude really has on Gemini is that with Claude Code, I can set /remote-contol in the session and then pick up
+the chat on my phone app while I am away from my keyboard. You can’t do that with Gemini.",opinion_feedback,AI-assisted; reviewed
+"Can we stop complaining about subscription prices if you use Claude for any business purpose?
+
+Title kind of says it all. Any business use is going to generate value. I’m not talking about Fortune 500 companies and API pricing.
+Freelance work, contract work, small business.
+
+First of all - if you are using it for any kind of business you should pay for a teams plan. It’s 2 seats minimum at
+25perseat.Igenerallyunderstandeachseatistheusageandcontextequivalentof1.25 20 subs, so you aren’t getting shorted
+compute.
+
+Second you have the benefits of a DPA and commercial terms of service and model training off (by default!), which lets you say you
+keep your client/customer data private.
+
+Third, if $30 per month isn’t something you can swing…maybe your business is really a crappy low paying job that makes feel good,
+but isn’t actually good for you.
+
+End of rant!",opinion_feedback,AI-assisted; reviewed
+"Stopped using Chrome Remote Desktop to start Claude Code sessions: one tap from my phone now.
+
+My whole home setup lives in one folder on a Windows PC, run with Docker Compose: Home Assistant, Jellyfin, the *arr stack and a
+local voice assistant. These days I manage almost all of it by talking to Claude Code from my phone.
+
+What I used to do
+
+Remote Control is great once a session is running, but starting one from my phone was a chore:
+
+Open Chrome Remote Desktop on my phone and connect to the PC.
+
+Squint at a tiny desktop, pinch and zoom, open a terminal in the server folder.
+
+Type claude and turn on Remote Control.
+
+Close RDP, switch to the Claude app and find the new session.
+All that just to ask “why isn’t the new episode of scrubs available?” or “why isn’t this lamp responding?” - Now it’s one tap.
+
+How it works
+
+There’s a “Start Claude” button on my Home Assistant dashboard.
+
+HA calls a tiny Python launcher on the PC.
+
+The launcher opens Claude Code in that folder with Remote Control on, so the session shows up in the Claude app on my phone.
+
+I tap the button, open the Claude app, and I’m talking to an agent that can read my compose file and HA config, check logs and fix
+things. It keeps memory notes between sessions, so it remembers how everything is wired and what broke last time. Claude also
+built the launcher.
+
+Security, since someone will ask
+
+The launcher only listens on the PC itself (127.0.0.1) and needs a token.
+
+It can only start a session tied to my own Claude account. It can’t run commands itself.
+
+Nothing is exposed to the internet. Remote access if I need it to HA is through Tailscale.
+
+Sessions run in auto mode, where a safety classifier blocks risky actions. It blocked Claude from reading HA’s auth file while
+checking all this.
+
+Happy to share the launcher script if anyone wants it.",project_showcase,AI-assisted; reviewed
+"Zero background in coding, just started Claude, How to save Usage?
+
+I’ve just started building some small fantasy football game last week relying mainly on Sonnet 5.5 (because I think its the in-between
+model?) with sometimes giving some tasks to Opus where I think it needs better logic or debugging and so on.
+
+Also one thing I have in my subconscious is that Opus would create a better code with less bugs and so on (keep in mind I’m new to
+programming but I understand tech products, bugs, tests and so on).
+
+Now I’ve noticed that I’m burning through my usage pretty fast using Claude Chat. Is there something that you guys do to save up
+usage? I usually just tell the chat what I want to change, new features, bugs etc. no fancy prompts or anything.
+
+Any suggestions or recommendations?",help_request,AI-assisted; reviewed
+"Cyber safeguards
+
+claude opus 5.5 is wayy to picky on cyber safeguards.
+
+Im contributing on my friend’s vibe coded OS and here i am using codex because opus decided to be a crybaby and trigger
+safeguards cause it had to look at 3 mem offsets.
+
+IMO they should change so the model decides when to trigger safeguards instead of relying on preset things that triggers them.",opinion_feedback,AI-assisted; reviewed
+"Opus 5.5 vs Fable 5.1 for UI and Design???
+
+Which model is better for design and ui/ux creation? Which one creates a more professional and appealing interface?",help_request,AI-assisted; reviewed
+"Non-technical founder. Can I realistically maintain and extend my app with Claude instead of my dev agency?
+
+I own a small B2B SaaS in a niche industry. I paid an agency high five figures to build it. It launched about a month ago with paying
+customers.
+
+I have zero coding experience. My background is operations, not tech.
+
+The stack, as far as I know: iOS and Android apps, a web admin console, AWS (EC2, RDS Postgres), Stripe for live payments,
+GitHub Actions for builds, Firebase for Android distribution. All accounts are in my name. I’m getting the repo access now.
+
+What I need built next:
+
+About 10 new fields on a user profile plus a required dropdown when a record is closed out
+
+8 reports with filters (date range, location, a couple of demographics). Web console only.
+
+E-signature using a third-party API (SignNow). Upload a PDF, add fields, save as template, send for signature. Mostly web console.
+The mobile app only sends a template and shows completed docs.
+
+The agency is in a 90-day post-launch window, then wants
+2k/monthformaintenance.Newfeaturesareextra.TheyuseAIcodingtoolsheavily.Someonetoldmethisworkshouldbeabout
+3-4k. I don’t have the money for much more than that.
+
+My question: Could someone like me use Claude (with repo access) to build this and handle bug fixes going forward? Plan would be
+staging environment first, small changes first. What am I not seeing? Where does this go wrong for a non-dev? Did anyone actually
+pull this off?
+
+*Edit/Update: Enough of you have provided enough caution for me to not do it right now. Mainly because time is something I don’t
+have. Selling it and other things have me already working 70+ hours a week. Good feedback, much appreciated. Glad I asked the
+question.",help_request,AI-assisted; reviewed
+"I built a small daily game where Claude mixes 3 GitHub repos into product ideas, and each week the community picks one we build as open source
+
+If you want something semi-nerdy and semi-fun: Repo Safari is a tiny daily game for finding open-source projects. You walk a trail of
+categories and collect repos as stickers.
+
+The new part is the Idea Shower. Pick any 3 repos and press Mix, and Claude turns them into three product ideas: one useful, one
+unexpected and one ridiculous. If you like one, publish it to the Idea Board, where people can star the ideas they want built.
+
+Every Monday at 00:00 UTC, the idea with the most new stars that week gets built as an open-source prototype, and we share it.
+The first pick is Monday 26 Oct.
+
+Free; playing and generating ideas need no account
+
+Publishing and starring use GitHub sign-in (public profile only)
+
+No cookies; visits are counted anonymously
+
+https://w20labs.github.io/repo-safari/?utm_source=reddit
+
+Why I built it
+
+I kept finding great repos by accident and forgetting them. A daily trail makes discovering them a 3-minute habit. Mixing repos is the
+fun part: unrelated projects often suggest products nobody has built yet, and letting people vote turns that into something real every
+week.
+
+How it’s built (mostly with Claude Code)
+Rooms: a weekly pipeline builds them from GitHub’s own topics. Rules decide what makes the cut: active in the last 6 months, the
+repo is actually about the topic, at most 2 repos per owner, and a safety filter. Nobody hand-picks.
+
+Hosting: the game is one static page on GitHub Pages.
+
+Backend: the Idea Shower and the Idea Board run in a single Cloudflare Worker. Claude generates the ideas, and D1 (Cloudflare’s
+SQLite) stores published ideas and stars.
+
+Sign-in: GitHub, with no cookies.
+
+What Claude Code did: most of the code, tests and reviews. My job was mostly deciding what to build and checking the results. The
+most useful habit was asking it to review its own pull requests before merging: it caught real bugs, like a moderation hold being lost
+when the week closed.
+
+Code (MIT): https://github.com/w20labs/repo-safari
+
+I’d love feedback on the ideas Claude comes up with, especially the ridiculous ones.",project_showcase,AI-assisted; reviewed
+"If my external hard drive gets disconnected accidentally, all terminals freeze
+
+Hello. It also restricts my access to the application, rendering most programs unusable. However, when I close and reopen it, I can
+resume from where I left off using the “continue” command. It seems that Claude might be running in the background without me
+noticing. To give you the full picture: if the connection to the external hard drive is lost, it causes most of my terminals to stop, and I
+lose access to the application. This happens on my M3 24GB MacBook Air. Thank you!",opinion_feedback,AI-assisted; reviewed
+"Claude Use Cases (for a newbie)
+
+I’ll open by saying sorry if this type of post is seen often here… I feel pretty stupid when it comes to figuring out how to use Claude
+for making tangible, helpful, impacts to my every day life, especially when constantly reading tons of “life-hack” type posts every day.
+
+My question is what have you done or built to make noticeable impacts to your day, and how?
+
+So far I’ve really only ever used Claude in 3 ways:
+
+A) Random chat questions, like upgraded google search
+
+B) For work, I did manage to see a repeatable task that happens every 3 months, where I receive a large PDF of information that I
+then need to turn into many short documents, excel sheet based requisitions, and some summary tables. I just used a regular chat
+window and I will say it blew my mind learning how to “build a skill” that can do that. So far I have not yet been able to get it to help
+with anything else though. I can’t give it access to work drives and don’t have any real setup on Google drive or One Drive that I can
+think of how to get value from giving them to Claude.
+
+C) I made my first ever “app” (not an app at all, just a widget using the Scriptable App) for my iPhone where it creates a calendar of
+sports games for my iPhone screen / widget. Claude wrote the code, and I pasted it into the Scriptable app, which an Apple Shortcut
+references.
+
+Gotta say, also amazing.
+
+So I see the power in using Claude, just maybe struggling since I’m not well educated in how Claude code, cowork, plug-ins / skills /
+connectors, (what on earth are agents?), all work. Or I just can’t think of things for it to help with?
+
+I thought to myself, what would be some small wins that could be amazing?
+
+   somehow if it could make an expense report maybe for my old crumpled receipts each month
+
+   maybe some sort of clothing app where it tells me what goes well with what (tried but failed pretty miserably lol)
+   maybe some sort of meal prep thing where it scours the internet and suggests meals to me and builds grocery lists? (Better yet
+       if it had the aisle for each ingredient… ha)
+
+    planning dates or maybe some sort of “here’s what’s going on / local events to get tickets for”
+
+Anyway, just feeling a bit of FOMO / overwhelmed from all the amazing posts but struggling to try and find legit reliable things that
+actually save time or help my every day in meaningful ways, and I know responses could be “just put this in Claude man” but I’d love
+to hear people’s stories!",help_request,AI-assisted; reviewed
+"PSA: OpenCode breach - my stored Anthropic key was used to drain ~$158 overnight. Revoke yours.
+
+If you saved an Anthropic, OpenAI, or Google key in OpenCode Console, check it now. OpenCode emailed Oct 17 about
+unauthorized access to a legacy console system, with exposure starting Oct 17 00:30 UTC. My key was only ever saved there and
+had zero prior use. Overnight it was used for Opus calls and my balance went from 158to 0 before I got any notice. Anthropic’s first
+reply said used credits are generally non-refundable, and OpenCode says it is talking with providers about reimbursement. Has
+anyone gotten a refund or credit yet? What worked?
+
+Steps: revoke the key at your provider, delete it from OpenCode, set a low monthly spend limit, and check usage since Oct 16.",help_request,AI-assisted; reviewed; security advisory and refund request
+"Anyone else’s Claude suddenly started using “read-only” for anything that could involve a write? Mine has gone crazy lol
+
+It says it so often, I have no idea where it came from. This is with Opus 5.5. It is almost at the point where it says “Going read a log,
+read-only” as to assure me no database in prod will be purged? It has gone overboard lol
+
+Anyone else with this or similar strange repeated phrases? Sometimes I miss the “Honest answer, there is a caveat and it’s load
+bearing” Claude of yesteryear. This new one is strange!",opinion_feedback,AI-assisted; reviewed
+"3 small Claude Code habits from other people’s setups that I liked
+
+I’ve been collecting Claude Code setups people have written up about their real day-to-day use (blogs, X, GitHub), and I tried a
+bunch of them. These 4 I have been finding useful recently.
+
+
+  1. Install 2 or 3 subagents. VoltAgent’s awesome-claude-code-subagents repo has 160+ definitions. What worked was asking
+   Claude which 3 would help this specific repo, reading each file before installing (they’re prompts that can request tools), and
+    trimming the tool access.
+
+  2. Get a desktop notification when Claude is waiting on you - Prashanth Vaidya had Claude Code set up its own Notification hook.
+   The prompt is basically: “Set up a Notification hook in my user settings that shows ‘Claude needs input: [project folder]’
+   whenever you’re waiting on me. Show me the settings JSON before writing it.” Was super useful so I could stop going back to
+   VSCode to check
+
+  3. Claude builds, something else reviews - Santiago uses Claude Code to build and Codex as a read-only reviewer that hunts bugs
+   and pushes back on architecture, and also added a fleet rule: the model that wrote a piece of work never reviews it.
+Originals:
+
+Prashanth Vaidya: https://x.com/pvbuilds/status/2009209023833493972
+
+santiagoo24: https://x.com/santiagoo24/status/2083004127144001812
+
+VoltAgent: https://github.com/VoltAgent/awesome-claude-code-subagents
+
+Disclosure: I put all 51 at Agent Cookbooks each linked to its original with a copy-paste prompt. It’s free because fuck people who
+gatekeep with paywalls!!",opinion_feedback,AI-assisted; reviewed; borderline workflow advice
+"Opus 5.5 Taking so long and token usage
+
+Not complaining at all, actually, since Opus 5.5 is a darn game-changer, but I am finding that 5.5 takes SOOO long to do pretty
+much any task and uses a good amount of tokens since everything seems to require pre-thought.
+
+Opus 4.8 was so good and thinking when it needed to and not taking for ever to get back to me and I’m wondering if other people
+are experiencing the same / came up with some good ways to work around this?
+
+In general, if it makes any difference, I’m on 5.5 medium / high and, again, not complaining since the outputs are truly good, but 4.8
+wasn’t too shabby either for a lot of the things (5 is a different story - We don’t talk about 5 😜)",help_request,AI-assisted; reviewed
+"My agent loop: a voice brainstorm, a kanban card, and one Claude Code run per usage window
+
+Most of my actual thinking about code happens away from the desk: in the car, out on a run, or doing something entirely different at
+my desk. For a long time, those ideas died in my head in a to-do item that slowly drifted to the bottom of the pile.
+
+The loop I began using earlier this week is super simple, but it actually works and I’ve done so much more with my Pro account’s
+usage windows… So why not share?
+
+  1. Talk it through, out loud.
+
+I use a voice assistant (in my case, Grok Bot to spreak my tokens and save Claude for coding, but you might as well do this in a
+Claude live convo) as a sparring partner while driving or walking. It isn’t there to write code; it’s there to argue with me until the idea
+turns into a spec: what it does, what it explicitly doesn’t, how I’ll know it works.
+
+When we’re done, it saves the spec as a Markdown note and creates a task linked to that note on a kanban board that only the
+agents work from:
+
+  1. A scheduled job picks up the next card.
+
+A small command, vist-next , grabs the top task from the agent board, loads its linked spec, and hands both to Claude Code.
+When the session ends, it writes back what happened: what changed, what’s blocked, what it’s unsure about. And this command
+“claude /vist-next” runs as a scheduled job on my computer…
+
+  1. The schedule follows the usage window, not the clock.
+
+This is the part that really surprises me - I never realized how much usage I was not using… Claude’s limits reset on a rolling
+session window, so running the job “every morning at 9” wasted a lot of it. I now run it on an interval matched to the window (e.g.
+every 5 hours), so each run starts with a fresh allowance and nothing’s left on the table while I sleep or sit in meetings.
+
+What I’ve learned so far
+   The spec matters, but a conversation with an agent will typically result in a pretty good spec. A card that just says “add export”
+    gets moved to the “Blocked” column on the board. Claude knows better than to work on a vague idea. A card linked to a spec I
+   argued out loud for 20 minutes usually produces something I’d merge.
+
+    Voice works better than typing for specs. When I type, I write what I’d like to happen. When I talk it through and get pushback, I
+   end up saying what I actually mean, including the edge cases.
+
+   Separate boards for humans and agents. Mixing them meant agents picked up half-baked ideas I’d jotted down for myself. Only
+   specs that are done go on the agent board. It sounded complex at first, but it’s really not.
+
+    Write-back matters more than the run. The loop only works because each session leaves a note the next one (and I) can read.
+   Otherwise the scheduled job is just an expensive way to forget. It’s not complicated. Every agent that works on a task appends
+    to a running log section in the plan note. Easy.
+
+
+Tools?
+
+I use T3 Code as an orchestrator, and Vist (my own app) for the notes and kanban board, but you can mix and match with herdr or
+just Claude Code itself of course as the harness/orchestrator; and Obsidian or Notion or so for the notes and kanban part, with some
+more setup.
+
+So this is how I roll now - it’s not autonomous development. I still review the PRs manually and organize the board to stay in control
+of prioritization.
+
+But the gap between that idea while driving and the PR waiting for review has gone from weeks (or never) to literally the next
+morning.",project_showcase,AI-assisted; reviewed
+"I built Studiolo with Claude Code: a free Mac design editor that Claude Code drives over MCP
+
+I built Studiolo, a free design editor for Macs that Claude Code drives over MCP. It was built with Claude Code from start to finish,
+and it’s made to be used with Claude Code.
+
+studiolo.dev
+
+What it does
+
+You describe a screen in Claude Code, and it gets built on a live canvas as real, editable layers: frames, auto layout, reusable
+components, design tokens with light and dark themes.
+
+You edit anything by hand, then ask Claude for the next change. You both edit the same file, and undo covers both of you.
+
+Export a Vite + React + TypeScript project (components become React components, tokens become CSS variables), or HTML/CSS,
+SVG and PNG.
+
+How Claude Code helped build it
+
+Claude Code wrote most of the code: a TypeScript monorepo with the document model and layout engine, a local Node server that
+exposes 27 MCP tools, the canvas editor, and an Electron shell for macOS. I set the direction, split the work into milestones and
+reviewed the results.
+
+Every feature came with tests that Claude Code wrote and ran: Vitest for the engine, Playwright for the editor and for the packaged
+Mac app.
+
+It tested the product by using it. In real sessions Claude Code designed whole apps through Studiolo’s own MCP tools (one was a
+five-page analytics app with a 12-component design system). Whatever tripped it up became a fix; for example, the tools now reject
+misspelled arguments instead of silently ignoring them.
+
+Before packaging, I had Claude do a read-only code audit. It caught real problems, like edits that could be lost while a save was in
+progress and a crash when autosave failed. Each was fixed with a test.
+
+Claude Code also packaged the Mac app, and the launch video (Remotion, built from real screen captures) and the website were
+made with Claude Code too.
+Free to try
+
+Download from studiolo.dev (needs a Mac with Apple Silicon). It isn’t notarized yet, so allow it once in System Settings > Privacy &
+Security.
+
+In the app choose Studiolo > Connect Claude Code…, or run: claude mcp add –scope user studiolo – ~/.studiolo/bin/studiolo mcp
+
+Run claude in any project and describe a screen.
+
+No account and no telemetry; it uses your existing Claude Code login. Free, but not open source.
+
+Feedback is welcome, especially on where the MCP tools fall short for you.",project_showcase,AI-assisted; reviewed
+"I built a free Claude connector for live stock market data (SEC filings, earnings calls, 13F, short interest). It’s an MCP server and works in ChatGPT too
+
+I got tired of asking Claude about a stock and getting a confident answer based on year-old training data. So I built Equibles, a
+connector that gives Claude real stock market data. It’s an MCP server, so Claude just calls it like any other tool, and it’s listed in
+Claude’s connector directory.
+
+What Claude can pull with it:
+
+SEC filings, full text. It searches inside 10-Ks, 10-Qs and 8-Ks and then reads the exact lines, so it quotes the filing instead of
+paraphrasing from memory
+
+earnings call transcripts, split by speaker
+
+financial statements, KPIs, guidance and analyst estimates
+
+13F holdings, insider trades and congressional trades
+
+short interest, daily short volume, squeeze scores and an estimate of the next FINRA short interest number
+
+prices, a screener, Fed economic data, and option chains on the paid plans
+
+European, UK, Hong Kong and Chinese stocks too (XPAR:AIR for Airbus, that kind of thing)
+
+Every answer comes back with the filing, the period and the date, so you can check it.
+
+How Claude helped: I build it with Claude Code every day. The filing parsers, the MCP tools and the tests come out of Claude Code
+sessions, and a second Claude pass reviews every change before it merges. I also wrote the tool descriptions with Claude as the
+reader. There are 120+ tools now, so each description is short (under 500 characters) and says which tool to call next, like search
+the filing first, then read the lines. With that many tools the descriptions are basically Claude’s index.
+
+The other thing I had to fix was fiscal quarters. NVIDIA is already in fiscal 2027, Apple’s year ends in September, and models mix
+those up all the time. Every number Equibles returns says which period it is and when that period ended.
+
+It’s free to try: 100 requests a day, no card. Paid plans are 9.99and 49.99 a month if you need more requests, option chains or real-
+time quotes.
+
+To connect it:
+
+Claude.ai or Desktop: Settings > Connectors > Browse connectors, search for Equibles. Or add a custom connector with
+https://mcp.equibles.com/mcp. You sign in with OAuth, no API key to paste.
+
+Claude Code: claude mcp add –transport http equibles https://mcp.equibles.com/mcp, then /mcp and authenticate.
+
+Some things to try once it’s connected:
+
+“What did Microsoft say about AI capex in its last 10-Q? Quote it.”
+
+“Which funds bought more Nvidia last quarter according to 13F filings?”
+
+“Show me congressional trades in defense stocks in the last 90 days.”
+
+“What’s the estimated short interest for GME before the next FINRA report?”
+
+One heads-up: the portfolio and watchlist tools can change your saved Equibles data, so leave tool confirmations on.
+So that’s it, a free stock market data connector for Claude (and ChatGPT) that cites its sources. If you’ve built a connector with a lot
+of tools, I’m curious how you kept Claude picking the right one.
+
+Docs: https://equibles.com/docs/mcp",project_showcase,AI-assisted; reviewed
+"Is there really no keyboard shortcut to start dictation in the Claude Mac app?
+
+I use the Claude desktop app on macOS (Claude Code tab), and I dictate a lot of my prompts. Claude’s own speech-to-text is a lot
+better than macOS dictation, but as far as I can tell there’s no way to start it with a shortcut. You have to click the mic button every
+time.
+
+What I’ve found so far:
+
+The “Voice shortcut” in Settings → General (Caps Lock or custom) only opens Quick Entry, which starts a new conversation. It
+doesn’t dictate into the chat you have open.
+
+voice:pushToTalk in ~/.claude/keybindings.json only works in the CLI, not in the desktop app.
+
+There’s an open GitHub issue asking for exactly this: #48305.
+
+Am I the only one who finds this annoying, or is there a setting or workaround I’m missing? I’m currently trying a Hammerspoon
+script that presses the mic button through the accessibility API, and I’ll report back if it works.",help_request,AI-assisted; reviewed
+"I built an MCP connection for Claude to search saved research and read a separate profile
+
+Hi, I’m Neil. I’m working on MyMemory, a personal knowledge app with an MCP connection for Claude, and I’d love feedback on the
+memory workflow.
+
+There are two different kinds of context in it:
+
+Saved material: links, notes, files, voice and video. Claude can search the collection by meaning and keywords, fetch a memory, or
+save a new note.
+
+A separate profile: who you are, how you work and your preferences. The get_profile tool returns that as Markdown, without making
+you paste it into every new conversation.
+
+Claude helped me build this. One concrete addition was the profile retrieval tool on both the local and hosted MCP servers,
+alongside the profile export work. Its tool description explicitly treats the profile as information about the user, rather than instructions
+for the assistant. Claude also helped prepare the public MCP package and keep the setup command and docs consistent.
+
+To try the local connection, create an API key in the MyMemory dashboard, run npx @mymemory.dev/mcp setup, select your
+Claude client, then restart it. The setup backs up your existing config before adding the connection.
+
+There’s a free plan, no credit card required. The product is closed source.
+
+If you use external memory with Claude, would you want the profile loaded at the start of a chat, or only when you ask? I’m also
+interested in cases where search retrieves the wrong context.
+
+Site: https://mymemory.dev Short demo of the app: https://youtu.be/sQvem5FQMSU
+
+Neil",project_showcase,AI-assisted; reviewed
+"I feel like im Neo in the Matrix
+
+Im 4 months in with Claude Code. Previously I’ve never coded, never built a website, never even opened terminal in my mac or
+done anything other than photoshop and light room.
+
+Fast forward to today. Im sat here watching Claude build me a meta business suite account for my Web page builder and print
+company. Ive gone from taking print orders through facebook to a fully functioning artwork generating monster of a website. I
+couldn’t imagine how much it would have all cost. I pay £90 a month for max 5x but get tens of thousands of pounds in value. I feel
+like im only scraping the surface too.
+
+Want a print server….done
+
+Need a file system and artwork checker….done
+
+Need a automated email system for instant downloads when a customer has paid…done
+
+Integrate postage and automate packing slip printing alongside the order….done
+
+Ive built our local school a lottery app…. done and taking real money.
+
+I could never have dreamed of being able to scale and develop my business anything like this in a lifetime without huge financial
+input and trusting outside people to build things.
+
+Whats next? I don’t quite know but the deeper i get the more its ramping up and getting a bit wild.
+
+Anyway gotta go Claude’s session limit has reset and I still need to figure out who JSON is.",opinion_feedback,AI-assisted; reviewed
+"What are your experiences using Ultracode on medium effort?
+
+I’ve recently started using Claude Code in the CLI. I’m not used to being able to adjust the effort level independently of ultracode. I
+typically don’t use ultracode much because of how quickly it drains tokens, but I’m thinking maybe medium effort with ultracode
+would be a good middle ground?
+
+My current workflow is that I typically, I create a plan in Fable on medium or high, having it define tasks and model/effort levels. I
+then switch to Opus medium and have that run the plan as an orchistrator. Thinking to maybe add ultracode to both the Fable
+planner and Opus orchistrator.",help_request,AI-assisted; reviewed
+"What’s the pettiest tool you have built with Claude Code?
+
+My wife ALWAYS forgets to put our electric toothbrush 🪥 on the charger at night. It’s quite old so the battery dies quickly but it’s fine
+as long as it’s on the charger so no need for a new one.
+
+I built a tool to ping her a text message every night to remind her to put it on charge 🙃.
+
+It works!!!
+
+Edit for clarity NB - we share the same electric toothbrush body we each have our own heads.",project_showcase,AI-assisted; reviewed
+"ultrareview or code-review max with fable 5.1
+
+I have a lean and formal methods heavy repo, that i need some review and validation, which one is better? the ultra-review or max
+with fable?
+
+ultra-review still mythos underneath it?",help_request,AI-assisted; reviewed
+"I had Claude Code make a full music video: 6 sessions, ~3,700 tool calls, $76.60. The whole production record is open
+
+Built with Claude Code. Claude wrote the lyrics and Suno made the music and sang them. Then I gave Claude Code the song and a
+brief, and it ran the production end to end. It made the beat grid itself with librosa (the tempo drifts between 133.97 and 134.43 BPM,
+so it fitted a curve), force-aligned every word, and drove Midjourney v8.2 in the browser through Claude in Chrome. It generated 31
+Seedance 2.5 clips through OpenRouter, repaired 25 of them with sync-2-pro and measured the sync, then drew every piece of type
+and UI in Remotion on the beat. 119 shots in total.
+
+Some lessons: never cd in a command, because it moved the working directory and broke the edit allowlist. Look at stills at full size,
+not only the contact sheets. And one session followed a plugin workflow instead of the brief and got reverted.
+
+Everything is free to watch and the repo is open (brief, plan, lessons, cost ledger): https://github.com/mortenbrudvik/always-allow
+
+Video: https://www.youtube.com/watch?v=zlL5Rwyquyg Method credit to u/anabology’s ESCAPE VELOCITY.",project_showcase,AI-assisted; reviewed
+"Built with Claude by a non-developer: two music guessing games that started as a game for my sister
+
+Less than a year ago, my sister Shani was diagnosed with cancer. She spent almost three months in the hospital, and to give us
+something fun to do together during those days, I started building a music game for the two of us.
+
+She passed away on August 29th, before I finished it. I kept working on it, partly to keep my mind busy, and now it’s live as
+Shabang, with two games:
+
+🥁 TrackStack: every song is split into its instruments. You start with only the drums, and each wrong guess adds a layer: bass,
+guitar, piano… vocals come last.
+
+⏱️ Songuess: you hear a fifth of a second of the song, and each wrong guess plays more: half a second, 2 seconds, 4…
+
+In both, the less you need to hear, the more points you get, and each one has a daily challenge: one song a day, the same for
+everyone.
+
+I’m a mechanical engineer, not a developer. I built the whole thing with Claude: the Flask backend, both games, and the pipeline that
+splits each song into its instruments.
+
+Free, no signup, works on your phone:
+
+https://shabangmusic.com
+
+I’d love honest feedback, and to see your daily results in the comments.",project_showcase,AI-assisted; reviewed
+"Propose: Paid resets
+
+I think it’d be great if we had paid resets ability.
+Let’s say 1⁄10 for 5h and 1⁄4 for weekly or so.
+
+Sometimes you hit the limit just once a month and instead of struggling with several accounts, I’d personally pay for the reset.",opinion_feedback,AI-assisted; reviewed
+"Is that to hard to have a sticky floating window for Claude like chatgpt does?
+
+We need something to opening claude fast as gpt does, without the need to open the whole chat!",opinion_feedback,AI-assisted; reviewed
+"Claude Code getting stuck for 15+ minutes with no response or token usage
+
+I’ve been using Claude Code to develop games on Roblox for the last few weeks, but since about two days ago I’ve noticed that
+once I’ve been in the same session for a few hours, I will randomly send a prompt and the Claude timer will start increasing with no
+token usage or action being taken.
+
+Before this, I was able to use the same session for multiple days and even then this would never happen until I decided to use a
+handoff and continue in a new session. Is this a problem with a recent update, or something else?
+
+When I create a new session while one is stuck, I can send and receive messages perfectly fine, which is what confuses me
+because it’s not like an internet or connection problem.
+
+Anyone know how to fix?",help_request,AI-assisted; reviewed
+"Where Claude’s plans land vs the other personal agents (pricing + what it can actually touch)
+
+I read through the official docs for about 10 personal-agent products. Here’s where Claude stands, sources checked 16 Oct 2026:
+
+Price: Free / Pro 20( 17 annual) / Max 100or 200 / Team 25perseatmonthly( 20 annual). For comparison: ChatGPT Business is also
+20–25/seat, Gemini ′ sagentneedsUltraat 99.99, Grok Bot comes with X Premium at 30, andLindystartsat 29.99 for 3,000
+credits.
+
+Where Claude stood out: it had the clearest published feature list for email and calendar of anything I read. Through the Gmail and
+Calendar connectors it can search and draft email, send, reply and forward (with approval on by default), create and move events,
+find mutual availability, and RSVP. Claude and Lindy were the only two that publish “ask before sending” as the default.
+
+Computer use: Cowork can drive the browser or your computer when there’s no connector. It’s beta, on Pro and Max.
+
+Team/Enterprise: no training on your data by default, plus SSO. Audit logs and SCIM are Enterprise only. I couldn’t find a public
+SOC 2 statement on the pages I read.
+
+If you build agents: Claude Managed Agents costs model tokens plus $0.08 per session-hour.
+
+Curious whether people on Max are actually leaving Cowork running for real work.",opinion_feedback,AI-assisted; reviewed
+"I thought my 90s Amiga was lost forever. 30 years later, it’s back due to ClaudeAI
+
+Someone suggested I post this here, as it’s about how Claude recovered my 90s computer files and you might like the story.
+
+TL;DR: My old Amiga was trapped in a corrupt 7z archive for 30 years. A single shifted byte was the culprit, and Claude finally found
+it. The Amiga (and the BBS it held) now runs again on a Raspberry Pi 400, with rebuilt scripts and brand new ANSI art. You can dial
+in below.
+
+In the 90s in London I ran an Amiga BBS called Slimelite, using several BBS packages. I started with an NComm script I wrote
+myself (about as basic as it gets), moved on to MAXsBBS Pro, and finally became an alpha tester for Zeus Pro BBS software.
+
+In 1996 I mothballed it and saved my drives to a 7z file to take with me when I emigrated to Italy. Years later I found the archive was
+corrupt and I could never get the files out. I was devastated, as it held all my Music-X compositions and my entire Zeus BBS. It sat
+on my PC for years with the occasional failed repair attempt.
+
+Roll on to 2026. I build websites for a living now, AI has become a thing, and I wondered if it could recover my files. Two days and
+many attempts later (I was literally pleading with it to try again), Claude gave up. I figured everything was gone forever.
+
+After another night’s sleep I tried once more, this time switching Claude to a more capable model. Ten minutes later it had found and
+fixed the 7z. Every file was there, nothing corrupt. A single byte shift had mangled the whole archive and touched nothing else. It
+was the best day I’d had in ages, birth-of-a-child levels of joy.
+
+I got everything running in WinUAE and was soon back in my old Music-X songs, sending MIDI out to a Kawai K1 II soft synth in FL
+Studio (the same synth I used in the 90s). Hearing those sounds again brought the nostalgia flooding back.
+
+Then I dug out an old Raspberry Pi 400, set up the Amiberry emulator, and got Zeus back online via Telnet. It took some work, but it
+runs.
+
+Should I put it up exactly as it was, with my crappy 90s ANSI and unfriendly navigation? Nah. I’m a web designer now, so my
+aesthetics brain kicked in. With Claude’s help I spent a few days rebuilding the scripts almost from the ground up, making them far
+more user friendly and visually appealing, with features I could never have imagined in the 90s. I even built a brand new Windows-
+based ANSI graphics editor, because nothing I found did the job the way I wanted.
+
+Today the revamped BBS went online, to the applause of absolutely no one (not many people use BBSes these days). But it was all
+for my own joy and nostalgia, and if the occasional person happens upon it and enjoys reliving the old days, it has done its job. All
+the old users, files (mainly Amiga related) and messages are still there to browse, download and read.
+
+Connect with any Telnet or SSH client that supports ANSI:
+
+Host: slimelite.mycloudnas.com Telnet port: 6023 SSH port: 6022 (read only) SSH login: bbs / bbs
+
+No client? Try this web one: https://youfiles.herokuapp.com/telnetclient/ or grab SyncTERM for the full-fat experience.
+
+If you drop by, leave me a message on the board. I’d love to see Slimelite get a few new callers after all these years!",project_showcase,AI-assisted; reviewed; recovery and rebuilt project
+"Use ClaudeCode with real customer data without the data ever reaching Claude
+
+Baldanders is a free, open-source (MIT) CLI I built for Claude Code users who can’t put personal data into Claude: support emails,
+contracts, HR files, anything with customers’ names, IDs or bank details in it.
+
+What it does
+
+You chat with Claude through your existing Claude Code login, as normal. Before each message leaves your machine, Baldanders
+swaps names, emails, phone numbers, IBANs, 55+ national ID formats and secrets for tokens like [PERSON_1]. Claude only ever
+sees the tokens. When the reply comes back, the real values are put back in on your side. The token map never leaves your laptop,
+and running with -v shows exactly what was sent.
+
+Claude Code runs in an empty private directory with all tools and MCP servers disabled, so it can’t read your files either.
+
+How Claude Code helped build it
+I wrote the first version myself, then used Claude Code for the big expansion. It took detection from a handful of formats to phones
+from any country, IBANs for 89 countries and 55+ national ID formats with checksum validation. It also switched names and
+addresses to a multilingual model and fixed the Codex and Grok providers. It set up the PyPI packaging, the CI matrix (Linux,
+macOS and Windows on Python 3.10 to 3.13) and trusted publishing, and designed the logo. The part that took the most iteration
+was tuning detection so it catches real IDs without scrubbing ordinary numbers like order IDs and version strings.
+
+Use it free
+
+pip install “baldanders[all]”
+
+baldanders download
+
+baldanders
+
+It also works with ChatGPT (Codex login), Grok, and any OpenAI-compatible API.
+
+https://github.com/Nahuel990/Baldanders
+
+Issues and missed detections are very welcome.",project_showcase,AI-assisted; reviewed
+"Persistent memory for Claude Code and Claude Desktop — an MCP server I built for it
+
+Claude Code is good at a task and then starts the next session with no idea what happened last time. You re-explain the repo
+layout, the conventions, the approach that already failed. I got tired of it, so I built an MCP server for it.
+
+CogniCore is an open-source memory layer, free to use, MIT licensed. It’s an MCP server, so Claude Code and Claude Desktop get
+persistent memory with no code changes:
+
+claude mcp add –transport http cognicore-env https://mcp.cognicoree.tech/mcp/stream
+
+Sign in with GitHub when prompted. Or run it locally — it’s on PyPI as cognicore-env.
+
+I built it with Claude Code as the coding agent on the repo — 275 commits so far.
+
+What it exposes — 10 tools:
+
+cognicore_remember / cognicore_recall — store an execution outcome, recall it later by relevance
+
+cognicore_recall_failures / cognicore_recall_successes — a category’s misses or wins
+
+cognicore_reflect — turns repeated failures in a category into a concrete recommendation
+
+cognicore_scan_threat — scans text for prompt injection, jailbreak and exfiltration before it reaches the model
+
+cognicore_save_session / cognicore_resume_session — writes atomic facts, decisions and action items at the end of a
+conversation; rebuilds a brief at the start of the next
+
+cognicore_compress_context — compresses older messages into a dense summary with no LLM call
+
+cognicore_stats
+
+One thing that fell out of it being an MCP server rather than a Claude feature: memory belongs to the GitHub account, not the app.
+So if you also use ChatGPT, pointing it at the same URL with the same account means it reads the same memory. Nothing to sync.
+
+Honest limits. Retrieval is TF-IDF/BM25 running in-process — no vector database, no embedding server, nothing to run. On
+LongMemEval multihop, strict recall@5 goes 78.8% → 85.2% at a 5-chunk window and 87.2% → 92.8% at 10. At 20 chunks the
+baseline catches up, and we report that rather than hiding it.
+
+Repo: github.com/cognicore-dev/cognicore-env — free, MIT, and it’s in the official MCP Registry if you’d rather add it that way.
+
+Curious whether the session save/resume pair is useful to other people or just to me — that’s the part I’m least sure generalises.",project_showcase,AI-assisted; reviewed
+"For non-coding work, how do you keep Claude consistent across sessions?
+
+I use Claude mostly for research, writing, and planning rather than code. My recurring problem is consistency: tone, preferences,
+and project details drift between chats unless I re-explain them. I’ve tried putting standing instructions in a project and keeping a
+short context document I paste in, and both help somewhat. For people doing similar non-coding work, what’s actually held up for
+you? Project instructions, a running notes file, memory, or something else? Curious what’s worked once the novelty wore off.",help_request,AI-assisted; reviewed
+"Surely this workflow exists. How?
+
+Right now, I feel like the condom between my codebase and my project manager. Issues get assigned to me, I review them, pass
+them to Claude, review/test the changes, and then push them to master/main.
+
+I’d love to be able to point Claude at either my JIRA/Linear board, Github Issues, or just my email, triage tasks, and wake up to a list
+of PRs ready to go.
+
+In a perfect world, it would have access to a dev database and full codebase for full context on everything.
+
+Does this workflow exist? Should I just set up a private VPS with a custom script/cronjob, and sign into my Claude subscription with
+VSCode? Or is there a more “proper” or elegant way to do this?",help_request,AI-assisted; reviewed
+"Worried my game will be hated just because I used AI
+
+I’ve been using Claude to help me code a video game that I’ve been dreaming about for nearly twenty years. The game concept and
+design decisions are all my own. Claude is just helping me put it all together in Unity and helping program it. I’m essentially filling the
+roles of director, producer, playtester, and occasional 3D artist. My text prompts for the game (not including Claude’s responses)
+currently total up to around 50,000 words of my own hand-typed vision and direction.
+
+I first tried to make this game back in 2022, and found that Unity was phenomenally capable of doing what I needed, but also
+realized that programming and scripting may as well be alien languages. I could pick up a few key phrases and terms, sure, but my
+degree is about as far from computer science as it gets - I’m a high school English teacher. I toyed around in Unity, learned the most
+basic of basics, followed a few tutorials, and ultimately left my project on the back burner as it got too ambitious and impossible for
+me to realize without leaving the rest of my life on the back burner. it’s not like I have any money to do build a development team, so
+I was content to have tried. I didn’t think it’s really go anywhere any time soon.
+
+Holy smokes, though. In the last month I’ve been using Claude Fable and Opus to build the game, and it’s been insane how far it’s
+gotten. it removed the friction between my having a great idea and implementing it! Previously, if I wanted to add a cool new idea, I
+would have to more or less drop everything and learn for a solid month to figure out how to even begin to execute the first step of it,
+and if I ever stepped away from the project I’d feel lost upon returning. Now I can prototype and implement so fast that the flow of
+ideas has been strong and I’ve felt downright empowered to make my dream game.
+
+That being said, I do worry that people will hate me or the game just on principle. There is a huge amount of ill will towards AI, and
+much of it is justified (though, I suspect, blown out of proportion). I don’t want people losing their jobs, I don’t want data centers
+obliterating our resources, I don’t want to live in an oligarchical technocracy. But also, I’d never have gotten to make my silly little
+game without AI. This project literally would never get traction if not for the huge boost given to me by AI coding assistance. I’m
+proud of my work, and it feels like it IS my own work. I just don’t look forward to the inevitable rejection when people sneer at me for
+having used AI and then never even give me a fair shake. It’s a passion project, and I’m deeply invested in it. Hopefully that shows.
+
+I’m sure I’m not the only one feeling this way, surely?",opinion_feedback,AI-assisted; reviewed
+"What have you done OUTSIDE of Claude to make your workflow better
+
+There’s a lot of discussion on how to be a better Claude jockey.
+
+But, what have you done to improve your claude workflow outside of the prompts, the connections, the memory files, etc. What
+tweaks to your setup or workflow improved your productivity?
+
+My mind goes first to physical setup and accessories (Like Stream Decks and Xenon Edge), but I’m sure there’s more out there.",help_request,AI-assisted; reviewed; requests workflow recommendations
+"I packaged my Claude Code guardrails and skills as 27 free plugins
+
+I run Claude Code on real work repos, and I built up a set of hooks that stop it from doing things I’d regret. It can’t merge, post
+GitHub comments as me, read .env files or rewrite tracked files with sed -i until I give an explicit go. I cleaned these up and
+published them as a free, MIT-licensed plugin marketplace, along with the skills I use for PRs, code reviews, ADRs and
+postmortems.
+
+How Claude helped: I built all of it with Claude Code. Many of the guardrails started as a mistake it made in a session: I log every
+mistake, and when one keeps coming back it becomes a hook that blocks it. The site that documents the plugins reads each plugin’s
+README at build time, so the docs can’t drift from the code.
+
+What’s in it (27 plugins):
+
+Guardrails: guard, pre-ship-gate (refuses commits that mix file moves with logic), worktree-guard, stop-check, text-lint
+
+Skills: pr, review-pr, pr-address-comments, adr-template, postmortem-template, github-work
+
+Mods: gh-guard, context-hud, secret-redactor, read-guard
+
+Each plugin has a page with what it does, when to use it, and its source: https://ferjani.dev/skills
+
+Install one: /plugin install guard –marketplace rezk2ll/skills
+
+Curious what guardrails other people run.",project_showcase,AI-assisted; reviewed
+"I spent last night manually checking 46 MCP server submissions. Here are the ones actually worth trying
+
+I run a small directory of MCP servers (ClaudeRules). Submissions had been piling up since May because I stopped reviewing
+them. Last night I finally went through all 46 by hand. For each one I opened the actual website, docs, or repo and checked whether
+the thing exists and does what the listing claims.
+
+Most were real. Some were not. Two were duplicates, one guy submitted the same face analysis tool three times under slightly
+different names, one submission was literally just an image with no text, and a couple of GitHub links were dead. Those got rejected.
+
+The ones that surprised me, in no order:
+
+Webhound. Web research where you set a dollar budget and the agent spends up to that cap. The budget as a first class input is a
+good idea and I have not seen it elsewhere.
+
+BeachFinder. A read only MCP over a database of 184,900 beaches and swimming holes. Absurdly specific, works exactly as
+described.
+
+FrameThrower. Search 5,489 films by cinematography and get stills back. If you do any video work it is a fun rabbit hole.
+Lians. Local memory for agents that is bitemporal, so it can answer what was true at a point in time, not just what is true now. On
+PyPI, open source.
+
+Base2026. Search over a curated set of expert videos with the source links kept attached to every excerpt. More MCPs should do
+attribution like this.
+
+Palisade. Checks your SPF, DKIM and DMARC setup from inside your assistant. Boring problem, real pain, solid tool.
+
+Lovie. Starts an LLC or C Corp incorporation from inside Claude Code. Lovie files it and manages the paperwork, $1,200 for the first
+year. Still slightly wild to me that this is a thing now.
+
+Orbit. A task manager built for people and agents working in the same workspace. Open source.
+
+OpenFate Bazi and Deckaura Tarot. Yes, there are MCP servers for Chinese astrology charts and tarot readings. Both are real and
+weirdly well documented. The ecosystem is getting strange in a good way.
+
+Full disclosure since this is my site: the directory is clauderules.net, 625 servers listed, submissions are free and I am reviewing
+again within a day or two. If your server is not there, the submit link is on the site. If your listing is there and the description is stale,
+tell me and I will fix it.
+
+What are you all using to find new MCP servers right now? Curious whether directories even matter or if everyone just searches
+GitHub.",opinion_feedback,AI-assisted; reviewed
+"Claude science
+
+Hey guys!
+
+I’m a PhD student and haven’t tried Claude for Science yet. Has anyone given it a try? 👀
+
+Would love to hear your thoughts and experiences so far! Is it actually worth it for research? Would you recommend it? Btw territorial
+engineering and spatial planning area here.
+
+Thanks! 🤓",help_request,AI-assisted; reviewed
+"considering going back to claude
+
+Been a while since I used Claude code. I I have been an Codex user but the quality has been gone downhill for a while. I am
+considering going back to Claude for coding work mostly and 20% knowledge work but I am so used to having Desktop application
+such as Codex now. I prefer to stay in a Desktop app if possible. Is there a Desktop Claude Code version? Do you recommend?
+Can someone tell me high level about their workflow in Claude code? I appreciate it a lot.",help_request,AI-assisted; reviewed
+"Tips for saving limit for Claude (Free Plan)
+
+So I’m a student and I have exams in the next month or so and the teachers haven’t really taught anything so I have to learn
+everything again, and I really need the good grades. I connected google drive and sheets and 1-2 more things to make things
+easier, uploaded the pics in drive and told claude to check from there instead of having to upload each one randomly, the problem
+now is hitting the limit, it really is time consuming having to wait hours and I cannot afford a paid plan. So I went on youtube but
+those videos are mostly viewbait or something which is why I came to reddit to ask for tips on how to use more or save usage so
+that I can study more. So far I’m loving it, created a project and claude does alot, renames the files to the relevant name creates a
+google sheet and so. But this is a problem I am facing. Any help will be valuable.",help_request,AI-assisted; reviewed; requests usage-saving advice
+"Self-improve skill / LESSONS_LEARNED.md
+
+How we turned 225 “lessons learned” into real guardrails for our AI coding agents. How do you do it?
+
+Solo founder here, building a SaaS mostly with Claude Code: one hub session plans, sub-agents build in parallel, and a fresh
+skeptic agent reviews anything touching money, data or auth.
+
+Over a few months we built a lot of “learn from mistakes” process. Today I audited it and most of it wasn’t doing what I thought.
+
+What we had:
+
+
+   LESSONS_LEARNED.md: every bug became a written lesson. 224 of them.
+
+   RETRO.md: a friction diary per session.
+
+   A /self-improve skill: every ~5 days it read logs and proposed rule/hook changes.
+
+
+What the audit found:
+
+
+   Nobody read the lessons at the moment it mattered. Not loaded at start, sub-agents never opened it.
+
+   A script said 139 lessons had no protection. Checking by hand against the code: only 26. The rest already had a test or rule that
+    didn’t cite the ID.
+
+   The retro was 92% duplicate (273 of 296 items already lived elsewhere).
+
+    Self-improve did work: 83% of proposals landed. But ~15 “landed and didn’t stick” (the gate measured the wrong thing), and
+   each run cost ~6 agents.
+
+
+Some of the bugs behind those lessons:
+
+   SQLAlchemy FOR UPDATE takes the lock but reads a stale object from the identity map. Needs populate_existing .
+
+   A TS fallback ?? ""Free"" on a plan label told a paying customer they were on the free plan.
+
+    umask 077 from one deploy step leaked into the next git checkout .
+
+    psql -tA without -q captures the command tag along with the value.
+
+    gh api ... | length without --paginate counted only page one.
+
+     First request to a “healthy” container returns 000, and our single-shot post-deploy check could roll back a good deploy.
+
+    ""123456"".isupper()  is False in Python.
+
+   A gate’s parser stopped at a blank line, checked 100 of 224 rows and reported green.
+
+
+What we changed:
+
+Each lesson has a state: OPEN, BARRED (a test/hook/lint rejects it), ABSORBED (short rule), ARCHIVED. A validator checks the
+barrier points to a function that exists; a comment doesn’t count.
+
+Lessons arrive by file path. Before editing, the agent runs a script with the files it will touch and gets up to 3 lessons and 2 past bugs
+for those files.
+
+Found a problem? Fix it, add the guard and record the lesson as BARRED, all in the same change. No approval queue. We mutate
+the code on purpose to prove the test catches it.
+
+Self-improve runs on metrics at session close: a barred lesson that recurred (the guard doesn’t work), an open lesson recurring, a
+gate failing repeatedly, the skeptic flagging the same pattern twice. First run flagged a “barred” lesson that came back twice.
+
+Demotion too: a lesson whose files nobody touched in 45 days and whose guard never fired becomes an archive candidate.
+Retro retired.
+
+Today: 123 barred, 98 absorbed, 2 open. Barring the open ones found and fixed 25 real violations.
+
+My takeaway: writing it down isn’t learning. Agents reliably follow tests and hooks; written rules only help if they arrive at the moment
+of the edit.
+
+Questions:
+
+
+   How do your agents actually use past mistakes? CLAUDE.md, rules per path, RAG, hooks?
+
+   Has anyone measured whether a written rule reduces repeat bugs vs. a hard gate?
+
+   Do you ever delete rules? How do you keep the files from bloating?
+
+    In multi-agent setups, who is allowed to write the lessons?",project_showcase,AI-assisted; reviewed
+"Guys, I think my Opus 5.5 might be nerfed
+
+I’d start by saying I loved Claude back in the days of Sonnet 3.5 new new (remember that? :) ). At some point I switched to
+ChatGPT. I’ve seen the huge praise of Opus 5.5 and finally gave in, and got a paid subscription. However, in my tests it made the
+exact same errors as GPT 6.1 Sol (on max). It can achieve things, but needs a lot of guidance. I don’t get all the hype at all, to me,
+Opus 5.5 it’s the same level as Sol 6.1
+
+I also tried the pelican test (pictured below), and Opus 5.5 medium looks very similar to Opus 5 high. Also, even GPT 6.1 sol (on
+max) looks better as an illustration. Even Opus 5.5 max doesn’t look as I was expected (slightly better than medium, but that’s about
+it).
+
+I worked in the CLI to test the code performance, but on the app for the pelican test. Prompt: “Please draw a pelican riding a
+bicycle”. I had to add “, make it a svg” to ChatGPT because otherwise it will use the skill and create an image. Am I doing something
+wrong?",opinion_feedback,AI-assisted; reviewed
