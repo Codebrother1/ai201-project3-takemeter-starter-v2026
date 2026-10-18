@@ -182,8 +182,7 @@ the chat on my phone app while I am away from my keyboard. You can’t do that w
 Title kind of says it all. Any business use is going to generate value. I’m not talking about Fortune 500 companies and API pricing.
 Freelance work, contract work, small business.
 
-First of all - if you are using it for any kind of business you should pay for a teams plan. It’s 2 seats minimum at
-25perseat.Igenerallyunderstandeachseatistheusageandcontextequivalentof1.25 20 subs, so you aren’t getting shorted
+First of all - if you are using it for any kind of business you should pay for a teams plan. It’s 2 seats minimum at $25 per seat. I generally understand each seat is the usage and context equivalent of 1.25 $20 subs, so you aren’t getting shorted
 compute.
 
 Second you have the benefits of a DPA and commercial terms of service and model training off (by default!), which lets you say you
@@ -277,9 +276,7 @@ About 10 new fields on a user profile plus a required dropdown when a record is 
 E-signature using a third-party API (SignNow). Upload a PDF, add fields, save as template, send for signature. Mostly web console.
 The mobile app only sends a template and shows completed docs.
 
-The agency is in a 90-day post-launch window, then wants
-2k/monthformaintenance.Newfeaturesareextra.TheyuseAIcodingtoolsheavily.Someonetoldmethisworkshouldbeabout
-3-4k. I don’t have the money for much more than that.
+The agency is in a 90-day post-launch window, then wants $2k/month for maintenance. New features are extra. They use AI coding tools heavily. Someone told me this work should be about $3-4k. I don’t have the money for much more than that.
 
 My question: Could someone like me use Claude (with repo access) to build this and handle bug fixes going forward? Plan would be
 staging environment first, small changes first. What am I not seeing? Where does this go wrong for a non-dev? Did anyone actually
@@ -380,7 +377,7 @@ to hear people’s stories!",help_request,AI-assisted; reviewed
 
 If you saved an Anthropic, OpenAI, or Google key in OpenCode Console, check it now. OpenCode emailed Oct 17 about
 unauthorized access to a legacy console system, with exposure starting Oct 17 00:30 UTC. My key was only ever saved there and
-had zero prior use. Overnight it was used for Opus calls and my balance went from 158to 0 before I got any notice. Anthropic’s first
+had zero prior use. Overnight it was used for Opus calls and my balance went from $158 to $0 before I got any notice. Anthropic’s first
 reply said used credits are generally non-refundable, and OpenCode says it is talking with providers about reimbursement. Has
 anyone gotten a refund or credit yet? What worked?
 
@@ -565,7 +562,7 @@ the filing first, then read the lines. With that many tools the descriptions are
 The other thing I had to fix was fiscal quarters. NVIDIA is already in fiscal 2027, Apple’s year ends in September, and models mix
 those up all the time. Every number Equibles returns says which period it is and when that period ended.
 
-It’s free to try: 100 requests a day, no card. Paid plans are 9.99and 49.99 a month if you need more requests, option chains or real-
+It’s free to try: 100 requests a day, no card. Paid plans are $9.99 and $49.99 a month if you need more requests, option chains or real-
 time quotes.
 
 To connect it:
@@ -750,8 +747,7 @@ Anyone know how to fix?",help_request,AI-assisted; reviewed
 
 I read through the official docs for about 10 personal-agent products. Here’s where Claude stands, sources checked 16 Oct 2026:
 
-Price: Free / Pro 20( 17 annual) / Max 100or 200 / Team 25perseatmonthly( 20 annual). For comparison: ChatGPT Business is also
-20–25/seat, Gemini ′ sagentneedsUltraat 99.99, Grok Bot comes with X Premium at 30, andLindystartsat 29.99 for 3,000
+Price: Free / Pro $20 ($17 annual) / Max $100 or $200 / Team $25 per seat monthly ($20 annual). For comparison: ChatGPT Business is also $20–25/seat, Gemini's agent needs Ultra at $99.99, Grok Bot comes with X Premium at $30, and Lindy starts at $29.99 for 3,000
 credits.
 
 Where Claude stood out: it had the clearest published feature list for email and calendar of anything I read. Through the Gmail and
