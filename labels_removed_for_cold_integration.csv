@@ -1,0 +1,383 @@
+original_row,source_id,text,label,note
+9,,"switching from codex to claude, love it, need freebsd support tho
+
+opus 5.5 and even sonnet 5.5 sht all over openai’s junk models. really liking claude too. a big limitation for me tho is for server apps my environment is freebsd, both dev workstation and server. claude doesn’t run there and it’s the only thing holding me back from cancelling my codex sub.
+
+SO my question: is it in any way against anthropic policy for me to use claude + opus 5.5 on linux to modify claude cli’s code to make it so it’ll run on freebsd?",help_request,AI-assisted; reviewed
+10,,"Issues about Claude
+
+First issue is limited usages
+
+I noticed claude has nothing after 20x, and when limited usage fulfilled we stay idle for hours
+
+Why they dont have something like 30x,40x and so on?
+
+Even something like reset limits for week for this price would be really useful since we have businesses depends on it
+
+Btw usage credits are useless, they cost a lot just buying second subscription is cheaper at this stage
+
+Second issue is high token usage
+
+Claude only has compaction to reduce token usage but why they are not periodically optimize memory files ? or do the things by creating set of memory agents ? i am sure many useless information rolls up there and causing a lot of waste of tokens.
+
+Third issue is claude design cant code his own design
+
+I used claude design and designs mostly good after many refinements of course
+
+Yet when i tried to make the claude making the same design connected to api or translating that to pure html it failed dramatically weeks of struggle to make it work and it couldnt,
+
+I finally coded a porter skill to handle the designs to html as they are
+
+Fourth issue is insane difference at api vs agent token usage difference,
+
+200$ subscription can run for few days in a week on constant usage but api token usage runs out in hours in the same amount
+
+Right now its not feasible to any architecture i know to use it as a cost effective option
+
+Fifth issue is similiarity in designs
+
+I noticed claude is giving very similar designs to all people its almost like a pattern easily noticable by eye, do they think expanding its skills for more different designs ?
+
+Sixth issue is low effort
+
+Quality is really low with this updates, using Opus 5.5 but i find a lot of bugs on anything it does, and spend a lot of time, pinpointing fixings to make it work, i feel like its just cutting everything on half run never completes a task to fully working stage, its like everytime completes half of it",opinion_feedback,AI-assisted; reviewed
+11,1x8uay5,"Remote access is stupid
+
+By design I have to turn it on locally, and there’s no way to do that remotely in the mobile app UI. I guess for security reasons.
+
+But then I can just start a new remote Claude Code session and ask it to open remote access to whatever project I forgot to open.
+
+What?
+
+If it can be done remotely, why not just show me all my projects right away. If the goal is strong security, then this is a failure on that
+front as well. So the result is neither secure nor convenient.",opinion_feedback,AI-assisted; reviewed
+25,1x8lae3,"3 small Claude Code habits from other people’s setups that I liked
+
+I’ve been collecting Claude Code setups people have written up about their real day-to-day use (blogs, X, GitHub), and I tried a
+bunch of them. These 4 I have been finding useful recently.
+
+
+  1. Install 2 or 3 subagents. VoltAgent’s awesome-claude-code-subagents repo has 160+ definitions. What worked was asking
+   Claude which 3 would help this specific repo, reading each file before installing (they’re prompts that can request tools), and
+    trimming the tool access.
+
+  2. Get a desktop notification when Claude is waiting on you - Prashanth Vaidya had Claude Code set up its own Notification hook.
+   The prompt is basically: “Set up a Notification hook in my user settings that shows ‘Claude needs input: [project folder]’
+   whenever you’re waiting on me. Show me the settings JSON before writing it.” Was super useful so I could stop going back to
+   VSCode to check
+
+  3. Claude builds, something else reviews - Santiago uses Claude Code to build and Codex as a read-only reviewer that hunts bugs
+   and pushes back on architecture, and also added a fleet rule: the model that wrote a piece of work never reviews it.
+Originals:
+
+Prashanth Vaidya: https://x.com/pvbuilds/status/2009209023833493972
+
+santiagoo24: https://x.com/santiagoo24/status/2083004127144001812
+
+VoltAgent: https://github.com/VoltAgent/awesome-claude-code-subagents
+
+Disclosure: I put all 51 at Agent Cookbooks each linked to its original with a copy-paste prompt. It’s free because fuck people who
+gatekeep with paywalls!!",opinion_feedback,AI-assisted; reviewed; borderline workflow advice
+26,1x8kjz6,"Opus 5.5 Taking so long and token usage
+
+Not complaining at all, actually, since Opus 5.5 is a darn game-changer, but I am finding that 5.5 takes SOOO long to do pretty
+much any task and uses a good amount of tokens since everything seems to require pre-thought.
+
+Opus 4.8 was so good and thinking when it needed to and not taking for ever to get back to me and I’m wondering if other people
+are experiencing the same / came up with some good ways to work around this?
+
+In general, if it makes any difference, I’m on 5.5 medium / high and, again, not complaining since the outputs are truly good, but 4.8
+wasn’t too shabby either for a lot of the things (5 is a different story - We don’t talk about 5 😜)",help_request,AI-assisted; reviewed
+29,1x8iv1t,"I built a free Claude connector for live stock market data (SEC filings, earnings calls, 13F, short interest). It’s an MCP server and works in ChatGPT too
+
+I got tired of asking Claude about a stock and getting a confident answer based on year-old training data. So I built Equibles, a
+connector that gives Claude real stock market data. It’s an MCP server, so Claude just calls it like any other tool, and it’s listed in
+Claude’s connector directory.
+
+What Claude can pull with it:
+
+SEC filings, full text. It searches inside 10-Ks, 10-Qs and 8-Ks and then reads the exact lines, so it quotes the filing instead of
+paraphrasing from memory
+
+earnings call transcripts, split by speaker
+
+financial statements, KPIs, guidance and analyst estimates
+
+13F holdings, insider trades and congressional trades
+
+short interest, daily short volume, squeeze scores and an estimate of the next FINRA short interest number
+
+prices, a screener, Fed economic data, and option chains on the paid plans
+
+European, UK, Hong Kong and Chinese stocks too (XPAR:AIR for Airbus, that kind of thing)
+
+Every answer comes back with the filing, the period and the date, so you can check it.
+
+How Claude helped: I build it with Claude Code every day. The filing parsers, the MCP tools and the tests come out of Claude Code
+sessions, and a second Claude pass reviews every change before it merges. I also wrote the tool descriptions with Claude as the
+reader. There are 120+ tools now, so each description is short (under 500 characters) and says which tool to call next, like search
+the filing first, then read the lines. With that many tools the descriptions are basically Claude’s index.
+
+The other thing I had to fix was fiscal quarters. NVIDIA is already in fiscal 2027, Apple’s year ends in September, and models mix
+those up all the time. Every number Equibles returns says which period it is and when that period ended.
+
+It’s free to try: 100 requests a day, no card. Paid plans are $9.99 and $49.99 a month if you need more requests, option chains or real-
+time quotes.
+
+To connect it:
+
+Claude.ai or Desktop: Settings > Connectors > Browse connectors, search for Equibles. Or add a custom connector with
+https://mcp.equibles.com/mcp. You sign in with OAuth, no API key to paste.
+
+Claude Code: claude mcp add –transport http equibles https://mcp.equibles.com/mcp, then /mcp and authenticate.
+
+Some things to try once it’s connected:
+
+“What did Microsoft say about AI capex in its last 10-Q? Quote it.”
+
+“Which funds bought more Nvidia last quarter according to 13F filings?”
+
+“Show me congressional trades in defense stocks in the last 90 days.”
+
+“What’s the estimated short interest for GME before the next FINRA report?”
+
+One heads-up: the portfolio and watchlist tools can change your saved Equibles data, so leave tool confirmations on.
+So that’s it, a free stock market data connector for Claude (and ChatGPT) that cites its sources. If you’ve built a connector with a lot
+of tools, I’m curious how you kept Claude picking the right one.
+
+Docs: https://equibles.com/docs/mcp",project_showcase,AI-assisted; reviewed
+31,1x8ibtv,"I built an MCP connection for Claude to search saved research and read a separate profile
+
+Hi, I’m Neil. I’m working on MyMemory, a personal knowledge app with an MCP connection for Claude, and I’d love feedback on the
+memory workflow.
+
+There are two different kinds of context in it:
+
+Saved material: links, notes, files, voice and video. Claude can search the collection by meaning and keywords, fetch a memory, or
+save a new note.
+
+A separate profile: who you are, how you work and your preferences. The get_profile tool returns that as Markdown, without making
+you paste it into every new conversation.
+
+Claude helped me build this. One concrete addition was the profile retrieval tool on both the local and hosted MCP servers,
+alongside the profile export work. Its tool description explicitly treats the profile as information about the user, rather than instructions
+for the assistant. Claude also helped prepare the public MCP package and keep the setup command and docs consistent.
+
+To try the local connection, create an API key in the MyMemory dashboard, run npx @mymemory.dev/mcp setup, select your
+Claude client, then restart it. The setup backs up your existing config before adding the connection.
+
+There’s a free plan, no credit card required. The product is closed source.
+
+If you use external memory with Claude, would you want the profile loaded at the start of a chat, or only when you ask? I’m also
+interested in cases where search retrieves the wrong context.
+
+Site: https://mymemory.dev Short demo of the app: https://youtu.be/sQvem5FQMSU
+
+Neil",project_showcase,AI-assisted; reviewed
+38,1x8foi8,"Propose: Paid resets
+
+I think it’d be great if we had paid resets ability.
+Let’s say 1⁄10 for 5h and 1⁄4 for weekly or so.
+
+Sometimes you hit the limit just once a month and instead of struggling with several accounts, I’d personally pay for the reset.",opinion_feedback,AI-assisted; reviewed
+60,1x7ox1x,"I used headless Claude Code to turn 18 founders’ public talks and essays into MCP servers, so Claude can answer “how would Levels price this?” with sources (free, MIT)
+
+I kept pasting Paul Graham essays and Levels tweets into Claude and asking “what would they do here”. So I built a way to plug them in directly.
+
+Repo: https://github.com/VicPitic/the-brains
+
+Site: https://brains.ceo
+
+What it does: 18 MCP servers, one per founder or investor (PG, Naval, Levels, Hormozi, Marc Lou and more). Add one to Claude and ask normal questions. Claude searches that person’s actual talks, essays and posts and links every passage it uses. It’s search over their real words, not Claude doing an impression.
+
+How Claude built it:
+
+A discovery script pulls cheap metadata (top X posts, YouTube talks, essays). Then a Claude agent following a runbook picks the 15-45 sources that actually cover business principles, out of hundreds.
+
+claude -p writes a card per source: summary, verbatim quotes, topics and a quality score.
+
+claude -p turns those into sectioned notes. Those notes are what the search returns.
+
+claude -p writes each person’s principles and sample Q&A, and every line has to cite a source.
+
+All of it ran on headless Claude Code on my subscription, no API credits. Scraping for the first 10 people cost about $3.50 total.
+
+Free: yes, no paid tier. First connect asks for an email and a 6 digit code. It logs your email and searches so I can see what gets used. Don’t want that? It’s MIT, and npm start runs it locally with no sign-in.
+
+These are unofficial unless marked claimed. Public sources only, and anyone in there can get theirs corrected or removed.
+
+Drop a startup question in the comments and tell me whose to run it through. I’ll paste the answer.",project_showcase,AI-assisted; reviewed
+65,1x7o65r,"Need a honest feedback on the claude sub grounded on existing setup
+
+I haven’t used claude for about 6 months now. Would appreciate thoughts about the following assuming I’m a noob who happens to get shit done:-
+
+Can I use the sub auth anywhere apart from the claude harness like web, cli and app? Not the API, the actual sub auth method.
+
+Does any model in the current pool of the Pro sub give value/intelligence better or equal to 6.1 Sol?
+
+Which model and effort gets the job done for you with consistency and no steering.
+
+Would you choose the same model above for both planning UI/UX design and implementing the code?
+
+How much do the models intelligence rely on bundled skills or workflows, system instructions etc? Would the same model on a non claude harness behave differently?
+
+I just gave up on random search results and outdated research results and wanted to hear it from the horses mouth.
+
+Cheers!!! 🥂",help_request,AI-assisted; reviewed
+73,1x7mawy,"Claude usage stuck at 100% — Cowork accounts for 100% of my weekly usage, even though I’m not using it
+
+Is anyone else experiencing this issue?
+
+My Claude usage has been behaving strangely, and the situation has gotten worse.
+
+My weekly usage reset recently, but less than a day later, my weekly limit is already at 98%, even though I haven’t been able to do any meaningful work with Claude since the reset.
+
+Every time I open Claude, it tells me that my usage limit has been reached. I have checked my computer and confirmed that there are no Claude processes or tasks running in the background.
+
+I also have no other active Claude sessions on any other devices, and I checked the Scheduled tasks section in Cowork, which says there are no scheduled tasks.
+
+What makes this even stranger is the Usage by product breakdown:
+
+Cowork: 100%
+
+Claude Code: 0%
+
+Other: 0%
+
+I do have a Claude Code project where I previously asked Claude to interact with my PC to investigate an issue, but that activity was in Claude Code, not Cowork.
+
+I don’t understand how Cowork could account for all my weekly usage when I’m not actively using it. My weekly limit had just reset, and less than a day later, my usage is already at 98%. I haven’t been able to use Claude normally during this time.
+
+Has anyone experienced something similar? Could this be a usage tracking bug, or is there something running on Anthropic’s servers that I can’t see from my computer?
+
+I’ve already checked for background processes, other active sessions, and scheduled Cowork tasks, but nothing explains this usage.
+
+Any suggestions would be appreciated. At this point, I’m effectively unable to use Claude despite my weekly limit having just reset.
+
+Thanks!",help_request,AI-assisted; reviewed
+111,1x84ue1,"Claude Desktop’s new UI: less control, more clicks, pointless animations
+
+I use Claude Code Desktop daily across multiple projects, often running 10+ parallel sessions, building Android apps, and managing Git worktrees and PRs. The latest redesign has made my daily workflow noticeably worse.
+
+1. Where is my code actually running? Previously, I could select a branch and enable or disable worktree isolation before starting a session. Now, with saved Environments, I can’t do that before sending the first message. I often need to update main and build an APK containing the latest merged changes. Before: Select main → Update → Build. Now Claude creates additional worktrees for routine tasks, potentially duplicating dependencies, consuming disk space, and forcing me to verify which revision I’m actually building. I use worktrees regularly. I just want to choose when to use them.
+
+2. The sidebar has always been terrible This isn’t a new regression, but the redesign missed a perfect opportunity to fix it. Projects and sessions are still a wall of tiny, nearly identical gray labels. Telegram figured out recognizable avatars, colors, and visual hierarchy years ago. Even Codex lets you assign project icons and colors. Why do I have to read through dozens of similar-looking labels just to find my project?
+
+3. Context and usage are harder to access Previously, context-window usage and account limits were conveniently accessible. When managing multiple agents, these aren’t optional statistics. They help me decide whether to continue a session, start a new one, or adjust my approach. Now that information takes more effort to find.
+
+4. Why remove the effort slider? The old slider was fast, intuitive, and already warned about increased token usage at higher levels. Now it’s replaced with nested menus. Same functionality, same information, more clicks. What exactly improved?
+
+5. And those ridiculous digital waves… Click the empty background and animated digital ripples appear across the workspace. Amazing. I can’t easily choose main before starting a task, but at least the background makes pretty waves. It’s like Slack hiding useful channel controls while introducing animated wallpapers.
+
+The real problem Claude Code is a professional development tool, not just a chatbot.
+
+I need visibility, predictability, and control over my projects, branches, worktrees, builds, and agents. There’s a difference between automating repetitive work and removing decisions users deliberately need to make. Safe defaults are great. Hiding essential controls isn’t. Please bring back: Branch and worktree selection before starting a session. Easily accessible context, usage, and effort controls. The effort slider. Proper visual identities for projects. I don’t need more animations or complicated dashboards. I just want to know where my code will run and get my work done. Hiding complexity doesn’t make a tool simpler. Sometimes it just transfers that complexity to the user. Claude Code keeps getting better at writing software, while Claude Desktop is getting worse at letting me manage that work.",opinion_feedback,AI-assisted; reviewed; PDF extraction
+142,1x7emur,"Cant move Chat to Projekt
+
+Hello together,
+
+i want to move a Chat to a Existing Projekt (also tried it with a new one). In the Menu i cant see my target projekt. The Projekt has a little lock behind its name? Google told me i need to change the Settings but i cant find it in the Projekt Settings …",help_request,AI-assisted; reviewed
+154,1x7baft,"I built a free browser tool for personalized 3D-print designs with Claude Code
+
+I run a small 3D printing site. Over the last few weeks I built a free web tool with Claude Code: you type a name, pick a font and a few settings, and it generates a 3D-printable model in your browser. You can download it as STL or a two-color 3MF.
+
+Try it (free, no sign-up): https://kady3dprinting.com/designer/ Open a design, type a name, and click Export. Everything runs in your browser.
+
+What it does
+
+There are 8 designs so far, each with its own settings:
+
+Name Desk Organizer: a bubble-shaped desk caddy with press-fit letters
+
+Name Piggy Bank: shaped like the name, with a coin slot and a twist-lock plug
+
+Cable Tag: a text label that snaps onto a cable of a given diameter
+
+Nametag: a desk name plate with a curved back
+
+Pen Holder: the name as a block with pen holes and pockets
+
+Name Keychain: a base that follows the letters, with a key ring hole
+
+Magnetic Nametag: magnet pockets in the back, open or sealed inside (it tells you which layer to pause at)
+
+Headband: the name curved above a printable headband, with an optional comb
+
+The preview updates live as you change things. You can upload your own font. Exports come out ready to print as one solid piece.
+
+How Claude Code helped
+
+I described what I wanted, usually with screenshots of designs I liked, and Claude Code wrote most of the code:
+
+The Next.js frontend and the shared 3D viewer (three.js)
+
+The geometry for every design, using manifold-3d (WASM) for the solid modeling and opentype.js to turn fonts into outlines
+
+Test scripts that check every model is watertight and one solid piece, with no letters floating and no walls too thin to print, across many fonts and names
+
+Hooking it into my existing NestJS site, plus the sitemap, analytics, and a “Report a Bug” button
+
+The most useful part was debugging the geometry. When I said “the text is floating above the base” or “the N and K are broken”, Claude Code wrote a check to measure the problem, found the cause, and fixed it. It found things like bouncy fonts that place letters above the baseline, and dots on an “i” that print as loose pieces. It then reran the checks across fonts to confirm the fix. I made the design decisions and tested the prints; it did most of the implementation.
+
+Stack: Next.js (static export), React, TypeScript, Tailwind, three.js, manifold-3d, opentype.js. It’s served from my NestJS app.
+
+Feedback is welcome, especially on prints that don’t come out right. There’s a “Report a Bug” button on each design page.",project_showcase,AI-assisted; reviewed
+166,1x798ss,"Claude on LinkedIn
+
+Hi,
+
+Claude can now use my browser and use LinkedIn for me. Doing LinkedIn outreach has always been a manual task.
+
+It can customise each message, plus mimic a human (it has to because its typing in the names and message) There is a risk of it doing something wrong, but I’ve had no problems so far.
+
+Is anyone doing this? Any bans on your LinkedIn account because of this?",help_request,AI-assisted; reviewed
+176,1x76m13,"Claude CLI Tutorial suggestions
+
+Looking for links to useful guides or tutorials for using CLI instead of the desktop app for Claude code. I use Claude code all the time and I tried switching from the desktop app to CLI, but had no clue what I was doing. I don’t understand how to switch between sessions, and it just feels like the learning curve is too steep.
+
+Most of the stuff I’ve found just explains how to use Claude code, which isn’t helpful at all.",help_request,AI-assisted; reviewed
+191,1x8sysh,"Claude Code built a physically accurate black hole renderer in raw WebGPU, and checked its own physics
+
+Try it: https://kerr-black-hole-roan.vercel.app
+
+I gave Claude Code (Opus 5.5) one brief: a spinning black hole ray traced per pixel in WebGPU, in a single HTML file, holding a steady 60 fps on my M3 Pro. I left the design and code to it, and gave feedback after trying it.
+
+What impressed me most was how it checked its own work:
+
+- It wrote a double-precision copy of its shader's math, plus an independent integrator, and compared them. Light rays agree to about 0.01°, and the shadow matches the exact published formula to about 0.02%.
+
+- It screenshotted the page in headless Chrome from several angles and compared them against the EHT image of M87* and the Interstellar renders.
+
+- It ran scripted camera flights measuring every frame's GPU time. That's how it found that macOS lowers the GPU clock under light load, which trapped the resolution low, and fixed it.
+
+My feedback rounds: orbit-only controls, a truly black sky with sharper stars (the first version looked grey), and fewer ray steps by default.
+
+Result: one 119 KB HTML file, no libraries, 60 fps at native resolution on a MacBook.
+
+Code: https://github.com/SkyWalkerPS/kerr-black-hole",project_showcase,AI-assisted; reviewed
+192,1x8oes9,"I asked Claude for ""a kawaii effect when I click"". My video editor had no such effect. Now it does.
+
+I maintain OpenScreen, a free and open source screen recorder and video editor (MIT, Windows / macOS / Linux).
+
+Since 2.1 there's no catalog for visual effects. You describe what you want, Claude Code writes it as a small GPU shader through OpenScreen's MCP server, and it lands on the timeline as a clip. Same pixels in the preview and in the export.
+
+Claude was involved twice. Most of the feature itself was built with Claude Code: the shader contract, the GPU passes on Windows, macOS and Linux, and the MCP tools. Then, in this video, Claude uses those tools to write the effects.
+
+In the video I typed three short requests on three themed sites:
+
+- ""kawaii effect when I click""
+- ""laser effect when I click""
+- ""8-bit explosion when I click""
+
+None of these existed before. There's no ""hearts burst"" or ""orbital laser"" preset hidden somewhere, Claude wrote the code on the spot. The effect knows where each click landed, where the recording sits after zooms, and the time, so it can react to the click and match the page.
+
+A few details:
+
+- Most effects compiled on the first try. One got refused because Claude named a parameter target, which is a reserved word in WGSL. It read the compiler error and fixed it.
+- I asked for one revision (bigger hearts). Claude checks its own result by pulling frames from the editor before exporting.
+- All three are in the ""light"" cost tier, so they don't slow the preview.
+- Once an effect is in the project, you get sliders for its settings in the editor. You never have to touch the code.
+
+It's free, no account. Repo: https://github.com/getopenscreen/openscreen
+
+Curious what you'd ask it for.",project_showcase,AI-assisted; reviewed

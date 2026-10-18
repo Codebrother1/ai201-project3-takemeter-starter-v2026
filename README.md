@@ -39,7 +39,7 @@
 
 ## What This Does
 
-TakeMeter is a fine-tuned text classifier designed to categorize public posts from the r/ClaudeAI Reddit community. After reviewing 30 recent posts, I identified three recurring types of discussions: people requesting assistance with Claude, users showcasing projects or tools they have built, and community members sharing opinions or feedback about Claude and Anthropic. These observations suggest three candidate categories: help requests, project showcases, and opinion or feedback discussions. The goal is to train a model that can distinguish these types of posts consistently using clearly defined labeling rules.
+TakeMeter is a fine-tuned text classifier designed to categorize public posts from the r/ClaudeAI Reddit community. After browsing an initial set of recent posts and manually selecting roughly 19–20 examples, I identified three recurring types of discussions: people requesting assistance with Claude, users showcasing projects or tools they have built, and community members sharing opinions or feedback about Claude and Anthropic. These observations suggest three candidate categories: help requests, project showcases, and opinion or feedback discussions. The goal is to train a model that can distinguish these types of posts consistently using clearly defined labeling rules.
 
 ---
 
@@ -131,17 +131,46 @@ If a post primarily asks for a specific explanation, instruction, solution, or p
 
 **Where the posts came from:**
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+All 200 posts are public posts from r/ClaudeAI, published in October 2026. I chose this community because I was already a member before the assignment. Each record is the post's full title and written body; author names, flair, images, ads and comments are not included.
+
+- **My own selections.** I browsed Reddit manually, read posts, chose examples and took screenshots. I believe I was browsing the Hot feed, but I have not confirmed the sort order.
+- **Larger batches.** After roughly 19–20 manually selected examples, I showed my selections to a Manus AI agent and asked it to collect batches of about 45 similar posts that met my criteria. Manus supplied those batches as PDFs.
+- **Review.** I uploaded the PDFs to ChatGPT, where I reviewed the proposed classifications, approved decisions and discussed exceptions. ChatGPT also helped me write prompts for Cursor.
+- **Extraction and integration.** Cursor extracted the reviewed posts from the PDFs, checked them and added them to CSV files. It did not collect the Manus batches. The final 11 AI-assisted posts were retrieved by Cursor from Reddit's public RSS feeds, because the PDF batches did not supply enough suitable posts.
+- **Cold-labelling posts.** The 18 posts I labelled independently later in the project were collected separately from Reddit's public new-posts feed.
+
+I excluded non-English posts, posts about AI in general rather than Claude, link-only news posts with no body, and duplicates, which were checked by Reddit post ID, title and full text. The PDFs had dropped dollar signs and spaces in some price amounts (for example "158to 0" instead of "$158 to $0"). I only corrected those passages with wording verified against the original Reddit post. Where I could not verify a passage, I excluded the post.
+
+**How I labelled them:**
+
+- **20 records are marked `cold`.** 18 of them are posts I labelled independently later in the project. They were collected from the new-posts feed in posting order and filtered only for objective reasons: already in the dataset, previously reviewed, or no written body. They were given to me as a blank CSV with no suggested labels, and I chose every label myself. I set aside three posts I could not confidently place in one label; they are not in `labels.csv`. The other two `cold` records (records 1 and 2) were among my first examples. They are marked `cold`, but I cannot remember with certainty whether AI discussion came before I chose their labels, so I do not claim all 20 as verified independent labels.
+- **To keep the dataset at 200**, the 18 new cold records replaced 18 AI-assisted records. These were chosen with `random.Random(42).sample` from the 198 AI-assisted rows, without regard to label or content. The removed records are archived in `labels_removed_for_cold_integration.csv`.
+- **180 records are AI-assisted.** An AI proposed each label and I personally reviewed and approved it, changing or excluding posts where I disagreed. Their notes read `AI-assisted; reviewed`, with a short reason added for borderline cases. I did not change labels to balance the dataset, and I did not add help requests just to reach 200.
+
+The 20 cold records are 15 `project_showcase`, 4 `help_request` and 1 `opinion_feedback`. They were taken in posting order rather than chosen by label.
 
 **Counts per label:**
 
-| Label     | Count | Share |
-| --------- | ----- | ----- |
-|           |       |       |
-|           |       |       |
-|           |       |       |
-| **Total** |       | 100%  |
+| Label              | Count | Share |
+| ------------------ | ----- | ----- |
+| `help_request`     | 90    | 45%   |
+| `project_showcase` | 58    | 29%   |
+| `opinion_feedback` | 52    | 26%   |
+| **Total**          | 200   | 100%  |
+
+**Labelling consistency check (criterion 5):**
+
+I labelled the 20 `cold` records a second time without looking at my first decisions. They were shuffled with seed 42 into a blank worksheet with no labels or notes. The two passes agreed on **18 of 20 (90%)**, above my 85% target. I set one post aside in the second pass, and I count it as a mismatch because the dataset has a label for it.
+
+| Record | First pass (in dataset) | Second pass |
+| ------ | ----------------------- | ----------- |
+| 198, "I gave the Clawd Mochi desk toy a new brain…" | `project_showcase` | `help_request` |
+| 1, "I let Claude hire its first employee. It chose a rock." | `project_showcase` | set aside |
+
+This result should not be overstated:
+- Criterion 5 describes a randomly selected sample of 20 posts, but I used the 20 `cold` records, not a random sample of the whole dataset.
+- Some of the second-pass decisions were made the same night as the first, so I may have remembered my earlier choices.
+- Three quarters of the sample is `project_showcase`, so it says little about my hardest boundary, `help_request` versus `opinion_feedback`.
 
 **Three hard cases**
 
@@ -150,27 +179,27 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 **1.**
 
-> _The post:_
+> _The post:_ "I used Claude to design a stock investing strategy and then backtested it using a 2-year holdout. Here is what it got right and where it was biased." The author builds and tests an investing strategy with Claude and evaluates what Claude did well and where it showed bias.
 >
-> _Could have been:_
+> _Could have been:_ `project_showcase` or `opinion_feedback`. The AI suggested `project_showcase`.
 >
-> _I chose, because:_
+> _I chose, because:_ `opinion_feedback`. The post's primary purpose is evaluating Claude's performance, including where it succeeded and where it showed bias, rather than showcasing the investing strategy.
 
 **2.**
 
-> _The post:_
+> _The post:_ "Skills list constantly repeating throughout context and triggering compaction." The author asks whether anyone else is seeing it, describes the behaviour, calls it a bug, and says it is "just chewing through context and triggering unnecessary automatic compactions."
 >
-> _Could have been:_
+> _Could have been:_ `help_request` or `opinion_feedback`
 >
-> _I chose, because:_
+> _I chose, because:_ `opinion_feedback`. It is primarily a complaint about frustrating Claude behaviour, not a request for troubleshooting instructions.
 
 **3.**
 
-> _The post:_
+> _The post:_ "I gave the Clawd Mochi desk toy a new brain: it reacts to Claude Code, shows my usage limits, music, calendar and more." The author rewrote a desk toy's firmware with Claude Code, lists its features and links to the source code. This is one of my `cold` labels.
 >
-> _Could have been:_
+> _Could have been:_ `project_showcase` or `help_request`
 >
-> _I chose, because:_
+> _I chose, because:_ `project_showcase`. The author primarily demonstrates what they built, describes its features and shares the source code rather than asking for help. In my second labelling pass I chose `help_request` for this post. I have kept that disagreement in my consistency result rather than hiding it.
 
 ---
 
@@ -199,19 +228,29 @@ of next unit's variance. -->
      workflow and disclosing it costs you nothing. Not disclosing it is the
      problem. -->
 
+I used four AI tools, each for a different part of the work:
+- **Manus** collected batches of about 45 posts similar to my own examples and supplied them as PDFs.
+- **ChatGPT** reviewed the PDFs with me, proposed labels, discussed borderline cases and helped me write prompts for Cursor.
+- **Cursor** extracted posts from the PDFs, checked text and duplicates, entered records into CSV files and validated them. For some PDF batches, and for the final batch of candidates it retrieved from Reddit's RSS feeds, Cursor also proposed labels and prepared review tables. Cursor did not collect the Manus PDF batches.
+- **I** reviewed and approved every AI-proposed label, whichever tool suggested it.
+
+AI helped with collecting and preparing data, but it did not choose any of the 18 later independent labels.
+
 **Moment 1**
 
-- _What I asked for:_
-- _What came back:_
-- _What I changed:_
+- _What I asked for:_ I asked Cursor to extract every post from a batch PDF with its full title and body, check for duplicates, and flag any damaged text instead of guessing.
+- _What came back:_ Cursor found that the PDF had rendered price amounts as math, which dropped dollar signs and spaces. It flagged the affected posts and stopped before importing them.
+- _What I changed:_ I checked a flagged post against a screenshot of the original Reddit post and supplied the exact sentence myself: "I run into my limit a lot with Pro surprisingly, but for my personal use, it doesn't make sense to go from $20/month to $100/month. 😵" Only that sentence was corrected.
 
 **Moment 2**
 
-- _What I asked for:_
-- _What came back:_
-- _What I changed:_
+- _What I asked for:_ A proposed label and a one-line justification for each post in a batch, with borderline cases flagged.
+- _What came back:_ A review table for the batch, prepared by Cursor. It labelled the stock-investing backtest post `project_showcase` and flagged it as a possible evaluation of Claude.
+- _What I changed:_ I changed it to `opinion_feedback`, because the post mainly evaluates Claude's performance (hard case 1). I also excluded posts that did not fit my taxonomy, such as non-English posts and general AI discussion. Later, when I was short of showcase and opinion posts, I picked 11 of 15 suggested candidates and dropped the borderline ones rather than relabelling posts to balance the counts.
 
 **Pre-labelling disclosure:**
+
+180 of my 200 labels were pre-labelled by AI and then individually reviewed by me, and changed where I disagreed. 20 records are marked `cold`. 18 of those I labelled myself with no AI suggestion: the AI only collected the posts and entered my decisions into the CSV. For the other two, records 1 and 2, I cannot remember with certainty whether AI discussion came before my decision. The `note` column shows which records are which.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 

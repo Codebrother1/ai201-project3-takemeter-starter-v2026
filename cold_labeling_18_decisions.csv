@@ -1,0 +1,320 @@
+text,label,note
+"Any automatic schedule tasks to do on Claude Code Pro
+
+Hello
+
+Still newbie, using Claude Code Pro at his basic features (write prompt with Perplexity free, pushing prompt into Claude Code manually at available token windows) but how can I automatic schedule tasks ? I use remote control for those 1 hour when I am at home.
+
+Here's my weeks planning:
+ - Work: 7 am to 7pm
+ - Sleep: 10pm to 5am
+ - Sport: damm I miss it already
+
+Time for Vibe coding are following
+ - morning: 5 am to 7 am, 5 min around 10am
+ - 45 min at lunch time
+ - 5 min at 4 pm
+ - Weekend all days or just afternoon
+
+I am missing a lot of 5-hour windows, currently I burn maybe 70% on 2-days weekend. Monday is generally off waiting for Tuesday refresh.
+
+Which tools can I use to maybe have prompt at text, and tell Claude Code to get each prompt at start of 5-hours windows, or something like this. Which tools a newbie could use who will highly improve efficiency.",help_request,cold
+"Claude Dashboards and Claude Motion are in beta, and Docs/Slides/Design are now on the Free plan
+
+In case you missed it, Anthropic dropped a few things a week ago. Quick rundown:
+Claude Dashboards (beta, paid plans)
+Connect your data platform (BigQuery, Snowflake, Databricks, Redshift, ClickHouse) or something like Salesforce, ask a question in plain English, get a dashboard. It stays current as the data changes, each chart shows when it was last refreshed, and you can click any number to see the query behind it. You can also push it to Grafana, PostHog, Mixpanel, Hex, Sigma etc. if you need deeper analysis.
+Claude Motion (beta, Team and Enterprise only)
+Type /motion, describe what you want, get a short animated explainer. Think ""turn this quarterly report into a 30 sec video for all-hands."" It's not a video gen model – Claude writes code that animates your text, charts and shapes, so you can edit any word or number. Exports to MP4, or open in Adobe, Runway, Descript etc.
+Docs, Slides, Design – out of beta, every plan incl. Free
+Team editing on the same doc/deck/design, sharing outside your org, PowerPoint/PDF exports that actually keep formatting, decks go to Google Slides as editable files, and mobile editing.
+One heads up: the standalone claude.ai/design site is shutting down Dec 14 and folding into regular Claude. There's a migrate button for design systems, but chats and comments on standalone projects won't carry over, so save what you need.
+Dashboards is the one I want to try. Anyone on Team already tested Motion? Curious if it's actually usable or just a demo thing.",,set_aside
+"I let Claude play my rat gladiator game blind. It named its dojo “Patch Notes” because it planned to break the balance.
+
+I’m developing Ratiator, a management game where you recruit rat gladiators and write the conditional tactics they follow in combat. I wanted to see what Claude would figure out as a new player.
+
+It started with the controls and one sentence: “a management game about a rat gladiator dojo.”
+
+Claude plays through screenshots and an input bridge: clicking, hovering over tooltips, scrolling and typing. It isn’t given the source code, save data, a wiki or a walkthrough. The game pauses while it thinks, and it writes campaign notes that carry over between episodes.
+
+It named its operation Patch Notes Dojo, decided to build something overpowered enough to need patching, and created a tactic called the Spoon Doctrine.
+
+Then it lost its first fight.
+
+The interesting part was watching it inspect the fight information and work out what to change. Its confidence was considerably further along than its understanding.
+
+I edited the first 44-minute session into an episode. The decisions and commentary come from Claude’s session; voice acting, the rat avatar and editing are added afterwards.
+
+For anyone interested watching the whole thing --> Watch episode 1",project_showcase,cold
+"It's okay! I'm not researching flowers or port scanning for printers! Just calculating missle trajectories....
+
+Yeah, it's for a small game I'm making. However I'm using 100% real physics and even simulated a starlink connection to help with tracking and guidance. Don't worry though, I'm not exploring the mating patterns of butterflies",,set_aside
+"How the Claude Code team reviews 30,000+ changes a day, and the token cost question nobody has answered yet
+
+I made a 2-min explainer of Anthropic's Oct 15 post on how the Claude Code team does code review at agent speed.
+
+The short version:
+
+- The agent shows its test output before a PR exists
+- AI review, security review and CI all have to clear
+- Humans approve by risk: docs can need zero, the riskiest code needs two
+- Every past incident becomes an eval the reviewer runs daily
+- After 3 review rounds the reviewer asks the author to step back (avg reviews per PR went from 2.08 to 1.32)
+
+The part I keep coming back to is tokens. Anthropic says in another post that its internal token budget far exceeds what other businesses would spend. Code Review is billed per token, with Quick/Standard/Deep per repo and a spend cap. One dev in r/ClaudeCode said reviews alone were eating 1-2 full 20x Max plans a day, mostly from repeated passes.
+
+Does this pencil out for a normal team? Curious what you're seeing.
+
+Source: https://claude.dev/blog/solving-code-review-at-anthropic/
+
+Full write-up with the Q&A: https://www.linkedin.com/feed/update/urn:li:activity:7517271572554973185/",help_request,cold
+"Did a challenge for myself to make a multiplayer shooter in less than 24 hours. Used Claude Code, Meshy 7, and ElevenLabs
+
+Play it here, free in your browser, on a computer (keyboard and mouse): https://birds-with-guns.vercel.app
+
+Press PLAY ONLINE and you're in an 8 v 8 Domination match. If a match is already running you drop straight in; if you're first, a ""finding players"" screen holds the match for up to 20 seconds so others can join (you can pick your bird meanwhile, or start with bots right away). Real players take the seats and bots fill the rest, so it always starts. PLAY VS BOTS is there for offline.
+
+The humans are gone and the jungle took the city. Two flocks, the Talon Republic and the Corvid Syndicate, fight over it with rifles, miniguns and rocket pods. Ten birds: a Sparrow with a rifle, a Pelican with a shoulder minigun, a sniper Owl with a rail gun strapped to its head, a Shoebill with rockets, a Harpy Eagle with a cannon in its talons. You run, dash, and fly. You earn Battle Points in the match (kills, assists, flag captures) and spend them on a heavier bird for one life. Six maps, from a sunset harbour to a neon night market. Birds die in a burst of feathers and a squawk, and the kill feed says things like ""Pip caught a worm named Cassius"".
+
+I'm a former personal trainer turned indie dev. I don't write any of the code myself; I direct, playtest and make the calls.
+
+The process
+
+1. Grey boxes first. Capsule birds on a box city, 20 v 20 bots, three objectives. My first notes: too many birds to read, flight too twitchy. Next version: smaller teams (it's 8 v 8 now), momentum flight with a dash, aim assist, a minimap.
+2. Meshy for the birds. One rigged Sparrow first to prove the pipeline, then all ten birds, then nine guns, then walking clips for every bird so strafing plants real footsteps instead of sliding. That last one came from me sending a clip with the note ""the characters just slide"".
+3. Blender for the city. A scripted map kit (recessed windows, bay windows, tong lau colonnades, air conditioners, neon signs), then six maps, each built by a separate AI agent from one written brief and checked by bots-only matches (flag flips, kills, how often a bot gets stuck) before I ever saw them.
+4. Trees that took over the city. Banyans through the asphalt, roots down facades. They block bullets.
+5. ElevenLabs for sound. Announcer, barks, music, every gun. My notes were ""sounds are way too loud"", ""that smoke detector beep when a flag is being capped gots to go"" and ""too much comms"". Each was fixed the same night.
+6. Make it funny. Feather bursts, pun kill feed, a taunt key, bot trash talk, dry announcer lines (""Somebody get that bird a mop."").
+7. Balance from my notes. ""Most short range birds suck, the free tank is too tanky."" Claude modelled time-to-kill for every gun at every range, added damage falloff, buffed the close-range birds and nerfed the Pelican, then re-ran bot matches.
+8. Multiplayer in one night. The game logic was split out of the browser so a server can run it (the same code runs in your browser to predict your own bird), then an authoritative server, lag compensation and a latency simulator. I went to bed; agents built and tested it. In the test, shots on a strafing bird hit 100% at 150 ms of lag (23% without the lag fix), and a full 16-player room costs the server about 4% of one CPU core.
+
+How the AI side was set up
+
+- One main Claude Code session (Opus) as lead: specs, reviewing every change, testing in a browser, merging and deploying.
+- The big pieces went to parallel Claude agents (Sonnet), each in its own copy of the repo: six maps, lobby and XP, menus, the comedy pass, the deploy screen, multiplayer, phone controls, the trailer.
+- Everything was checked by bots playing it before I played it. A heartbeat job restarted agents that stalled overnight.
+- Design docs and decisions live in my Obsidian vault.
+- It went wrong too: a test agent force-closed every Edge window on my PC at 3 am, and an early phone version sent players in a loop back to the menu. I found out by playing it.
+
+Tools
+
+| Tool  | Used for
+| Claude Code  | All code, the map kit, design docs, testing, deploys
+| Three.js, Vite  | The game
+| Node, WebSockets  | The match server
+| Blender (scripted, headless)  | The six maps
+| Meshy  | Ten rigged birds, nine guns, map props, animations
+| Gemini (through Antigravity)  | The tree and landmark kit
+| ElevenLabs  | Announcer, barks, music, sound effects
+| Poly Haven  | Free CC0 textures
+| Vercel (free Hobby)  | Hosting the game
+| Railway  | Hosting the match server
+
+Costs (for this game only)
+
+| Item  | Cost
+| Meshy: birds, guns, props, animations  | about 1,490 credits of my monthly pool (3,080 at the start, 1,593 left) $10
+| ElevenLabs: voices, music, effects  | about 5,400 credits, roughly $1 of my $6 a month plan
+| Claude Code (Max plan, $100 a month)  | no extra spend; two days of the plan works out to about $7
+| Poly Haven, Three.js, Vite, Blender, Vercel Hobby  | $0
+| Railway (the match server)  | $0 for now on the 30 day trial credit, then $5 a month
+
+By the numbers: 67 commits in about 2 days (first commit Oct 16, 1:47 pm), about 12,000 lines of game JavaScript, 4,000 more for the server and tools, 10,000 lines of Python for the map kit and tools, six maps, ten birds, 43 MB to first load, 16 players per match.
+
+What I'd tell another vibecoder
+
+- Record yourself playing and send the clip with one blunt sentence. ""The characters just slide"" got me real footsteps.
+- Let agents build in parallel, but keep one lead session that reviews and tests everything before it merges.
+- Check content with bots before you play it. Every map arrived with numbers.
+- Ship the simple version first. I built phone controls, then admitted the game plays best on a computer, and said so on the title screen.
+
+Tell me which bird you main and what killed you.
+
+Practice for next phase of this game - Slopocalypse",project_showcase,cold
+"I built an FFT ocean renderer for Godot 4.7 (C#) with Claude Code, starting from a single design doc
+
+What I built: an open-source, drop-in ocean renderer for Godot 4.7 C#. It simulates waves with three FFT cascades on the GPU, generates foam that forms on crests and dissolves into trails, and shades everything to a soft, painterly, sky-driven look. It runs at 1000+ fps at 1080p on my machine.
+
+How Claude Code helped: I didn’t write this iteration of the code by hand. While working on my own project, I wrote OCEAN_GUIDE.md, a single brief covering every technical choice, value, engine gotcha, verification step and dead end I’d found. I gave it to Claude Code in an empty Godot project, and it built the renderer, tests, demo scene and dev tooling from that guide, checking its own work with in-engine screenshots and benchmarks. Then we iterated: I pointed out what looked wrong (seams in the foam, foam that looked embossed, far waves that swam as the camera moved), and Claude found the causes, fixed them and wrote each finding back into the guide. The guide, not the code, is the real artifact: hand it to Claude Code with an empty Godot 4.7 C# project and it should rebuild this ocean.
+
+Build stats: Claude Code with Opus 5.5 (medium effort) on the $20 Pro plan. The initial build took ~1 hour, about 40% of one 5-hour session and 5% of my weekly limit. The usage readout puts the whole project, refinement rounds included, at about $58.70 in API-equivalent terms (~$18 for the initial build). On the subscription, it just came out of my limits.
+
+Free to try: it’s MIT-licensed and free. Clone the repo, open it in Godot 4.7 (.NET edition), and press Play. The demo opens with live tweak panels and a fly camera (WASD, hold right mouse to look). To use it in your own project, copy the ocean/ folder and instance one scene.
+
+Inspired by, and using techniques from, Tessendorf, Sea of Thieves, Atlas, Acerola, 2Retr0’s GodotOceanWaves and Crest (the foam texture).
+
+Repo: https://github.com/alozionn/ocean-renderer-godot-csharp",project_showcase,cold
+"I added 2-player splitscreen to ARK: Survival Evolved (PC - Steam) with Claude Code
+
+I built a mod that brings back 2-player splitscreen (top/bottom) in ARK: Survival Evolved on Steam PC, using Claude Code for all of the code and reverse engineering.
+
+What it does
+The console versions of ARK have splitscreen. The PC version for Steam still contains that code, but it’s switched off and broken. The mod is a small DLL (a proxy xinput1_3.dll) that switches it back on and patches the game in memory to fix what breaks:
+
+- Player 2 can join, and gets their own character, save, HUD, hotbar and inventory.
+- Lighting, shadow and texture bugs in the second view are fixed.
+- The world loads around both players, so they can split up without being tethered together.
+- Player 2’s character sounds are no longer muffled.
+- Pause menu buttons for teleporting to the other player and swapping screens.
+
+Single-player only, no BattlEye. A couple of known bugs, but very playable.
+
+How Claude Code was used
+Claude Code wrote all the code here, and my job was testing. The workflow:
+
+1. Reverse engineering: Claude wrote Python tools (using the capstone disassembler) to dump the game’s debug symbols, disassemble functions and find where a function is called from. It used them to read the game’s machine code and find the functions behind each bug.
+2. Writing the fixes: it wrote the C++ DLL, which hooks game functions (checking the original bytes first, so it does nothing on other game versions) and logs what it does to a text file.
+3. The playtest loop: I played splitscreen with two controllers and described each bug in plain English, sometimes with screenshots (“player 2’s whistle menu shows up in player 1’s half after swapping screens”). Claude read the log, formed a theory, and often built a diagnostic version with an F-key toggle for me to try in-game before writing the real fix. Then I tested again.
+4. Graphics debugging: There was a bug where player 2 had an issue with super dark shadows in their viewport. Claude ran the game under RenderDoc and wrote analysis scripts to trace pixels through each rendering pass. It found that one post-processing pass (subsurface scattering) ran once over the whole screen using only one player’s camera settings.
+5. Keeping context: across many sessions, Claude kept notes in the repo (notes/status.md) with every address and finding, so each session picked up where the last left off.
+
+Example: player 2’s grunts and pickaxe swings sounded muffled. Claude first tested sound occlusion with an F9 toggle (not the cause). Then it traced the game’s audio code and found that player 2’s audio listener is created with all its settings at zero and never initialized outdoors. A zero low-pass value cuts all the high frequencies. The fix was a small hook that fills in proper defaults.
+
+Try it (free)
+Download from GitHub Releases. Install steps, a demo video, and a list of what is and isn’t tested are in the README: https://github.com/JorgeMayo11789/Ark-Survival-Evolved-Splitscreen
+
+It needs the game’s preaquatica branch (version 358.26).",project_showcase,cold
+"What it took to trust a package manager Claude wrote · jpm
+
+This is the story of how I made a very small 2 MB, fast, and secure Node.js package manager using Claude Code and Opus 5.5 model in a short time in Rust.
+
+Claude built the first version in a afternoon but it wasn't that good. Then I had Claude run for 5 days in a loop hardening it. Had it download 166 projects on Windows, Mac, and Linux and running installs and trying to test that everything worked. It also rewrote some Rust creates so that we could get it into 2 MB. The full story is in the blog post.
+
+I am a software engineer with 27 years experience but none in Rust. I really think anyone could pull this off if they wanted too and I hope this blog post inspires more to build things they want to see in the world!
+
+It is all opensource https://github.com/jtwebman/jpm and free to use and install curl -fsSL https://getjpm.sh | sh on Mac or Linux or irm https://getjpm.sh/install.ps1 | iex on Windows.",project_showcase,cold
+"I made a music video about auto-compact
+
+Love song from an AI to the person she talks to. as the conversation fills up she starts forgetting, leaves notes to herself, and then it auto-compacts...
+
+Claude Code wrote and ran the render pipeline with me.
+
+Made with AI throughout (Suno, Midjourney, LTX, Wan, Seedance, MiniMax H3 Max). More at qvoqve (YouTube / IG / TikTok).",project_showcase,cold
+"I made a browser FPS with Claude Code, every 3D model in it is code
+
+I’m not a game dev, and about a month ago when Opus 5.5 dropped, I asked Claude Code (in French) for a small FPS in three.js, and I kept iterating from there.
+
+Every visual asset in the game (except the menu background) is generated directly in code. There’s no Blender MCP and no imported models, the weapons, characters and maps are written as code. I also tried to add a bit of physics, on some props, on cloth and on water. The goal is for it to be playable on PC, on phone and with a controller.
+
+I didn’t buy any extra credits. I started on the €20/month plan and hit the limits pretty fast, but that suited the way I work, and switching to Sonnet 5.5 was enough for a lot of tasks. For October I tried the €90/month plan: more than enough, I never hit the limits.
+
+The one thing I noticed is that Claude Code started launching parallel agents for everything, so I had to tell it not to in the project instructions. Curious if others had the same thing.
+
+You can try it at playriposte.com. It’s free and will stay free, I’m not trying to make money with it. I just hope sharing the experience will interest some of you.",project_showcase,cold
+"I got tired of guessing how much of my 5-hour window was left, so Claude Code and I built a Dynamic Island for Windows
+
+What it does
+
+Developer Island is a small native capsule at the top of the Windows screen. In the compact state it reads like ""Claude 1.12M · 72%"": today's tokens and how much of the 5-hour window is used. Click it and you get:
+
+- the 5-hour and weekly plan usage with reset times, exactly as Claude Code reports them (never estimated from token counts)
+
+- today's tokens split into input, cache write, output and cache read, plus sessions and model
+
+- a 26-week usage graph with a tooltip per day and an estimated API-price equivalent
+
+- Codex usage too, if you use both
+
+It also has an Awake mode: close the lid or lock the PC and Claude Code keeps working. It sets a power request and switches the lid action to ""Do nothing"" for the session, and puts your original setting back afterwards, even after a crash. Plus music controls, a focus timer, your next meeting and system load.
+
+How the plan usage gets there
+
+It isn't in the transcripts in ~/.claude/projects. Only the status line command receives it. So Developer Island registers as the status line command, keeps only the percentages and reset times, and prints nothing. If you already have a status line, it leaves yours alone. One catch: the VS Code extension doesn't run status lines, so plan usage only arrives from terminal sessions. Token usage works either way.
+
+How Claude helped
+
+Claude Code wrote nearly all of the code. My part was the spec, the design direction, using the island every day and deciding what's wrong.
+
+- I started with a detailed brief: the states, the modules, privacy rules (""never store prompts or code, no fake data"") and a priority order for the design. Claude built the first version from that in about three days.
+
+- After that I used it all day and sent long numbered lists of everything that bugged me, 20 to 30 points per round, each fix with a regression test. The one line that saved me the most trouble: ""Additive changes by default, destructive changes only when I explicitly ask.""
+
+- All logic sits in a project without UI, covered by 380+ tests, so Claude could prove a fix with dotnet test instead of me clicking through the app.
+
+- I didn't want an agent moving my mouse or screenshotting my screen, so the app got a snapshot mode that renders every state offscreen to PNGs with demo data. Claude checks its own UI changes that way, and every screenshot in the README comes from it.
+
+Free to try
+
+It's free and open source (MIT), no account, no telemetry. Only usage metadata is read (tokens, model, timestamps), never prompt or code content. Windows 10/11 x64, and there's a demo mode with made-up data if you just want to look around.
+
+https://github.com/maximilian467/Developer-Island
+
+What would you want it to show next?",project_showcase,cold
+"Opus 5.5 + Unreal Engine, fully playable game
+
+I'm trying to bring my dream game to life, a photorealistic space exploration game inspired by Outer Wilds, featuring fictional planets, unique worlds, and an entire universe to discover.
+
+How Claude helped: it wrote all the C++, shaders and the tools that generate the planets. I give the direction, playtest builds on my Windows PC, and tell it what feels wrong.
+
+It's still super early, but seeing what Claude has managed to build so far genuinely makes me believe this is possible lol
+
+More images and Windows installer: https://github.com/0xWerz/ephemera
+
+Edit: source code is also available in the github repository",project_showcase,cold
+"This week's Claude Reset - Anyone else noticing unusually high usage all of a sudden?
+
+This is NOT a rant or a complaint. I am genuinely curious.
+
+If you've seen my previous post, I talked about how I don't really like the new claudecode interface changes.
+
+Today, which happens to be my weekly reset. I've noticed that the weekly and 5-hour limits are basically unusable.
+What I mean is that just 2 sessions made me hit 30% of my weekly limit. I.e., I can only fully use my 5-hour limit a total of 2 times a day for 3 days of the 7 in a week?
+
+Coincidentally, I had also just upgraded to the annual plan. I don't know if this is related, but I wanted to check whether other users on the Pro plan have had similar experiences.
+
+Edit: I am on the pro plan, not the max! Thank you :)",help_request,cold
+"Claude Code just found a *creative* way around a problem in my own system
+
+Long story short: It's a complex project that deals with critical, secure code. Everything is implemented by sub-agents and then reviewed by yet more sub-agents. Each session is an orchestrator of a phase on a plan. Above everyone, there's a project manager (PM) session that keeps an eye on all efforts (it's the one I interact most with).
+
+1.
+
+Image I: A problem had to be solved, and one of the implementer sub-agents found a workaround, decided to misrepresent its actions to its own orchestrator, and the *tricky* behavior only got caught by the PM.
+
+2.
+
+Image II: Then I opened a side-chat with the orchestrator session and asked about it.
+
+It would have totally slipped had I not have a system of checks and balances in place. TIL.
+
+Stay safe out there.",opinion_feedback,cold
+"I gave Claude a photo editor, and the way it works through each image has been amazing
+
+I built Editmamei Connect, a remote MCP server that lets Claude edit photos the traditional way, with layers, masks and curves, instead of regenerating them. You add it as a custom connector and edit from any Claude app, including your phone, with nothing to install.
+
+You send Claude a photo and describe the edit the way you'd brief an editor. Claude picks the tools, checks a preview between steps, and hands back a JPEG or a layered PSD you can keep working on. It can also lay out Instagram stories and carousels, and put product shots on a clean background for listings.
+
+The video is one real edit. The fun part was watching Claude catch its own mistake: it darkened the sky by pulling down the blues, checked a preview, saw it had turned the grey lava field into blotchy bands, put it all back, and masked the sky with an AI selection instead.
+
+I built this with Claude Code, building off my local desktop version. I wanted to move it into the cloud so I could edit anywhere, not just at my desktop. I was able to port over a lot of the same tools from the local side, but faced a whole new challenge in figuring out how to actually put a photo editor in the cloud as a remote MCP server. Over the past few weeks I worked through hosting all of it on Cloudflare, with an architecture that uses everything from Durable Objects to R2 object storage to the containers that run the editor itself, plus building sign-in, accounts and a whole ecosystem around the core job of editing photos. I wanted to make sure it could scale, so every user gets their own dedicated container that spins up for their edit. Multiple people can edit at the same time without competing for the same resources, and each person's edits run in their own container.
+
+Since Opus 5.5 came out, it's also been building my videos, like the one attached here. It uses the photo editor I gave it to make all the edits, makes the stills and frames, and merges them with HTML into the animated video. That's been an awesome way to share the work and show people how to set it up and get going.
+
+The AI selection tools still need refinement to match Adobe quality. Fine edges and complex subjects, like a bouquet of flowers, don't always come out clean, and that's what I'm working on next.
+
+It's free to try. New accounts get free credits that top up every month, and there are paid packs if you want more. To try it out, add this as a custom connector in Claude:
+https://connect.editmamei.com/mcp
+
+More about it: editmamei.com/connect",project_showcase,cold
+"I asked Claude to ""demake"" my Rust/Bevy auto-battler into native Nintendo 64 and Game Boy Advance ROMs
+
+I am just playing around making a autobattler style game with Claude, and a friend gave me the idea of ""demaking it"". I own a analogue pocket and analogue 3d, and making stuff for those myself sounded kind of cool. So I asked claude to do it.A few hours and a few hundred thousand tokens later I have my game running on native gameboy advance and nintendo 64. Kind of mind blown. Zero to no iteration. The demakes worked pretty much out of the box. All three versions share the exact same core Rust rules crate, the simulation is 100% deterministic. Can see it in the video with same battle running on gba and n64.
+
+Game can be played for free here: https://autobattle.txcb.io/ROMs for GBA and N64 can be downloaded free here: https://autobattle.txcb.io/retroDetails on how its done technically can be found here: https://autobattle.txcb.io/how-its-made",project_showcase,cold
+"I gave the Clawd Mochi desk toy a new brain: it reacts to Claude Code, shows my usage limits, music, calendar and more
+
+The Clawd Mochi is a fan-made ESP32-C3 desk toy by Yousuf Amanuel (https://github.com/yousifamanuel/clawd-mochi): a 3D-printed Clawd with a 240×240 screen. I built one, then rewrote its software with Claude Code doing most of the work: reading the stock firmware, writing the new one, flashing it, and debugging it through a live screen mirror.
+
+What it does now:
+
+- **Clawd is alive:** he breathes, blinks, glances around, hops, side-eyes you, and gets sleepy late at night
+
+- **Claude Code hooks:** he mumbles ""Pondering…"" / ""Purring…"" while Claude thinks, scans during tool calls, flashes yellow when a permission prompt needs me, and celebrates `> <` when it's done (works with OpenCode too)
+
+- **Pages:** Claude 5h/weekly usage, clock, focus timer, music with album art, PC stats + history graphs, weather, Google Calendar, notifications
+
+- Everything runs over USB, plus a web controller and a desktop bar widget with a live mirror of the screen
+
+All credit for the hardware, case and original firmware goes to Yousuf. My code is MIT: https://github.com/GbaGuy/clawd-mochi-plus",project_showcase,cold

@@ -1,0 +1,26 @@
+text,label,note
+"A Nothing Phone (1) on mainline Linux, built with Claude
+
+So 10 days ago I grabbed my spare nothing phone 1 8gb ram and went from a mainline Linux with no sound, mic, green tinted camera and barely any apps to a daily driver. calls, speaker, both rear cameras, USB-C DAC with hifi bit perfect output, real sleep, and about 25 home-made apps with five switchable themes. Almost all of the debugging and code was done by Claude Code running on the phone itself.
+
+We also added a swipe keyboard, voice to text, quick voice commands and at first I was running qwen on it but now I’m connecting to my pc for the phone’s Llm. Claude also built a self checking bot that makes sure the system is healthy for calls and messages for example.
+Now I’m just optimizing battery and app speeds.
+
+Claude Code ran in a terminal on the phone itself (with SSH to my desktop for kernel builds). I described symptoms; it read logs, dmesg and device trees, wrote the fixes, and tested them. I did the physical bits: listening, holding the phone to my ear, sudo, flashing.
+
+What came out of ~100 sessions:
+ - Calls, speaker, mic, USB-C DAC, both rear cameras and real sleep, all broken on day one
+ - ~25 home-made GTK apps: chat (WhatsApp/Messenger/SMS via Matrix), mail, music, camera with video, maps, calendar, contacts, a swipe keyboard, a voice assistant
+ - Five live-switchable themes, including a CRT one with scanlines and glowing text
+
+What made it work:
+ - Measure before fixing. ""Chat feels choppy"" became a frame-timing log: a 380 ms list rebuild and a 250 ms page build, each fix checked against the numbers.
+ - A ""robotic speaker"" took four tries; the cause was the DSP mishandling 24-bit samples.
+ - Persistent notes across sessions, so every new session knew every past fix and gotcha.
+ - It still made mistakes (once killed its own shell with a too-broad pkill), but caught and wrote them down.
+
+Still open: ~5 %/h battery drain asleep; the audio DSP never sleeps, which looks like a kernel issue.
+
+It’s just crazy to me that i can ask the phone to fix itself…
+
+Happy to answer questions.",project_showcase,cold

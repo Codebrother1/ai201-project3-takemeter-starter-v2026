@@ -1,0 +1,30 @@
+text,label,note
+"Claude Project Showcase Discussion Hub updated on 17 October 2026 (Sort this by New!)
+
+This is the Discussion Hub for showcasing your project built using Claude products. We appreciate all of your submissions as they are a great inspiration to many people on the subreddit. It is sorted by default by New.
+
+Anyone is welcome to submit a project to this Megathread provided you follow the Showcase requirements in Rule 7.
+
+NOTE: We now require the OP of a Project Showcase on the subreddit feed to have total karma>=50 . We found there were just too many submissions and not enough visibility to go around. Our analysis of this issue showed us that OPs with total karma < 50 very rarely get any traction of their projects on the feed (<=1 upvotes). So this Megathread is your best place to be seen by readers and other creators if you're relatively new to Reddit. If you don't meet this karma requirement you will be directed to this Megathread when you submit your post. Very occasionally we might invite you to post on the subreddit feed if you do not meet this karma requirement but it will be very rare (so please don't ask us!)
+
+Thanks again for sharing your ideas and creations to our subreddit. Best of luck with your projects!
+
+Prior Discussion Hub: https://www.reddit.com/r/ClaudeAI/comments/1x2dksu/claude_project_showcase_discussion_hub_updated_on/",,set_aside
+"Procedural generation with Opus is insane. This entire game is 20MB.
+
+I made a post about my game about a month ago, and I just wanted to share my progress.
+
+I've been working on Mecha Royale for about 4 months now. About 99% of the code and content was created using Opus. Sound and music were created using ElevenLabs and Sunos.
+
+The animations and models for the pilots, mechas, buildings, etc. are procedurally generated.
+These are results of /loops literally running non-stop for a full week.
+
+The map has a radius of about 15km and contains millions of procedurally generated objects, from trees and props to bunkers and caves, along with roads and water. All of that fits into a 20MB game.
+
+The game is fully multiplayer-ready. You can pilot the same mecha with 2 of your friends.
+
+Thank you for checking it out. Happy to answer any questions!
+
+Edit: You can play the game at www.mecharoyale.com - It's browser-based. No download required.
+
+Edit2: Heading to bed now. Be right back to answer more questions! Thank you for your interest!",project_showcase,cold
