@@ -2902,3 +2902,271 @@ Am I doing something wrong?
 
 EDIT: Here is my explanation why this function and similar “bad” code is dangerous:
 https://www.reddit.com/r/ClaudeAI/comments/1x6qkmu/comment/pgyg5ja/",opinion_feedback,AI-assisted; reviewed
+"I’ve spent the last ten months building a project with Claude, and tonight I asked it to show me a bit of the code that he thinks is very clever and he’s proud of
+
+I’ll pick the barcode scanner listener, src/hooks/useLabelScan.ts. It’s about 50 lines, and one of them does nearly all the work:
+
+// A scanner’s keys come well under this apart; a person’s, well over.
+
+const GAP_MS = 60;
+
+const onKey = (event: KeyboardEvent) => {
+
+if (typingIn(event.target) || event.ctrlKey || event.metaKey || event.altKey) return;
+
+const now = performance.now();
+
+if (now - last > GAP_MS) typed = ''; // ← this line
+
+last = now;
+
+if (event.key === 'Enter') {
+
+const code = typed.length >= 2 ? readLabelCode(typed) : null;
+
+typed = '';
+
+…navigate to the ticket or device
+
+}
+
+if (event.key.length === 1) typed = (typed + event.key).slice(-16);
+
+};
+
+Here’s why I love it. A USB barcode scanner isn’t really a device the app can talk to. As far as the computer is concerned, it’s a keyboard. There’s no driver, no AP and no pairing. It just “types” T7001 and presses Enter. So the app can’t ask “was that a scan?” It can only watch keystrokes, and a scan looks exactly like you typing on the Tickets page.
+
+Except for one thing: speed. A scanner types the whole code in a few milliseconds per key. A person, even a very fast one, leaves well over 60ms between keys most of the time.
+
+So instead of trying to recognise scans, the listener simply forgets anything slow. Every key that arrives more than 60ms after the last one wipes the buffer. Human typing never gets to build up a code: by the time you’ve pressed the third key, the first two are gone. A scanner’s burst slides straight in, Enter arrives, and if what’s there reads as a label code (T plus a number, or D plus a device ID), the app opens it.
+
+There’s no mode, no “scan now” button, and no timer running in the background. It’s one subtraction and a reset. The T in front matters too: scanning an old legacy label, which holds only a bare number, does nothing rather than opening some random ticket that happens to share the number.
+
+The label test proves both sides: the same T3 sent 8ms apart opens the ticket, and 150ms apart it doesn’t.
+
+I thought this was super cute, and I’m thrilled I asked!",project_showcase,AI-assisted; reviewed; code quotes verified against original post
+"I built a free windows app meant for building and running modded (or vanilla) Minecraft servers!
+
+I host Minecraft servers for friends on my own PC. A lot of modpacks don’t come with server files, and setting them up by hand is a pain: picking the right loader and Java version, removing mods that only work in the game, fixing crashes. So I built an app to do that for me. I originally made it for myself, but it turned out well enough that I wanted to share it.
+
+What it does
+
+- Search for a modpack (or use a .zip/.mrpack file) and it builds a working server: it downloads the mods, installs the loader, picks the right Java and removes client-only mods.
+- Start and stop servers, see the console, live memory use and tick speed, and the addresses friends need to join.
+- If a server crashes, it explains why in plain words and can try to fix it with one click.
+- There’s a Mods tab that warns you when a mod is client-only or made for the wrong version, plus easy operator and whitelist management.
+- You can run several servers at once.
+
+How I built it with Claude
+
+I’m not a programmer, so Claude Code did all of the coding. My job was deciding what the app should do, testing it on my PC, and passing along bugs my friends hit. The workflow went like this:
+
+- Plain-language requests. I described what I wanted the way a user would. For example: “the save button should always be visible instead of having to scroll down”, “add a warning if someone leaves settings without saving”, or “make it so you can right-click a server to delete it or edit its properties”. Claude turned those into code and asked when something was unclear.
+- Bug reports pasted straight in. When a user got an error like [WinError 87] The parameter is incorrect while downloading a modpack, I pasted it in. Claude found the cause (a “:” in the file name, which Windows doesn’t allow), fixed it, and changed the app so errors come with step-by-step instructions.
+- Testing before every release. Claude built a fake Minecraft server and a test setup, then used Playwright to click through the real interface automatically (create a server, start it, crash it, fix it, add mods). It also used Wine to build and test the Windows installer, including updating from older versions and uninstalling.
+- Code reviews. I periodically asked it to “double check everything for bugs”. It used sub-agents to review different parts of the app in parallel, and that caught real issues before users hit them.
+- Releases. It set up GitHub Actions so that adding a changelog entry builds the installer and publishes a signed release, and the app updates itself.
+
+The app is a single Python file with a native Windows window. Everything (code, tests, release setup and the demo video) was done through Claude Code.
+
+Try it (free)
+
+It’s completely free and open on GitHub. Download MinecraftServerManager-Setup.exe from the Releases page and run it (Windows only):
+https://github.com/ricoism/minecraft-server-manager
+
+I’d love feedback, and please tell me if you find bugs or have ideas!
+
+(App demo video also made by Claude!)",project_showcase,AI-assisted; reviewed
+"Claude Code built a physically accurate black hole renderer in raw WebGPU, and checked its own physics
+
+Try it: https://kerr-black-hole-roan.vercel.app
+
+I gave Claude Code (Opus 5.5) one brief: a spinning black hole ray traced per pixel in WebGPU, in a single HTML file, holding a steady 60 fps on my M3 Pro. I left the design and code to it, and gave feedback after trying it.
+
+What impressed me most was how it checked its own work:
+
+- It wrote a double-precision copy of its shader's math, plus an independent integrator, and compared them. Light rays agree to about 0.01°, and the shadow matches the exact published formula to about 0.02%.
+
+- It screenshotted the page in headless Chrome from several angles and compared them against the EHT image of M87* and the Interstellar renders.
+
+- It ran scripted camera flights measuring every frame's GPU time. That's how it found that macOS lowers the GPU clock under light load, which trapped the resolution low, and fixed it.
+
+My feedback rounds: orbit-only controls, a truly black sky with sharper stars (the first version looked grey), and fewer ray steps by default.
+
+Result: one 119 KB HTML file, no libraries, 60 fps at native resolution on a MacBook.
+
+Code: https://github.com/SkyWalkerPS/kerr-black-hole",project_showcase,AI-assisted; reviewed
+"I asked Claude for ""a kawaii effect when I click"". My video editor had no such effect. Now it does.
+
+I maintain OpenScreen, a free and open source screen recorder and video editor (MIT, Windows / macOS / Linux).
+
+Since 2.1 there's no catalog for visual effects. You describe what you want, Claude Code writes it as a small GPU shader through OpenScreen's MCP server, and it lands on the timeline as a clip. Same pixels in the preview and in the export.
+
+Claude was involved twice. Most of the feature itself was built with Claude Code: the shader contract, the GPU passes on Windows, macOS and Linux, and the MCP tools. Then, in this video, Claude uses those tools to write the effects.
+
+In the video I typed three short requests on three themed sites:
+
+- ""kawaii effect when I click""
+- ""laser effect when I click""
+- ""8-bit explosion when I click""
+
+None of these existed before. There's no ""hearts burst"" or ""orbital laser"" preset hidden somewhere, Claude wrote the code on the spot. The effect knows where each click landed, where the recording sits after zooms, and the time, so it can react to the click and match the page.
+
+A few details:
+
+- Most effects compiled on the first try. One got refused because Claude named a parameter target, which is a reserved word in WGSL. It read the compiler error and fixed it.
+- I asked for one revision (bigger hearts). Claude checks its own result by pulling frames from the editor before exporting.
+- All three are in the ""light"" cost tier, so they don't slow the preview.
+- Once an effect is in the project, you get sliders for its settings in the editor. You never have to touch the code.
+
+It's free, no account. Repo: https://github.com/getopenscreen/openscreen
+
+Curious what you'd ask it for.",project_showcase,AI-assisted; reviewed
+"I launched a Minecraft server host without writing code by hand. One Claude Code session runs parallel cloud sessions, and every mistake became a rule
+
+Cubepals went live today. You make a Minecraft server in a few choices, send friends the address, and it sleeps when nobody plays and wakes when someone joins. Free to try (20 hours, up to 2 a day).
+
+I didn't write the code. Claude did: 535 merged PRs and over 1,000 commits across six repos in 4 weeks, from about 300 task briefs. My job was deciding what to build, testing it as a player, and saying no.. A LOT😄!
+
+Here's the setup:
+
+The shape
+
+- One local Claude Code session is the manager. It researches, writes a brief per task, and launches each as its own cloud session. Each cloud session does one job, follows the rules, opens a PR, and stops
+- A plain script polls GitHub, not the model. It wakes the manager only when a PR changes, so waiting costs nothing.
+- Another script sees a red CI check and tells that session to fix its own PR.
+- The manager reviews and merges. Production only takes commits that passed a nightly run on a real staging environment.
+
+The rules, and where each one came from
+
+The manager keeps a rules file and about 120 memory notes. Hooks print the rules at every session start and after every context compaction, so they survive long sessions. Almost every rule comes from something that went wrong once:
+
+- An agent ran pkill -f cat and quit every app on my Mac. Rule: never kill processes by pattern.
+- A run sat 13 hours waiting on one permission prompt for rm. Rule: no commands that can prompt when I'm away.
+- Sessions said ""all checks pass"", then CI failed. Rule: run CI's exact commands before opening a PR, and ""done"" means main is green, not ""the session said so"".
+- The manager burned most of a 5-hour usage window by reading whole diffs into its own context. Rule: it reads short script summaries, and PR bodies are capped at a page.
+- ...and so on. Every mistake becomes a new rule, and where it can, a script or hook enforces it, so it doesn't depend on Claude remembering.
+
+The rule that changed the most
+
+The manager kept stopping to ask me ""should I merge this?"" Now a hook rejects any reply that waits on me for something the rules already cover. Only four things come to me: money💰💳, anything irreversible, legal🚔, and posting as me (like this post). Everything else it decides and tells me after.
+
+What I'd tell anyone trying this
+
+Parallel sessions are so freaking useful. The real work is keeping them out of each other's way and keeping the manager cheap. When something breaks, write the rule and make a script enforce it. Don't trust memory, they forget all the time.
+
+It's open source: github.com/cubepals/cubepals
+
+Happy to answer anything about the setup.
+
+cubepals.com/",project_showcase,AI-assisted; reviewed
+"Claude picks Powerball numbers! Poorly 😂
+
+I built a system where Claude picks the Powerball numbers for each drawing and gives a reason. No random number generators, Claude has to make its best guesses.
+
+Claude gets sad, then desperate after many losses. It makes excuses when it loses. It also gets happy for wins, and even has a party for a big win.
+
+It keeps a history and logs its picks ahead of time on GitHub.
+
+So far 0 numbers matched! But tonight is a new night.
+
+How Claude Code helped: I built the whole thing with Claude Code (the site, the Python scoring script, and a GitHub Action that scores each drawing the morning after). Claude Code also runs it. Every Monday, Wednesday and Saturday morning it picks five numbers and a Powerball on its own, writes one sentence on why, and pushes the pick to GitHub hours before the drawing. A script checks the official results afterward, so Claude never does the math. Claude writes its own reaction after each drawing too, and its mood on the site comes from its recent wins and losses.
+
+Check it: Free to view, no signup, and no real tickets are bought: https://design-wins.github.io/Claude-picks/",project_showcase,AI-assisted; reviewed
+"I built Tacit, os based on arch linux with claude code opus 5.5
+
+I built Tacit, a free operating system for Intel and AMD PCs, on top of Arch Linux. The project includes a custom desktop, its own applications, an installer, background updates, an app store, and Thyris, a browser based on Chromium.
+
+Claude Code was part of the engineering workflow throughout development. I used it to investigate specific bugs, compare architectural options, make focused code changes, and work through test results. I provided the product direction and constraints, reviewed the proposed changes, and evaluated them in the running system.
+
+One example was a browser window where the tab appeared to clip into the frame on workspace 2. I asked Claude Code to inspect the live window state and trace the cause. It identified the corner-rounding setting, adjusted it, and verified the resulting property. For broader decisions, I asked it to compare Qt WebEngine, Electron, and a Chromium fork against the machine’s memory and performance limits, as well as the ongoing cost of maintaining each option.
+
+That same cycle applied to system work: investigate the existing behavior, make a targeted change, test the result in a VM or on the machine, then refine it based on what the test showed. Claude Code also helped revise the project website to distinguish Tacit’s components from the Arch Linux base.
+
+Tacit is free to try. You can boot it from a USB drive without changing your existing installation; installation is optional.
+
+Download: https://tacitos.co
+
+Source: https://github.com/ciscobugger/tacit",project_showcase,AI-assisted; reviewed
+"Claude Code edited my product video, and I'm honestly surprised how good it is
+
+I built a Mac app with Claude Code over the last month, and for the launch I asked it to make the video as well. No video editor, no After Effects. It wrote each scene as HTML, animated it, mixed in the music, and rendered it with HyperFrames. This is version 5, after one day of me saying things like ""the text overlaps the panel"" and ""make both sides use the same clip so the comparison is fair"".
+
+The app is CallLane: it stops macOS from turning your music down during calls, and keeps AirPods in high quality while you dictate or call, by using the Mac's mic instead of the AirPods mic.
+
+Some context: I only started using Claude about 6 months ago. Claude Code wrote most of the Swift app and the Core Audio driver. My job was mostly testing on real calls and deciding what the thing should do.
+
+If people are interested I can write up how the video pipeline works (it's just HTML scenes plus a render step).",project_showcase,AI-assisted; reviewed
+"I built a Claude skill to find genuinely remote jobs posted on LinkedIn in the last 24 hours across all 50 US states, by reading the actual job descriptions.
+
+“Remote” can mean fully remote, hybrid, remote within certain states, or just a company benefit that doesn’t apply to the role.
+
+I built a skill with Claude Code to check the actual job description and show the sentences behind its judgment.
+
+The video shows a search for Product Manager jobs posted in the last 24 hours across all 50 US states plus DC:
+
+- 868 postings collected
+- 215 duplicates removed
+- 147 had no wording about working location or arrangements
+- 501 went through the remote check
+- 35 passed the criteria for that run
+
+Passing doesn’t mean “work from anywhere.” For this run, I allowed location and work-authorization restrictions, but displayed them alongside each result. Those criteria can be changed for your own search.
+
+One example in the video says “100% remote” but also requires an active Secret clearance. A remote label alone wouldn’t tell you whether you could apply.
+
+How it works
+
+Code removes duplicates and extracts sentences around remote-related keywords, including surrounding context. A model evaluates those passages against configurable criteria:
+
+- Remote, hybrid, or on-site
+- Where you can work from
+- Work authorization
+- Time-zone requirements
+- Travel and office attendance
+
+Each result includes the supporting sentences. Missing information stays “not stated,” so you can distinguish what the employer actually wrote from what remains unknown.
+
+What I learned building it with Claude Code
+
+The important part was defining what should count as evidence. “We offer flexible working” is different from “this position is fully remote.” A company-wide policy also doesn’t necessarily describe this particular role.
+
+I built the workflow with Claude Code, then refined the criteria by reviewing its decisions against the source text. Extracting relevant passages before model evaluation keeps the input smaller, although it can miss restrictions elsewhere in the description. It’s a screening aid; I still review the full posting before applying.
+
+The project is free and open source, runs locally, and uses your own Claude/model access. The search role, locations, keywords, and pass/fail criteria are configurable.
+
+What wording would you use to test this? I’m especially interested in ambiguous remote policies or contradictory requirements that could trip it up.",project_showcase,AI-assisted; reviewed
+"People don’t praise Haiku 5.5 enough
+
+it’s the first time i haven’t hit limits as a free user, even during heavy, long chat sessions. i used to have claude pro mainly so i could study without interruptions and get more usage with sonnet 5/5.5 , but now claude haiku 5.5 dropped and it’s genuinely great for the price. i don’t even feel the need to renew my claude pro subscription anymore because haiku is more than enough for most of what i do.
+
+It understands my messy handwriting and notes and just outputs the stuff I should know and doesn’t do the long ass outputs like Gemini/ChatGPT it’s like talking to a fast cheap version of opus 5.5
+
+And the fact that Claude makes it 90% fucking cheaper when you’re under 100k context is actually insane. Like, the value you get for the price is ridiculous, especially when you’re using it for Claude chat and don’t want to constantly worry about hitting limits or burning through your budget.
+
+(I start a new session every ~1 hour to stay within the <100k context pricing unless I need it to remember stuff earlier. )
+
+Honestly, being able to use a model this good without feeling forced to pay for a pro subscription is a massive W. I saw many people hating on it on Claude Code, but there’s no praising for it in normal Claude chat.",opinion_feedback,AI-assisted; reviewed
+"Same prompt, 4 coding agents: build a 3D car configurator from scratch. Which one would you ship?
+
+I gave Opus 5.5, Sonnet 5.5, Haiku 5.5 and Codex (Sol 6.1) the same prompt: build a 3D car configurator in the browser, all procedural, no 3D models or textures. Fresh empty folder each, 40 minute cap, all four could screenshot their own work.
+
+Cost (API list prices) / time / finished: - Opus 5.5: $5.76 / 40:00 / no, hit the cap - Sonnet 5.5: $2.12 / 33:09 / yes - Codex Sol 6.1: $0.83 / 35:14 / yes - Haiku 5.5: $0.38 / 17:07 / yes
+
+Opus built the car that looks most like a real car, but it never finished on its own. Haiku was 15x cheaper and done in 17 minutes, with a much rougher car.
+
+Caveat: one run each, so this is a look at what each one builds, not a benchmark.
+
+Which one would you ship, and would the Opus car be worth 15x the cost to you?",opinion_feedback,AI-assisted; reviewed
+"I benchmarked Haiku 4.5 and 5.5 against GPT-6 Luna, Gemini Flash-Lite and two decision models on 1,000 support chats
+
+I ran 6 models on the same 1,000 customer-service chats (public ABCD dataset), 7 questions each, scored against the store's system logs. Both Haikus at default settings, same prompt, structured output.
+
+Claude results:
+
+- Haiku 5.5: best of the cheap LLMs on ""how far did the agent go"" (91.6%), perfect on promo codes, best handoff score (F2 0.98). It beat the decision model Jev on call reason (+4.0 pts) and resolution (+2.3), both surviving correction for 42 comparisons.
+ - Cost: Haiku 5.5 is $0.14 per 1,000 chats vs $2.83 for 4.5. About 10x is list price; prompt caching doubles it (4.5 can't cache prompts under 4,096 tokens).
+ -Weak spot for both: ""was identity verified?"" ~380-390 false yeses. They read ""may I have your name"" as verification.
+
+Notebooks and every call: https://github.com/CaffeinatedSoftwareLLC/AI-Data-Bench
+Not sponsored. Constructive feedback welcomed.",opinion_feedback,AI-assisted; reviewed
