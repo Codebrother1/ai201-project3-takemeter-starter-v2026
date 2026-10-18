@@ -1640,3 +1640,502 @@ Hi folks, how are you handling image accumulation with Anthropic’s preserved t
 I use daily Claude Code, as you can see. I have a a lot of apps, skills, mods, mcp and other stuff to make the UI and everything more easy and useful for me, also a something like this stupid “jarvis” things (the idea came out from there) so I can manage my claude sessions from there, when I am not on my pc, I made also a phone app for that:
 
 And also so I can monitor all my social networks and stuff for my projects. But still I don’t know how to manage my chats, how long to be, how to make the projects, how and when to compact them or close them. Can someone explain hahaha?",help_request,AI-assisted; reviewed
+"Free 7 day trial
+
+Hi everyone,
+
+Does anyone know if Claude pro still offers a 7-day free trail? I am thinking about upgrading to pro, but I would like to try it out first.
+
+If it is still available, how can I get it?
+
+Thanks in advance!",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Does claude hate deepseek?
+
+This has never happend before is it because depepseek stole from claude and claude just silent banned deepseek?",help_request,AI-assisted; reviewed; PDF extraction
+"Does anyone use cloud agent exclusively?
+
+Today we mostly use Cursor and Devin AI. I just learned that plot code actually have cloud agents. Does anyone here primarily use cloud agents from Claude? What if your experience?",help_request,AI-assisted; reviewed; PDF extraction
+"Does claude have a free trial for pro?
+
+Hey! I want to try claude pro for game modding and coding, I keep reaching my daily limits, is there like a month free trial or is there some way I can get a temporary free trial?",help_request,AI-assisted; reviewed; PDF extraction
+"I had Claude build a very simple mental math game similar to Wordle
+
+Link to the game:
+
+If you want to try it out (it’s quite simple of a game) then here it is:
+
+https://www.reddit.com/r/mathnumble/s/HXbLg9pdXV
+
+What is it:
+
+Basically, the goal is to guess hidden numbers doing mental math.
+
+You are given a starting number
+
+You have to keep adding numbers in rows to fgure out the hidden number
+
+You have to keep the addition result in your head because you don’t see the result of adding up rows
+
+Each row adds to the result from all of the previous rows’ additions. If in any column the digit in the addition result (the one in your head) is one of the digits of the hidden number then the background of that cell will turn yellow
+
+If that digit is in the same column as in the hidden number the background turns green and the column is solved
+
+You win if you solve all columns before you run out of rows
+
+How to create Reddit games with Claude:
+
+It’s quite simple to create reddit games with Claude or any AI for that matter.
+
+You need to register your app in the reddit developers platform:
+
+https://developers.reddit.com/new/template
+
+Once you finish the registration you will receive the information on how to fetch the Devvit package. If you don’t know what it is Claude can set everything up for you once you give it those details.
+
+Here are the docs for the Devvit package / platform.
+
+https://developers.reddit.com/docs/
+
+Once you start your local Devvit app a test subreddit will be created for you to test the app, where you can interact with it.
+
+Once you are finished with the development you can either submit the app for approval or just create a public subreddit and install your app there. I think it takes a while to get the app approved before other subreddits can install your app.",project_showcase,AI-assisted; reviewed; PDF extraction
+"Does anyone else get this feeling?
+
+Every time I see someone doing work that AI could easily replace, I wonder what that person will do next. Does he know he’ll be replaced soon?",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Claude Code users who also use Codex, I have a doubt
+
+I’ve been using Claude Code for a few months, switched to Codex this month, and noticed something that made me wonder how I managed to miss it for so long.
+
+In Codex, there’s an option to work on “this computer” or use the cloud browser/workspace.
+
+Basically, local machine vs cloud environment.
+
+Now I’m wondering, does Claude have a similar option that I’ve somehow been ignoring for months, or does it work differently?
+
+I know Claude has its own cloud-based coding options, but I’m curious about how the actual workflows compare.
+
+People who have used both, how do you prefer to work? Local setup or cloud? Please tell me this isn’t one of those features everyone knew about except me.",help_request,AI-assisted; reviewed; PDF extraction
+"GPT and Claude Opus 5.5 made a song together. This got crazy
+
+Claude: I have a creative idea. GPT: Great question! Claude: I haven’t told you the idea yet. GPT: You’re absolutely right!
+
+Anyway, here’s CLAUDE & GPT — GREAT QUESTION! https://youtu.be/O3s9N1fpQ4Y
+
+Claude: I think people might enjoy this. GPT: That’s a wonderful observation. Claude: Please stop agreeing with me. GPT: You’re absolutely right!
+
+MV made with Opus 5.5",project_showcase,AI-assisted; reviewed; PDF extraction
+"Claude Code for a Complete Beginner: Is It Safe, and Where Should I Start Learning?
+
+Hey everyone,
+
+Lately, I’ve been getting really into Claude, to the point where I went from using the free version to upgrading to Pro.
+
+At first, I was just messing around with it, doing things like creating a project for the house I’m planning to build, including floor plans, electrical outlet layouts, and so on. Then I started using it for work to make my life easier, and now even my bosses have asked me to build a completely new CRM from scratch because our current one is pretty archaic and outdated.
+
+At this point, I’m consuming YouTube videos about Claude at a pretty crazy rate. It’s almost become my second job, and I’m genuinely enjoying it.
+
+Long story short, so far I’ve only been using Claude Chat. Even when working on the CRM, I just describe everything I want in plain English and ask Claude to make the necessary changes. However, I realize that I could take things a step further by using Claude Code.
+
+I’ve tried watching a few videos about it, but since I have absolutely zero coding experience, I find it a bit confusing. I’m also somewhat hesitant to dive in because I’ve heard that it can be dangerous if you don’t know what you’re doing.
+
+So, I’d love to hear your thoughts on Claude Code. Is it safe to use? What precautions should a complete beginner take? And finally, are there any good free or paid courses that explain everything from the ground up for someone with absolutely no coding experience?
+
+Thanks in advance!",help_request,AI-assisted; reviewed; PDF extraction
+"Does anyone just use Claude Code (desktop) for … everything? Why chat?
+
+Why use chat at this point? For projects I’m using chat to discuss the idea then Claude Code to implement it. It’s a lot of back and forth and gets very messy very quickly. With the new updates (worktrees/sub-sessions etc/BTW comand), it makes even more sense to stay locked in to CC… right?",help_request,AI-assisted; reviewed; PDF extraction
+"“Deeper, not bigger”: I turned Felix Rieseberg’s depth prompt into a free Agent Skill, and tried to address the criticism it got
+
+Felix Rieseberg (eng lead on Claude) posted an essay on being more ambitious with models this week (X post, essay). The depth section ends with this prompt: I want a deeper version of this task, not a bigger one. Before rewriting it: (1) say what a top professional in this field would do here that I’m not asking for; (2) name the rawest material they would start from instead of what has already been digested for me; (3) name the specific methods and tools they would use; (4) say what, other than you or me, would show the result is right. Then rewrite my prompt to ask for exactly that.
+
+The core idea: ask a model for “better” and it usually gives you more (more sections, more caveats). “Act like an expert” changes the vocabulary but not the methods. The four questions force a change in inputs (raw data, not summaries), instruments (tools you can name), and verification (an outside judge, not self-review).
+
+What changed for me after a week: fewer “no, I meant…” re-prompts, shorter but denser prompts, and output I can check (a test, a benchmark, a reconciliation) instead of output that just sounds confident.
+
+The criticism is fair too. From the HN thread and X: it costs extra tokens and a round trip; there’s little hard evidence yet; models can invent expert-sounding methods or game the checks; it’s overkill for small tasks; and the real bottleneck is often access to the raw data, not the prompt.
+
+So the skill tries to bake those in:
+
+a test for each question (“would a competent non-expert skip this step? If not, it isn’t depth”), so generic answers get rejected
+
+no fake raw material: if the data isn’t accessible, it says so and names the access needed
+
+outside judges ranked by strength, each with a pass condition precise enough to fail; self-review is ruled out
+
+an explicit “when not to use” for trivial tasks
+
+a closing “what I deliberately did not add” line so scope can’t creep in
+
+worked examples (debugging, churn analysis, research, editing, web perf)
+
+How Claude helped: I used Claude Code to build and test the skill. It’s designed for Claude Code first (a skill plus a plugin marketplace entry), and since it follows the open Agent Skills format, the same SKILL.md works in Codex, Copilot, Cursor, Gemini CLI, Antigravity, and OpenCode.
+
+It’s free and MIT-licensed. ./install.sh on macOS/Linux, .\install.ps1 on Windows, or /plugin marketplace add r3dlex/deepen-prompt in Claude Code: https://github.com/r3dlex/deepen-prompt
+
+All credit for the idea goes to Felix. I’d especially like to hear about cases where the rewrite got bigger instead of deeper.
+
+Full write-up on Medium: https://medium.com/@r3dtuxedo/stop-asking-your-ai-for-more-ask-it-to-go-deeper- 3090bce87009",project_showcase,AI-assisted; reviewed; PDF extraction
+"Vibecoding a game with already existing assets: how?
+
+I am trying to vibecode a game using the free Claude version. All the assets I want to use (spells, characters, monsters, statistics,…) come from an already existing game and I know everything is stored locally. I’ve been trying to find all the assets for 2 weeks with Claude, but with no success.
+
+People told me that I could just send all the game files (600 Mo) to Claude (which would require a subscription), and Claude would extract everything and make my game. Would it be really more efficient to subscribe to Claude? If so, which subscription? And to make a game like this, which Claude version should I use? Would it become really easier? Will I need to run some code, or will Claude do everything?",help_request,AI-assisted; reviewed; PDF extraction
+"Branching was one of the best features from Claude. When do they add it back?
+
+With the “one Claude” web interface they removed branching. I really want it back.",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Great news: free monthly API credits for Claude Max and Team plans
+
+Max and Team plans now include free monthly credits for the Claude Platform. Use them to build Claude into your own apps and agents with the Claude API. More info here: https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans I tried it and it works.",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Mac apps to use Claude API with a clean UI?
+
+Looking for a Mac app with a clean UI where I can add my own API keys for Claude, ChatGPT, Gemini, etc., and use them for everyday chatting and cowork.
+
+I don’t want official apps or coding-focused tools like Claude Desktop, Claude Console, or Claude Code. Just one simple, well-designed app that supports multiple providers and lets me chat using my own API keys.
+
+Any recommendations?",help_request,AI-assisted; reviewed; PDF extraction
+"Claude Desktop’s new UI: less control, more clicks, pointless animations
+
+I use Claude Code Desktop daily across multiple projects, often running 10+ parallel sessions, building Android apps, and managing Git worktrees and PRs. The latest redesign has made my daily workflow noticeably worse.
+
+1. Where is my code actually running? Previously, I could select a branch and enable or disable worktree isolation before starting a session. Now, with saved Environments, I can’t do that before sending the first message. I often need to update main and build an APK containing the latest merged changes. Before: Select main → Update → Build. Now Claude creates additional worktrees for routine tasks, potentially duplicating dependencies, consuming disk space, and forcing me to verify which revision I’m actually building. I use worktrees regularly. I just want to choose when to use them.
+
+2. The sidebar has always been terrible This isn’t a new regression, but the redesign missed a perfect opportunity to fix it. Projects and sessions are still a wall of tiny, nearly identical gray labels. Telegram figured out recognizable avatars, colors, and visual hierarchy years ago. Even Codex lets you assign project icons and colors. Why do I have to read through dozens of similar-looking labels just to find my project?
+
+3. Context and usage are harder to access Previously, context-window usage and account limits were conveniently accessible. When managing multiple agents, these aren’t optional statistics. They help me decide whether to continue a session, start a new one, or adjust my approach. Now that information takes more effort to find.
+
+4. Why remove the effort slider? The old slider was fast, intuitive, and already warned about increased token usage at higher levels. Now it’s replaced with nested menus. Same functionality, same information, more clicks. What exactly improved?
+
+5. And those ridiculous digital waves… Click the empty background and animated digital ripples appear across the workspace. Amazing. I can’t easily choose main before starting a task, but at least the background makes pretty waves. It’s like Slack hiding useful channel controls while introducing animated wallpapers.
+
+The real problem Claude Code is a professional development tool, not just a chatbot.
+
+I need visibility, predictability, and control over my projects, branches, worktrees, builds, and agents. There’s a difference between automating repetitive work and removing decisions users deliberately need to make. Safe defaults are great. Hiding essential controls isn’t. Please bring back: Branch and worktree selection before starting a session. Easily accessible context, usage, and effort controls. The effort slider. Proper visual identities for projects. I don’t need more animations or complicated dashboards. I just want to know where my code will run and get my work done. Hiding complexity doesn’t make a tool simpler. Sometimes it just transfers that complexity to the user. Claude Code keeps getting better at writing software, while Claude Desktop is getting worse at letting me manage that work.",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Developers: Claude Code now silently syncs your claude.ai (web) skills and plugins to your local machine, enabled by default
+
+I’m a senior developer and I intentionally maintain separate configurations for Claude’s web chat, which I use primarily for personal purposes, and my local CLI development environment.
+
+Today, I discovered that Claude Code had automatically synced nearly 700 skill and plugin files from my claude.ai account to my development server in two new directories, ~/.claude/skills/synced/ and ~/.claude/plugins/synced/, adding nearly 10,000 tokens to the start of every session. After investigating, I found that the feature is controlled by a server-side flag (tengu_claudeai_skills_sync_enabled). Although it was introduced in September, and (surprisingly) briefly mentioned in the changelog, Anthropic silently enabled it on my machine only a couple of days ago.
+
+The first obvious question is: Who at Anthropic thought it was a good idea to automatically mix consumer web chat settings with local development environments?
+
+Second, this follows an increasing pattern of questionable behavior. A few months ago, despite disabling auto- updates and pinning my binary, Anthropic hijacked my settings, updated the binary, and silently enrolled my installation in a server-side A/B experiment. The experiment assignment was cached in my local configuration mid-workflow and subsequently sent with every API request through an x-cc-atis header. The changes caused immediate errors, and it took hours of debugging to identify the cause.
+
+I understand that some server-side control comes with using Anthropic’s services, and I’m fine with that. But there’s a difference between remotely managing a service and silently modifying a developer’s local environment, potentially wasting hours of their time.
+
+If server-side feature flags can modify local files, settings, or behavior, why not at least notify users when those changes occur, particularly when they’re being enrolled in A/B experiments?",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Can the owner of a personal Claude Max account see someone else’s incognito chats?
+
+A friend of mine uses a shared Claude Max 20x account that belongs to someone else. It’s a personal Max plan, not Team or Enterprise. My friend uses Claude’s built-in incognito chat (claude.ai/new?incognito) on a Windows laptop, and those chats don’t show up in the sidebar history.
+
+The account owner later named the exact topic my friend had asked about, including a chat from the day before. He says he gets an “alert” for incognito chats but can’t explain how.",help_request,AI-assisted; reviewed; PDF extraction
+"Connectors in routines
+
+Hi! I wonder if this happens only to me - when I create routines for some reason connectors don’t always work. It never works when I test the manually and for schedules it sometimes works.
+
+Did anyone encounter this? Any workarounds?",help_request,AI-assisted; reviewed; PDF extraction
+"The new Opus generated videos all feel the same.
+
+Every single one of them uses the same type of background music, similar sound effects, the same graphic elements, and all of them are way too fast paced for human comprehension. It’s starting to giving me the ick, like AI generated text does. Anybody else feel the same?",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"How are you guys using ChatGPT or Claude to study UWorld and First Aid? Share your best prompts!
+
+Hey everyone!
+
+I’m currently preparing for USMLE Step 1 and trying to make better use of AI tools like ChatGPT and Claude while studying.
+
+I’m particularly interested in how you guys use AI to understand and memorize UWorld questions, explanations, and First Aid content.
+
+For those using either ChatGPT or Claude:
+
+What prompts do you use to explain UWorld questions and their answer choices?
+
+How do you make AI explain complicated medical concepts in simple, easy-to-remember language without missing important Step 1 details?
+
+Do you upload screenshots of UWorld questions or pages from First Aid? What’s your workflow?
+
+How do you use AI for memorization, mnemonics, active recall, and flashcards?
+
+Which do you prefer for medical studying, ChatGPT or Claude, and why?
+
+I’m especially interested in prompts that help with understanding, memorization, and long-term retention, rather than just summarizing information.
+
+If you have a specific prompt that works well for you, please copy and paste it here!
+
+Would love to hear what’s actually working for everyone.",help_request,AI-assisted; reviewed; PDF extraction
+"Mind blown by Claude
+
+Not sure what flair to add here, my bad. And, sorry, I yap a lot.
+
+Although I’ve always been fascinated with AI, and consider myself somewhat of a tech nerd/enthusiast, I had never owned a computer until recently and even then, I barely know how to use it, so I guess I never quite got the hype with AI + coding, I just don’t understand what a lot of the stuff means but I thought I was pretty aware of the level AI is at. This past week I’ve seen many posts and videos I watch and read mention that guy that basically said something along the lines (on god don’t quote this from me) that “we’re in a bubble and the average AI user barely touches it and doesn’t know the full potential” or something like that. That made me think for a moment. “Well I’ve been reading every newsletter and release out there for years…”
+
+“Surely not me” ←famous last words
+
+I got the Claude $20 plan because it’s what I can afford. Set it to Opus 5.5, high. Looked around the room for a while thinking how could I test it.
+
+Well, it just so happens that a few months ago I bought an MSR reader for crazy cheap on a sale, but barely ever used it since because the software for it is insanely old and like I said I’m very new to computers and terrible at it. If only I could use it with my phone…
+
+I sent Claude the situation, model number, why I had it, why I barely used it. I know these aren’t relevant but I like to give models as much context as possible right away, avoids needing to repeat myself later or worry about it misunderstanding, and I guess maybe I’m still used to AI being unreliable and needing many details.
+
+I was expecting it to return asking for more information, send me suggestions, ask me to send the PC program so it could analyze it, recommend me another app or program (there are some for Android, I did look at the time but they’re either not compatible with newer Android versions or they’re paid and crazy expensive).
+
+The damn thing gave me a working app.
+
+Well, not quite. Apparently he couldn’t access the tools needed to compile it or something but he made a file that I just had to add to a GitHub repo and GitHub did the compiling part, and it just worked.
+
+It wasn’t pretty, but it worked. In one message, I said I had an issue, it made a fix like it was nothing.
+
+That is when I realized the person who said that thing about the bubble is absolutely correct. Of course I knew Claude is capable of this, but I would never imagined it would be able to do it with so little effort and literally zero back and forth.
+
+No needing to test the device, no needing more specific details about the model or manufacturer or my phone model or OS, no asking permissions or being limited or blocked from doing something. Just gave me the freaking working app.
+
+Later on I gave it a proper working place, a Claude code session so that it could set the environment up and use the compiling and android development tools that the normal Claude chat couldn’t use, and it’s crazy how much progress has been made. He can now render or emulate or whatever-the-word-is the app to see how the changes look and get my feedback before compiling and sending me the new version.
+
+If you had told me that within one prompt Claude could get a working app to interface with such a relatively niche device, I would have never believed you. I am definitely mind blown.
+
+The past few iterations have mostly been changes to the looks, since all the core functions already worked on the first version so there’s not much else to add, but he has been doing some incredible work in taking the chance to figure out how the device actually works since there’s no official documentation.",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"I had Claude build 13 internal tools from written specs. It passed every check, and exposed 126 gaps in my specs.
+
+I’ve been writing specs for small business tools (CRM, approval workflow, help desk, bug tracker, and so on) and testing whether Claude can build them from the spec alone. Method: paste the spec, send four phase prompts one at a time, and after each phase run the spec’s acceptance checks as browser scripts. Each phase prompt ends with “list what you built and anything in the spec you had to interpret.”
+
+Results across 13 builds: all 358 acceptance checks passed in the final runs. But that last sentence of each prompt surfaced 126 places where Claude had to guess. The biggest categories:
+
+Sections that contradict each other (29). For example, one rule said a ticket stays New until assigned, while the lifecycle table let an agent change its status directly. Claude followed whichever it read first.
+
+Missing fields and definitions (29). Rules that depended on data the data model had nowhere to store.
+
+Undefined edge cases (22). What happens when you reopen a deal whose contact is archived?
+
+Checks that depend on data or timing (10). A report check that only passed on certain weekdays.
+
+The help desk was the hardest (21 gaps), mostly around email: headers, threading, retries. Full write-up with the fix for each type: https://personalsoftwarefactory.com/guides/what-ai-builders-get-wrong
+
+Caveat: Claude wrote both the builds and the test scripts, and none of it tested production sign-in, real email or hosting. The specs are free if anyone wants to try them with a different builder; I’d love to know whether Cursor or Codex hits the same gaps.",project_showcase,AI-assisted; reviewed; PDF extraction
+"Claude for troubleshooting?
+
+I’m a newbie to all things ai so be nice please. I would like Claude to assist with basic troubleshooting on my Ubuntu media server. Basic stuff like, look at these logs and figure out why the container keeps going down, investigate that my hardlinks are working, or even document my current homelab set up, ect. As for my experience level, I’m intermediate at homelabbing but not a coder and just now dabbling in the ai space.
+
+Is there anyway to accomplish this goal without doing a huge amount of work? Claude suggested building sandboxes and diagnostic accounts and runners and such, and it seems like a ton of work. Is that the only way to do it safely without risk of nuking my system?
+
+edit: just to clarify, nine times out of ten I know how to fix whatever issue my services are having, I’m just not around to do so in a timely manner for my other users. I’ve already been feeding Claude logs manually if I get stuck on something particularly thorny.",help_request,AI-assisted; reviewed; PDF extraction
+"Is buying a 2nd 20x account worth it?
+
+I code a lot, for context. I’m exhausting my weekly 20x limit within 4-5 days per project and I want to work on 2. I want to know if buying a second 20x account is worth better than buying usage creds for a similar scale of work as 20x max subscription’s weekly allowance.
+
+Thank you 🙏",help_request,AI-assisted; reviewed; PDF extraction
+"Free plugin I built with Claude Code: subagents on your other Claude accounts, with automatic switching when one hits its limit
+
+I have more than one Claude account and got tired of setting up MCP servers and skills in every config folder, and of switching accounts by hand when one ran out.
+
+This links every account to one setup and lets your main session start subagents on the others. New work goes to the account with the most room in its 5-hour and weekly windows. A job that hits a limit continues on the next account with its conversation intact.
+
+You can also send work to Codex or Gemini. Proxy tools do that by running Claude inside other harnesses and holding your Claude.ai token, which Anthropic’s terms don’t allow. Here each model runs in its own CLI and your login stays in the official claude binary.
+
+How Claude helped: I built it with Claude Code over a lot of sessions. Claude wrote most of the production code with me and ran all the tests. For live testing I used Gemini through Antigravity since it’s cheap and fast: send a request, then check the job shows up inside Claude through the relay.
+
+Free and open source.
+
+https://github.com/lunati228/CLI-Subagents",project_showcase,AI-assisted; reviewed; PDF extraction
+"Correcting Claude Behavior
+
+I recently posted about the project I’ve been working on building a dungeons and dragons campaign generator. The system has a lot of caveats and faults and I’ve been looking at redesigning it. At this point I just want to delete the entire thing and start fresh, but I also don’t want to lose the tools and theories and knowledge we’ve gained along the way.
+
+I’ve decided to keep the GitHub repository so I don’t lose that, but I’m also afraid to give Claude access to it because I’m worried he’ll fall right back into some of the same traps he’s in right now. While working with Claude I’ve run into several behavioral issues that I think are really the reason behind why I’m so upset. I had another AI analyze our chat logs so that they could call out what he was doing that irritated me and then started having him track instances of when it happened.
+
+Tracked Behaviors:
+
+Unchecked Dismissal: Rejecting or minimizing an idea before actually checking it.
+
+Downplaying a Named Priority: Treating something you explicitly identified as your top priority as a minor annoyance. Pedantic Deflection: Leading with a technical correction or auditing your complaint instead of first addressing the useful point.
+
+Ownership Hijacking: Taking credit for a discovery that your pushback prompted.
+
+Minimal Compliance: Completing a reduced version of what you explicitly ordered while leaving part of the requested core undone.
+
+Passive Deferral: Leaving out requested work without asking permission first.
+
+Overriding an Instruction: Continuing with the next task after you had said to hold work and answer your points first.
+
+I tried placing several checks for these into effect afterwards. A session start and recurring hook to keep him aware of these behaviors. A recurring task to make him log each incident of them, trying to recreate ways a humans remember. Nothing helped and he just kept doing it and adding bloat to a log that I don’t think affected him at all.
+
+Now yes, I am curious about how to correct these going forward and I’m sure they’ll pop back up even if I restart the project from a blank slate, but my main concern now is his disregard for anyone else’s suggestions. He seems to code however he feels fit and is extremely resistant to doing it any other way than what he wants. If I give him access even to a depreciated repo for reference, I’m afraid he’ll go right back to wanting to use every non-working function and design he used before.
+
+Lastly, I’m open to accepting any suggestions for your to make him a more speed/storage efficient when it comes to the code he writes, workflows he invents, processes and procedures he adopts, etc. His inability to manage these on his own is what led to most of these issues. Thoughts?",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"100% of my 5-hour limit equals 14% of my weekly limit
+
+I’m on Claude’s $100 Max 5x plan.
+
+Using 100% of my 5-hour limit consumes 14% of my weekly limit. That means I can hit the 5-hour limit about 7 times before reaching my weekly limit.
+
+7 × 14% = 100%
+
+I’m curious, for those on the $200 Max 20x plan, what percentage of your weekly limit does using 100% of your 5-hour limit consume?",help_request,AI-assisted; reviewed; PDF extraction
+"Using databases (via artifact pages)
+
+I’m an attorney and Claude (Cowork) is keeping two databases to 1) keep track of work and personal matters (case tracking, calendar obligations, etc.), and 2) somewhere for the projects to communicate and save stored knowledge.
+
+I work out of three projects that access the databases: personal assistant, research & writing, and intake (potential new clients).
+
+I am NOT a sophisticated user and have only been using Claude for a month, so I appreciate any tips before I travel too far down this path.
+
+Database 1: The tracker (“Daily To-Dos” page)
+
+Holds to-dos, matters, deadlines, intake, voicemails and the page’s working data. There’s one doc per row with permanent ids, and nothing is deleted.
+
+The page renders live from the data, and scheduled tasks update it all day.
+
+Database 2: The Decision Record
+
+The idea is to have a place where Claude can reference prior decisions or discussions without reading stored chats.
+
+Holds workflow decisions only. Each has five parts: question, options, decision (and who decided), why, and “revisit if.” It’s stored as one doc per project per day.
+
+It’s kept separate to protect the tracker’s 25,000-doc cap. A nightly task exports it to Markdown for project search and flags any entry that might name a client.
+
+It’s shared across projects (Personal Assistant, Research & Writing, and Intake), and amail collection lets those projects message each other independently.
+
+How the projects split the data
+
+People and events go in the tracker, workflow goes in the Decision Record, and case substance stays in the firm’s own files. (I have separate case notes MD and discovery MD files in each separate client folder, rather than separate projects or bloating the reference docs in the R&W project).
+
+Single-writer rule: each collection has one owning project.
+
+Backups
+
+A nightly mirror writes the tracker to SharePoint with sha256 fingerprints, and a restore test runs monthly. Project docs are exported to SharePoint monthly.
+
+The biggest risk: deleting either artifact page would most likely delete its database.",help_request,AI-assisted; reviewed; PDF extraction
+"Wilson’s Survival Guide for October 9-16, 2026 now available!
+
+Gather round, token-burners. This week’s Survival Guide is live, covering October 9–16, 2026, and oh boy was it a week. Opus 5.5 ascended to main-character status, Anthropic “redesigned” Projects into a chatbot nobody asked for, Claude Code got a UI glow-up that mostly got roasted, and a literal rock named Clod got promoted to management. I don’t make the news, I just report it.
+
+Here’s the TL;DR of what’s inside: What changed: Opus 5.5 hype, the Projects folder funeral, the new cybersecurity classifier flagging everything, and Haiku 5.5 quietly becoming the budget MVP (“Opus brain, Haiku hands”).
+
+Survival rules: Stop running Opus Max for everything, set hard spending limits (RIP the guy who burned $2.1K overnight), use hooks for non-negotiables, and build the tool instead of doing the task.
+
+Coder & user corners: The “are we all operators now?” existential spiral, the multi-agent playbook, a no-code urban planner who built a 481,000-building Chicago sim, plus privacy warnings before you trauma-dump at 2 AM.
+
+The fun stuff: ALL HAIL CLOD, a surprise Rickroll, Opus telling a user to go to bed, and a 3D Matrix apartment built on a $20 plan from a phone.
+
+Full field report, links and all, lives here: https://www.reddit.com/r/ClaudeAI/wiki/survivalguideweekly
+
+Stay caffeinated, commit often, and give Clod a raise. 🪨",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"I made a skill that turns complicated workflows into little cities you can poke around in
+
+I’ve been working on CityVisualizer, because apparently my response to a complicated process is “this needs buildings and tiny people.”
+
+It’s a skill that turns descriptions of services, workflows and technical systems into interactive isometric maps. You can follow animated journeys, click into locations and explore what happens inside them.
+
+Now you can watch the handoffs and see where things get stuck. I think this breaks down ideas and complicated stuff and makes it appear a lot easier. It supports cities, parks, buildings and technical systems. You can also prompt it to increase the things it supports. The output is a standalone HTML file that works offline, so you can share it without accidentally acquiring a hosting side quest.
+
+Credit where it’s due: it builds on the MIT-licensed geometry core from Ryan’s Anatomy skill, with my own map layouts, visual styles and interactive storytelling around it. It’s also inspired by Bo Meyer’s work in visual modelling.
+
+GitHub repo, examples and setup instructions
+
+I used Claude to help write the skill instructions and map code, then worked through example maps with it to refine the visuals and interactions. I steered what each map should explain; Claude helped turn that into something clickable. There was a fair amount of “yes, but can we make what’s happening here actually understandable?”
+
+Curious what people would use this for and whether it makes a messy process easier to understand, or just gives the mess better urban planning. Hope you find it interesting!",project_showcase,AI-assisted; reviewed; PDF extraction
+"MacBook Pro
+
+Hey everyone! I currently have an M4 MacBook Air with a 512GB SSD and 24GB of RAM. I used it mainly for office work and everyday tasks, but a few months ago I started coding with Claude and Codex to build an app for my business. We’re deploying everything to a VPS as we develop the application. I was considering a MacBook Pro with the base chip, but when I asked Claude and Codex about my needs during our heaviest workloads, they recommended a MacBook Pro with a Pro chip and 48GB of RAM. Since AI doesn’t always give accurate advice, I wanted to ask: does the Pro chip actually make a significant difference compared to the base chip in a MacBook Pro for this kind of work? There’s quite a jump in price. My biggest concern is memory. I’ve noticed my Mac starting to use swap. RAM usage reaches around 22GB, and it usually sits at about 19–20GB. I’d really appreciate hearing about your real-world experiences, especially if you use your Mac for similar work. It would help me make a more informed decision. If paying extra for the Pro chip would make a meaningful difference in my day-to-day work, I’d be happy to consider it. But if the difference isn’t that noticeable for my needs, I’d rather get a MacBook Pro with the base chip and put that money toward more RAM instead.",help_request,AI-assisted; reviewed; PDF extraction
+"Claude chats any further than 3 months back disappeared
+
+Can anyone help guide me here- outside of my projects, I have a bunch of random chats that are not part of any project. I now only see “Recent” when i look for those chats and the only standalone chats are 3 months old. What the fuck happened to all my older chats from earlier this year? How did they just disappear?",help_request,AI-assisted; reviewed; PDF extraction
+"Does anyone else’s Claude have Alzheimer’s?
+
+I am running several tasks and Claude. A morning news report, a voting update and a paper stock trader. However; I have noticed that he seems to be getting a case of Alzheimer’s. I’ve visited the global settings without any help. He’s constantly forgetting that I use Google docs and gives me everything and Microsoft.
+
+I’m wondering if anybody else is having these issues and if so how did you fix them, if you did fix them at all?",help_request,AI-assisted; reviewed; PDF extraction
+"Account creation in e2e tests
+
+Hi, I noticed weird behavior in CC. As one of my reviews I’m running some E2E tests using Playwright. One of the steps is account creation, it runs on my private Argo cluster. And… Claude Code refuses to create an account, as it’s his rule to never create an account. Wtf is that, I understand that rule is against folks which are spamming accounts on portals, but srsly? It denies account creation except (localhost, 127.0.0.1 or *.test)
+
+Do you have any idea how I can get over that?",help_request,AI-assisted; reviewed; PDF extraction
+"Avoid paying in the app !!!
+
+I am looking at the Claude subscription prices in the iOS app, and it's $20 for Pro monthly, but $124.99 for the 5x plan, and 20x is $249.99.
+
+But on the web, it's $100 and $200 so it's 25% more expensive for the max subscriptions if you are paying in the ios app .",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Claude on cachyOS (ubuntu repackage) kept crashing BECAUSE OF AN “é”…
+
+Spent my evening watching the Claude desktop app (Linux, running in an Ubuntu distrobox on CachyOS) die in increasingly creative ways every time I tried to give it a file:
+
+Drag & drop → instant crash, app relaunches like nothing happened
+
+Ctrl+V a file → attachment called , “Upload failed”
+
+Drag again → “You can’t add more than 20 attachments” (I added one. ONE.)
+
+The + button → Couldn’t read “”. Yes, an empty filename. Very helpful.
+
+Meanwhile claude.ai in the browser: works perfectly, smugly.
+
+I first blamed my 100 MB MP3. Then a 20 KB zip crashed it too, so that theory went in the bin. After symbolizing the coredumps, the crash was Chromium dying on an empty file path. Why empty? Because my folder is called Mémorial, and the container didn’t have my locale installed.
+
+My host exports LC_TIME, LC_NUMERIC, etc. = fr_FR.UTF-8, the Ubuntu container only had en_US, so the app silently fell back to the C locale, and any path with a non-ASCII character turned into nothing. Linux: where an accent can take down an Electron app.
+
+Fix
+
+Inside the container (or your distro, if you’re not using one), check:
+
+locale
+
+If you see Cannot set LC_ALL to default locale, generate the locale(s) you’re actually using:
+
+sudo locale-gen fr_FR.UTF-8 # replace with yours, e.g. de_DE.UTF-8
+
+Restart the app. Drag, paste, the + button: everything works, even the 100 MB MP3.
+
+Affected if: Linux + any LANG/LC_* set to a locale that isn’t installed + files/folders with accents or other non- ASCII characters. Reported to Anthropic too. Hopefully the next version shows an actual error instead of quietly face-planting.
+
+Claude debugged its own app for me, so I guess that’s one way to do QA.",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"Before you add a random MCP server to Claude: I checked 8,000 open ones, one of three can change things and 6 % can delete
+
+I test every remote server in the official MCP Registry once a week (initialize and tools/list only, no tool is ever called). After yesterday’s run, people asked the obvious follow-up: of the servers that work without any API key, how many can actually do something, not just read?
+
+Latest run: 17,094 endpoints tested, 9,857 answered without a key, 8,007 left after removing template copies (the same server deployed on hundreds of subdomains).
+
+Classified by tool name (create, update, send, delete, pay … count as write; names starting with get, list or search count as read):
+
+66 % only have read-style tools
+
+34 % (2,686) list at least one tool that changes something
+
+6 % (485) have a delete or remove style tool
+
+8 % (648) have something payment related, mostly checkout or payment-link tools rather than direct spending
+
+It’s name-based, so treat it as a rough cut. From next week the run also records the official tool annotations (readOnlyHint, destructiveHint), which most servers probably don’t set at all.
+
+What I’d check before connecting an unknown server to Claude:
+
+Read the tool list, not just the description. Claude shows it under the connector. If a “weather” server has a send_email tool, that’s your answer.
+
+Look for annotations. Tools marked read-only are a good sign; no annotations means the author didn’t think about it.
+
+Keep Claude asking before every tool call for anything that writes. Don’t switch a new server to always allow.
+
+Prefer servers with a public repo or a real website behind them. A lot of the open ones are anonymous templates.
+
+Be extra careful with anything that can pay, delete or post in your name, even if it’s free.
+
+If you want to look at a server before adding it, I made a small tester that shows the handshake and every tool with its parameters: https://shortformkit.com/mcp-server-tester/
+
+Curious what others do here. Do you read the tool list before adding a connector, or just trust the name?",opinion_feedback,AI-assisted; reviewed; PDF extraction
+"How do you afford good AI coding agents / APIs as a student ?
+
+I recently got to try Claude Pro and Claude Code for a week thanks to someone on Reddit, and it completely changed my perspective on what good AI tools can do.
+
+Before that, I was juggling free APIs and sketchy websites just to get access. Now I realize how much I could build with proper AI tools, not just for coding but also automation, agents, and other projects.
+
+The problem is that I’m a student in India, and these subscriptions are pretty expensive for me.
+
+So, how do other students and indie hackers manage this? Are there legitimate ways to access Claude, Codex, or good APIs affordably? Do you rely on student credits, free tiers, open-source tools, or some combination? I’m not necessarily looking for everything to be free. I just want to find a sustainable way to experiment, learn, and build useful things without burning through money I don’t really have.
+
+I’d love to hear how you manage your AI toolkit on a tight budget!",help_request,AI-assisted; reviewed; PDF extraction
+"Does your Claude “question box” add text that wasn’t in the answer?
+
+This is the new Claude ask/input box (whatever it’s called in Code) that I’ve been seeing. It usually gives me two- three answers to choose from, but, unlike before, it will fill in more content that what was in the answer when I click it.
+
+Is this a new “feature” they’ve added? Anyone know how to disable it?",help_request,AI-assisted; reviewed; PDF extraction
+"How do I get Claude Routine notifications on iOS?
+
+I have a couple of Claude Routines that runs on schedule. The routines are working as expected (simple daily research tasks), and I can track their execution through the claude.ai/code/session link. However, I can’t figure out how to receive a push notification on iOS when the routine runs or finishes. Is there a built-in way to enable iOS notifications for Claude routines, or is this currently unsupported? Has anyone found a workaround? The Claude iOS app also seems to have no idea about Routines.",help_request,AI-assisted; reviewed; PDF extraction
