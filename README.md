@@ -413,7 +413,7 @@ Criterion 5 measures my labels, not the model. The sample was the 20 `cold` reco
 
 - **My dataset was balanced, but the predictions were not.** `labels.csv` has 90 `help_request`, 58 `project_showcase` and 52 `opinion_feedback` posts. Yet the model predicted `help_request` for 30, 29 and 27 of the 30 test posts on seeds 42, 7 and 2024. A balanced dataset did not produce balanced predictions.
 - **The biggest errors all point one way.** In the seed-42 confusion matrix, 9 real `project_showcase` posts and 8 real `opinion_feedback` posts were predicted as `help_request`. No real `help_request` post was predicted as anything else. Across all three seeds, the model never predicted `opinion_feedback` once.
-- **The model's confidence and loss barely moved from guessing.** Its final training loss was 1.064, 1.041 and 1.029 on the three seeds. A model that gives every label an equal one-in-three chance scores about 1.099 on this measure. Validation loss was still falling at the end of epoch 3 on every seed. With 139 training posts and a batch size of 16, each run made only about 27 training updates in total.
+- **The model's confidence and loss barely moved from guessing.** Its average training loss was 1.064, 1.041 and 1.029 on the three seeds. A model that gives every label an equal one-in-three chance scores about 1.099 on this measure. Validation loss was still falling at the end of epoch 3 on every seed. With 139 training posts and a batch size of 16, each run made only about 27 training updates in total.
 - **The zero-shot baseline did better, but did not solve the task.** BART scored 0.567 accuracy against my trained model's 0.433 on the same 30 posts (seed 42). It found all 9 `project_showcase` posts (F1 0.621), but it also scored 0 on `opinion_feedback`. It labelled 7 of the 8 opinion posts as `project_showcase`, and it predicted `project_showcase` for 20 of the 30 posts. Neither model separated all three labels.
 
 *What I think explains the misses (hypotheses, not proven causes):*
@@ -503,24 +503,72 @@ There is no pattern of disagreements to read, because there were none. That is a
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** Increased EPOCHS from 3 to 10. This was the only controlled change; all other model settings, data, seeds, splits, and evaluation methods stayed the same.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** Hypothesis 1 in Verdicts and Diagnoses: the original 3-epoch runs appeared undertrained, with training loss near the three-class chance level, validation loss still decreasing, and predictions overwhelmingly concentrated on help_request.
 
 ### Run Log — After
 
+I changed exactly one training setting: `EPOCHS` from 3 to 10. Everything else stayed the same: the data and labels in `labels.csv`, the seeds (42, 7 and 2024), the stratified split method, the learning rate (2e-5), batch size (16), maximum length (128), the base model (`distilbert-base-uncased`) and the evaluation method. Each seed was again tested on 30 held-out posts. The numbers come from `results_three_seeds_after.json`. In criterion 2, the three F1 scores are listed in the order `help_request` / `project_showcase` / `opinion_feedback`.
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 | --------- | ------ | ------- | ------ | --------- | ------- |
-| 1.        |        |         |        |           |         |
-| 2.        |        |         |        |           |         |
-| 3.        |        |         |        |           |         |
-| 4.        |        |         |        |           |         |
-| 5.        |        |         |        |           |         |
+| 1. Overall accuracy | ≥ 0.65 | 0.767 | 0.667 | 0.667 | **MET** |
+| 2. Per-label F1 | `help_request` ≥ 0.55, `project_showcase` ≥ 0.65, `opinion_feedback` ≥ 0.55 | 0.867 / 0.842 / 0.364 | 0.812 / 0.737 / 0.000 | 0.750 / 0.750 / 0.333 | **MISSED** |
+| 3. Dataset balance | No label above 50% of `labels.csv` | 45% | 45% | 45% | **MET** |
+| 4. Most-confident-third accuracy | ≥ 0.70 | 0.900 | 1.000 | 0.900 | **MET** |
+| 5. Labelling consistency | ≥ 85% agreement on a repeat labelling of 20 posts | 90% (18 / 20) | 90% (18 / 20) | 90% (18 / 20) | **MET** (numerically; same caveats as before) |
+
+**Before and after, per seed:**
+
+| Measure | Seed 42 before → after | Seed 7 before → after | Seed 2024 before → after |
+| ------- | ---------------------- | --------------------- | ------------------------ |
+| Overall accuracy | 0.433 → 0.767 | 0.467 → 0.667 | 0.500 → 0.667 |
+| Macro F1 | 0.202 → 0.691 | 0.273 → 0.516 | 0.328 → 0.611 |
+| F1 — `help_request` | 0.605 → 0.867 | 0.619 → 0.812 | 0.650 → 0.750 |
+| F1 — `project_showcase` | 0.000 → 0.842 | 0.200 → 0.737 | 0.333 → 0.750 |
+| F1 — `opinion_feedback` | 0.000 → 0.364 | 0.000 → 0.000 | 0.000 → 0.333 |
+
+**Confusion matrix after the change (seed 42, from `results_three_seeds_after.json`):**
+
+| true \ predicted | help_request | project_showcase | opinion_feedback |
+| ---------------- | ------------ | ---------------- | ---------------- |
+| **help_request**     | 13 | 0 | 0 |
+| **project_showcase** | 0  | 8 | 1 |
+| **opinion_feedback** | 4  | 2 | 2 |
+
+The largest remaining error is 4 real `opinion_feedback` posts predicted as `help_request`, with 0 going the other way. The model now separates `project_showcase` well (8 of 9 correct), but it still pulls most opinion posts toward the other two labels. Only 2 of the 8 opinion posts were labelled correctly. The other two seeds show the same pattern: 5 of the 8 real opinion posts were called `help_request` on both seed 7 and seed 2024.
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
+
+Yes, on most measures, but it did not fix everything.
+
+- **Accuracy improved on every seed.** Average accuracy rose from about 0.467 to 0.700, a gain of about 0.233 (23.3 percentage points). All three seeds now meet the 0.65 target. However, seeds 7 and 2024 scored 0.667 (20 of 30), so they passed by only one correct post. One more mistake on either seed would have been a miss.
+- **The spread across seeds is 0.100.** That is exactly 3 posts out of 30 (23 correct on seed 42, against 20 on seeds 7 and 2024). This is a meaningful amount of variation for a 30-post test set. With the same settings, the score still depends noticeably on which posts land in the test split.
+- **`opinion_feedback` still does not work reliably.** It missed its 0.55 F1 target on every seed (0.364, 0.000 and 0.333), and scored zero on seed 7. So criterion 2 is still missed, and I cannot claim the model handles all three labels.
+
+**Checking my prediction.** Before this run, I predicted that 10 epochs would lower training loss, reduce how often the model predicts `help_request`, and improve at least some per-label F1 scores. All three happened:
+
+- Average training loss fell on every seed, from 1.064, 1.041 and 1.029 to 0.725, 0.707 and 0.672.
+- Predictions became much less concentrated on `help_request`: 17, 19 and 19 of 30 posts, down from 30, 29 and 27.
+- Accuracy improved on every seed, and per-label F1 improved for `help_request` and `project_showcase` on every seed, and for `opinion_feedback` on two seeds.
+
+This supports my undertraining hypothesis, but it does not prove that undertraining was the only cause. `opinion_feedback` is still weak, which fits my other hypothesis that its boundary with `help_request` is genuinely hard or inconsistently labelled.
+
+**Confidence.** The most-confident third scored 0.900, 1.000 and 0.900. The least-confident third scored 0.700, 0.500 and 0.400. On every seed the model was more confident on average when it was right than when it was wrong:
+
+| Seed | Mean confidence when right | Mean confidence when wrong |
+| ---- | -------------------------- | -------------------------- |
+| 42 | 0.716 | 0.644 |
+| 7 | 0.662 | 0.536 |
+| 2024 | 0.734 | 0.595 |
+
+Unlike the before-run, the model now predicts all three labels, so criterion 4 means more this time. It is still based on only 10 posts per third, so I treat it as encouraging rather than conclusive.
+
+**Overfitting check.** Validation loss kept falling through epoch 10 on all three seeds, ending at 0.715, 0.604 and 0.735, against 1.036, 1.019 and 1.000 after 3 epochs. It flattened in the last few epochs. I saw no increase that would suggest overfitting in these runs. That does not mean 10 epochs can never overfit on 139 training posts, or that training even longer would help.
 
 ---
 
@@ -528,10 +576,31 @@ There is no pattern of disagreements to read, because there were none. That is a
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+After the 10-epoch change, my classifier meets 4 of my 5 criteria. The per-label F1 criterion (criterion 2) is still **MISSED**, and some of the passes are narrow.
+
+**`opinion_feedback` is still not learned well.** Its F1 was 0.364, 0.000 and 0.333 on seeds 42, 7 and 2024, below the 0.55 target on all three. On seed 42, the model labelled only 2 of the 8 real `opinion_feedback` posts correctly; it called 4 of them `help_request` and 2 `project_showcase`. On seeds 7 and 2024, 5 of the 8 real opinion posts were called `help_request`. So the main remaining problem is the boundary between `opinion_feedback` and `help_request`.
+
+**The accuracy result is fragile.** Accuracy was 0.767, 0.667 and 0.667, a spread of exactly 0.100 (3 posts out of 30). Each test set has only 30 posts, so the score depends noticeably on which posts land in it. The two 0.667 scores pass the 0.65 target by a single post; one more error on either seed would have been a miss.
+
+**I do not know yet why `opinion_feedback` fails.** The 10-epoch results support my undertraining hypothesis, but they do not tell me whether the remaining opinion errors come mainly from:
+
+- genuinely ambiguous posts,
+- inconsistent labelling on my part,
+- too few examples (52 `opinion_feedback` posts in `labels.csv`, and only 8 in each test split), or
+- limits of the model itself.
+
+My staff agreement result cannot settle this either. Its 30 / 30 (100%) agreement used a different taxonomy (`analysis`, `hot_take` and `reaction`) and posts ordered in blocks by label, so it does not validate my TakeMeter label boundaries. My own repeat-labelling check contained only one `opinion_feedback` record.
+
+**What I would do next (future work, not done in Unit 6).** I would do an independent, balanced review of my `opinion_feedback` posts, especially those close to the boundary with `help_request`, and relabel any that I applied inconsistently. Then I would evaluate the model on a new held-out set of posts it has never seen. I stopped here because Unit 6 asks for one controlled improvement, and I have already used it on the epoch change.
+
+The classifier is not ready for reliable use. It recognises `help_request` and `project_showcase` reasonably well, but it does not handle all three labels equally well.
+
 **The gap between what I meant my labels to capture and what the model
 learned:**
 
 <!-- Two sentences. Your confusion matrix is the evidence. -->
+
+I meant `opinion_feedback` to capture posts whose primary purpose is to express an evaluation, complaint, praise or opinion about Claude, Anthropic or its products, rather than to ask for help or present a project. The model has not learned that distinction: in the seed-42 confusion matrix, 6 of the 8 real opinion posts were sent to `help_request` (4) or `project_showcase` (2), which suggests it may be reacting to the problem or project a post mentions rather than to the opinion it expresses.
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
