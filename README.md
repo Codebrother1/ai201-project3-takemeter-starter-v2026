@@ -338,30 +338,44 @@ The baseline's 0.567 accuracy is still below my 0.65 target, so neither model me
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
+All three runs use the same settings as my Milestone 5 run (3 epochs, learning rate 2e-5, batch size 16, max length 128) on `mps`, with 30 test posts per seed. The numbers come from `results_three_seeds_before.json`. In criterion 2, the three F1 scores are listed in the order `help_request` / `project_showcase` / `opinion_feedback`.
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 | --------- | ------ | ------- | ------ | --------- | ------- |
-| 1.        |        |         |        |           |         |
-| 2.        |        |         |        |           |         |
-| 3.        |        |         |        |           |         |
-| 4.        |        |         |        |           |         |
-| 5.        |        |         |        |           |         |
+| 1. Overall accuracy | ≥ 0.65 | 0.433 | 0.467 | 0.500 | **MISSED** |
+| 2. Per-label F1 | `help_request` ≥ 0.55, `project_showcase` ≥ 0.65, `opinion_feedback` ≥ 0.55 | 0.605 / 0.000 / 0.000 | 0.619 / 0.200 / 0.000 | 0.650 / 0.333 / 0.000 | **MISSED** |
+| 3. Dataset balance | No label above 50% of `labels.csv` | 45% | 45% | 45% | **MET** |
+| 4. Most-confident-third accuracy | ≥ 0.70 | 0.900 | 0.800 | 0.800 | **MET** (numerically; see below) |
+| 5. Labelling consistency | ≥ 85% agreement on a repeat labelling of 20 posts | 90% (18 / 20) | 90% (18 / 20) | 90% (18 / 20) | **MET** (numerically; see below) |
+
+**Notes on each verdict:**
+
+1. **Overall accuracy missed on every seed.** Accuracy moved 0.067 across the three seeds, from 0.433 to 0.500. Even the best seed is 15 points below the 0.65 target, so the spread does not make this verdict uncertain.
+2. **Per-label F1 missed.** `help_request` reached its target on all three seeds (0.605–0.650). `project_showcase` reached at most 0.333 against a 0.65 target, and `opinion_feedback` was 0.000 on every seed. The model never predicted `opinion_feedback` once in any of the three runs.
+3. **Dataset balance met.** My largest label, `help_request`, is 90 of 200 posts (45%). This is a property of `labels.csv`, so it is the same for every seed and says nothing about the model.
+4. **Most-confident-third accuracy met numerically on all three seeds, but it tells me little.** The model predicted `help_request` for 30, 29 and 27 of the 30 test posts on the three seeds. Its most confident guesses were therefore almost all `help_request`, and they were right mostly because the 13 real help requests are the largest group in the test split. The model's confidence stayed close to an even three-way guess (about 0.33). On average it was only 0.41–0.47 confident, whether right or wrong. A high score here does not show that the model knows when it is right.
+5. **Labelling consistency met numerically.** This was measured on my labels in Milestone 4, not on the model, so it is the same for every seed. As I explain in The Dataset, I cannot be certain my first labels for records 1 and 2 were independent of AI discussion. The sample was also the 20 `cold` records, not a random sample, so the 90% should not be overstated.
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |     |     |     |
-| ---------------- | --- | --- | --- |
-| \*\*\*\*         |     |     |     |
-| \*\*\*\*         |     |     |     |
-| \*\*\*\*         |     |     |     |
+This matrix is from the **seed-42 run in `results_three_seeds_before.json`**. That run reproduced my Milestone 5 `results.json` exactly. Rows are the true labels; columns are the model's predictions.
+
+| true \ predicted | help_request | project_showcase | opinion_feedback |
+| ---------------- | ------------ | ---------------- | ---------------- |
+| **help_request**     | 13 | 0 | 0 |
+| **project_showcase** | 9  | 0 | 0 |
+| **opinion_feedback** | 8  | 0 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
 
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
+
+The biggest error is 9: all 9 real `project_showcase` posts were predicted as `help_request`, and 0 real `help_request` posts went the other way. The model did not learn the boundary between showing off a finished project and asking for help; it pushed everything toward `help_request`. The same happened with `opinion_feedback`: all 8 real opinion posts were also called `help_request`. With seed 42, the model predicted only one label, so it learned no boundaries at all. It simply defaulted to my largest category.
 
 ---
 
