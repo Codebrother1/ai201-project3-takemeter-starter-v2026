@@ -386,11 +386,17 @@ The biggest error is 9: all 9 real `project_showcase` posts were predicted as `h
 
 | #   | Criterion | Target | Verdict | How I decided |
 | --- | --------- | ------ | ------- | ------------- |
-| 1   |           |        |         |               |
-| 2   |           |        |         |               |
-| 3   |           |        |         |               |
-| 4   |           |        |         |               |
-| 5   |           |        |         |               |
+| 1   | Overall accuracy | ≥ 0.65 | **MISSED** | 0.433, 0.467 and 0.500 on seeds 42, 7 and 2024. All three are below the target, so the 0.067 spread does not change the verdict. |
+| 2   | Per-label F1 | `help_request` ≥ 0.55, `project_showcase` ≥ 0.65, `opinion_feedback` ≥ 0.55 | **MISSED** | `help_request` passed on every seed (0.605, 0.619, 0.650). `project_showcase` failed on every seed (0.000, 0.200, 0.333), and so did `opinion_feedback` (0.000 on all three). |
+| 3   | Dataset balance | No label above 50% | **MET** | My largest label, `help_request`, is 90 of 200 posts (45%). This is a property of `labels.csv`, not of the model. |
+| 4   | Most-confident-third accuracy | ≥ 0.70 | **MET** (numerically) | 0.900, 0.800 and 0.800 on the three seeds, but the score is misleading (see below). |
+| 5   | Labelling consistency | ≥ 85% | **MET** (numerically) | 18 of 20 (90%) on my repeat labelling of the 20 `cold` records in Milestone 4. The same caveats as in The Dataset apply. |
+
+**Why criteria 4 and 5 are weaker than they look**
+
+Criterion 4 passed only because the model almost always predicted `help_request`. When nearly every guess is `help_request`, the most confident guesses are almost all `help_request` too. They come out right mostly because the 13 real help requests are the largest group in the test split. The model's average confidence was only 0.41–0.47 on every seed, whether it was right or wrong, against 0.33 for an even three-way guess. So this pass does not show that the model knows when it is right.
+
+Criterion 5 measures my labels, not the model. The sample was the 20 `cold` records, not a random sample. Three quarters of it was `project_showcase`, and only 1 record was `opinion_feedback`. I also cannot be sure my first labels for records 1 and 2 were independent of AI discussion. So the 90% tells me little about my hardest boundaries.
 
 **Diagnoses**
 
@@ -402,6 +408,31 @@ The biggest error is 9: all 9 real `project_showcase` posts were predicted as `h
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+*What I observed (facts from my results files):*
+
+- **My dataset was balanced, but the predictions were not.** `labels.csv` has 90 `help_request`, 58 `project_showcase` and 52 `opinion_feedback` posts. Yet the model predicted `help_request` for 30, 29 and 27 of the 30 test posts on seeds 42, 7 and 2024. A balanced dataset did not produce balanced predictions.
+- **The biggest errors all point one way.** In the seed-42 confusion matrix, 9 real `project_showcase` posts and 8 real `opinion_feedback` posts were predicted as `help_request`. No real `help_request` post was predicted as anything else. Across all three seeds, the model never predicted `opinion_feedback` once.
+- **The model's confidence and loss barely moved from guessing.** Its final training loss was 1.064, 1.041 and 1.029 on the three seeds. A model that gives every label an equal one-in-three chance scores about 1.099 on this measure. Validation loss was still falling at the end of epoch 3 on every seed. With 139 training posts and a batch size of 16, each run made only about 27 training updates in total.
+- **The zero-shot baseline did better, but did not solve the task.** BART scored 0.567 accuracy against my trained model's 0.433 on the same 30 posts (seed 42). It found all 9 `project_showcase` posts (F1 0.621), but it also scored 0 on `opinion_feedback`. It labelled 7 of the 8 opinion posts as `project_showcase`, and it predicted `project_showcase` for 20 of the 30 posts. Neither model separated all three labels.
+
+*What I think explains the misses (hypotheses, not proven causes):*
+
+1. **The training was too short for the model to learn anything beyond a default.** This is my strongest hypothesis. The training loss stayed close to chance, validation loss was still falling when training stopped, and about 27 updates is very little. A model that has not learned the boundaries yet would fall back on the most common label it saw, and `help_request` is my largest label at 45%. This would explain why it leaned so heavily on `help_request` even though no label is above 50%. I have not tested this yet.
+2. **`project_showcase` looks learnable, so its failure looks like a model problem rather than a labelling problem.** The baseline, given only my written definitions, found every `project_showcase` post in the test set. In my own repeat labelling, 15 of the 20 records were `project_showcase`, and I gave the same label both times on 13 of them. Both of my two disagreements were on this label, so my labelling of it was not perfect. Still, that suggests the label is described clearly enough to recognise. My fine-tuned model found at most 2 of the 9.
+3. **`opinion_feedback` may be a genuinely hard boundary, possibly made worse by how I applied it.** Both models scored 0 on it. In my own taxonomy, many opinion posts also describe a problem or mention a project, so they overlap with the other two labels. My consistency check contained only one `opinion_feedback` record, so it cannot tell me whether I applied this label consistently. I cannot yet separate "hard boundary" from "inconsistent labels" for this class.
+
+**What the staff agreement can and cannot tell me**
+
+My 30 / 30 agreement with staff shows that I can apply someone else's written rules the way they intended on that set. It does not show that my own TakeMeter taxonomy is well defined. The staff set used different labels (`analysis`, `hot_take` and `reaction`) and different posts from a fictional running forum. The posts were also ordered in blocks of 10 by label. So I do not use it as evidence that my `help_request` / `project_showcase` / `opinion_feedback` labels are consistent. The closest evidence I have for that is my own 90% repeat-labelling result, with the limits above.
+
+**Improvement candidate for Milestone 5 (not yet run)**
+
+I plan to make one controlled change: increase `EPOCHS` from 3 to 10. Everything else stays the same: the dataset and labels, the splits and seeds (42, 7 and 2024), the learning rate, batch size, max length and evaluation method. This tests my strongest hypothesis, that the model was undertrained.
+
+I predict that training for 10 epochs will lower training loss, reduce the model's tendency to predict `help_request` for nearly every post, and improve at least some of the per-label F1 scores across the three seeds. I will compare all three seeds, including validation loss, to see whether the gains are consistent or whether longer training overfits.
+
+More epochs can also cause overfitting on 139 training posts, so I will look at validation loss as well as test scores.
 
 ---
 
