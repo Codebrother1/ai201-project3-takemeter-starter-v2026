@@ -413,7 +413,15 @@ The biggest error is 9: all 9 real `project_showcase` posts were predicted as `h
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** **_ / 30 = _**%
+**Agreement rate:** **30 / 30 = 100**%
+
+I labelled all 30 staff posts myself under the staff taxonomy in `data/staff_taxonomy.md` before I saw any staff answers. My labels are in `my_staff_labels.csv`, committed in `c71d022` before I received `data/staff_labels.csv`. `python agreement.py` compared the 30 posts and found 30 matches and 0 disagreements (`agreement_results.json`, agreement rate 1.0).
+
+| staff \ mine | analysis | hot_take | reaction |
+| ------------ | -------- | -------- | -------- |
+| **analysis** | 10 | 0 | 0 |
+| **hot_take** | 0 | 10 | 0 |
+| **reaction** | 0 | 0 | 10 |
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -435,27 +443,30 @@ The biggest error is 9: all 9 real `project_showcase` posts were predicted as `h
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
-**1.**
+There were no disagreements, so there are no cases to adjudicate and nothing to sort into the three piles.
 
-> _The post:_
->
-> _Staff said / I said:_
->
-> _My call, and why:_
->
-> _Which pile:_
+**The seven posts staff marked as borderline**
 
-**2.**
+Staff marked 7 of the 30 posts as hard cases in `data/staff_labels.csv`. I gave the same label as staff on all seven. I did not write a rationale for each post when I labelled them, so the reasons below are the staff's reasons, linked to the staff rules. They explain why each post is borderline, not how I decided.
 
-> _The post:_
->
-> _Staff said / I said:_
->
-> _My call, and why:_
->
-> _Which pile:_
+| Post | Label | Why it is borderline |
+| ---- | ----- | -------------------- |
+| `sp_005`, "Carbon plates aren't the whole story…" | `analysis` | It opens like a hot take about shoes. Under rule 1 it is analysis, because the comparison that follows carries the argument: 2% and then another 2% in the same shoes, when only weekly mileage changed. |
+| `sp_010`, "Three of us ran the same session…" | `analysis` | The conclusion is hedged and the sample is three people, but the claim rests on a checkable observation: three runners within 10 seconds over 5 miles. |
+| `sp_014`, "Times are down about 3% since the shoe rules changed, so obviously…" | `hot_take` | Staff call this the canonical rule-1 case. The 3% is decoration on a conclusion already reached; "so obviously" does the work, not the number. |
+| `sp_019`, "Nobody actually enjoys the long run…" | `hot_take` | It reads as reflective, almost like a reaction. Under rule 2 it is a general claim about everyone, not a report of what happened to the writer. |
+| `sp_020`, "Every injury thread on this forum is the same injury…" | `hot_take` | It sounds observational and could in principle be checked, but no count is given. The writer is asserting, not showing, so it falls on the `hot_take` side of the `analysis` / `hot_take` boundary. |
+| `sp_028`, "Third DNF this year…" | `reaction` | "Third this year" is countable, but nothing is argued from it. Rule 3 does not move it to `analysis`, because no fact is load-bearing. It is the writer reporting their own state. |
+| `sp_029`, "Just realised the shoes I set every PB in…" | `reaction` | It could be read as a wry hot take about shoe discussions. Under rule 2 it is a reaction, because it reports the writer's own realisation, now. |
 
 **What the pattern in my disagreements tells me:**
+
+There is no pattern of disagreements to read, because there were none. That is a good sign that I can apply a written rule the way its authors did, but it does not prove my rule-following is flawless.
+
+- **The set was ordered by label.** The first 10 posts were `analysis`, the next 10 were `hot_take`, and the last 10 were `reaction`. My labels followed those blocks. This arrangement may have made the task easier, so I would be cautious about treating 100% agreement as proof that I could achieve the same result on a shuffled set.
+
+- **The agreement was higher than the taxonomy guidance suggests is typical.** The staff taxonomy says an agreement rate in the 70s is normal because some examples are ambiguous. My 100% agreement is encouraging, but this small, ordered sample cannot tell me how I would perform on new examples.
+- **This measures a different taxonomy.** The result shows how well I applied the staff's `analysis` / `hot_take` / `reaction` rules to 30 fictional running-forum posts. It is not a measure of my own TakeMeter labels, and it says nothing directly about my model's accuracy. My classifier still scored only 0.433–0.500 accuracy on my own labels across the three seeds.
 
 ---
 
